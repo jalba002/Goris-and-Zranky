@@ -22,7 +22,7 @@
     "itemName": "",
     "itemDescription": "",
     "itemSlug": "empty_shoulder_l",
-    "itemSlot": 4,
+    "itemSlot": 3,
     "itemPrefab": null,
     "resourcePath": null
   },
@@ -31,7 +31,7 @@
     "itemName": "",
     "itemDescription": "",
     "itemSlug": "empty_shoulder_r",
-    "itemSlot": 8,
+    "itemSlot": 4,
     "itemPrefab": null,
     "resourcePath": null
   },
@@ -40,7 +40,7 @@
     "itemName": "Naked",
     "itemDescription": "",
     "itemSlug": "naked_body",
-    "itemSlot": 16,
+    "itemSlot": 5,
     "itemPrefab": null,
     "resourcePath": null
   },
@@ -49,7 +49,7 @@
     "itemName": "",
     "itemDescription": "",
     "itemSlug": "empty_hand_l",
-    "itemSlot": 32,
+    "itemSlot": 6,
     "itemPrefab": null,
     "resourcePath": null
   },
@@ -58,7 +58,7 @@
     "itemName": "",
     "itemDescription": "",
     "itemSlug": "empty_hand_r",
-    "itemSlot": 64,
+    "itemSlot": 7,
     "itemPrefab": null,
     "resourcePath": null
   },
@@ -67,7 +67,7 @@
     "itemName": "",
     "itemDescription": "",
     "itemSlug": "empty_belt",
-    "itemSlot": 128,
+    "itemSlot": 8,
     "itemPrefab": null,
     "resourcePath": null
   },
@@ -75,8 +75,8 @@
     "itemID": 9,
     "itemName": "",
     "itemDescription": "",
-    "itemSlug": "empty_legs",
-    "itemSlot": 256,
+    "itemSlug": "empty_skirt",
+    "itemSlot": 9,
     "itemPrefab": null,
     "resourcePath": null
   },
@@ -84,52 +84,43 @@
     "itemID": 10,
     "itemName": "",
     "itemDescription": "",
-    "itemSlug": "empty_feet",
-    "itemSlot": 512,
+    "itemSlug": "empty_leg_l",
+    "itemSlot": 10,
     "itemPrefab": null,
     "resourcePath": null
   },
   {
-    "itemID": 101,
+    "itemID": 11,
     "itemName": "",
     "itemDescription": "",
-    "itemSlug": "buffoon_head",
-    "itemSlot": 1,
+    "itemSlug": "empty_leg_r",
+    "itemSlot": 11,
     "itemPrefab": null,
-    "resourcePath": "Gear/Buffoon/Buffoon_Hat"
+    "resourcePath": null
   },
   {
-    "itemID": 601,
+    "itemID": 12,
     "itemName": "",
     "itemDescription": "",
-    "itemSlug": "buffoon_shoulder_l",
-    "itemSlot": 32,
+    "itemSlug": "empty_foot_l",
+    "itemSlot": 12,
     "itemPrefab": null,
-    "resourcePath": "Gear/Buffoon/L_Buffoon_Sleeve"
+    "resourcePath": null
   },
   {
-    "itemID": 701,
+    "itemID": 13,
     "itemName": "",
     "itemDescription": "",
-    "itemSlug": "buffoon_shoulder_r",
-    "itemSlot": 64,
+    "itemSlug": "empty_foot_r",
+    "itemSlot": 13,
     "itemPrefab": null,
-    "resourcePath": "Gear/Buffoon/R_Buffoon_Sleeve"
-  },
-  {
-    "itemID": 901,
-    "itemName": "",
-    "itemDescription": "",
-    "itemSlug": "buffoon_legs",
-    "itemSlot": 256,
-    "itemPrefab": null,
-    "resourcePath": "Gear/Buffoon/Buffoon_Skirt"
+    "resourcePath": null
   },
   {
     "itemID": 102,
     "itemName": "",
     "itemDescription": "",
-    "itemSlug": "knight_head",
+    "itemSlug": "knight_helmet",
     "itemSlot": 1,
     "itemPrefab": null,
     "resourcePath": "Gear/Knight/Knight_Helmet"
@@ -138,8 +129,8 @@
     "itemID": 302,
     "itemName": "",
     "itemDescription": "",
-    "itemSlug": "l_knight_shoulder",
-    "itemSlot": 4,
+    "itemSlug": "knight_left_glove",
+    "itemSlot": 3,
     "itemPrefab": null,
     "resourcePath": "Gear/Knight/L_Knight_Shoulder"
   },
@@ -147,8 +138,8 @@
     "itemID": 402,
     "itemName": "",
     "itemDescription": "",
-    "itemSlug": "r_knight_shoulder",
-    "itemSlot": 8,
+    "itemSlug": "knight_right_shoulder",
+    "itemSlot": 4,
     "itemPrefab": null,
     "resourcePath": "Gear/Knight/R_Knight_Shoulder"
   },
@@ -157,7 +148,7 @@
     "itemName": "",
     "itemDescription": "",
     "itemSlug": "knight_chestplate",
-    "itemSlot": 16,
+    "itemSlot": 5,
     "itemPrefab": null,
     "resourcePath": "Gear/Knight/Knight_Chestplate"
   },
@@ -165,8 +156,8 @@
     "itemID": 602,
     "itemName": "",
     "itemDescription": "",
-    "itemSlug": "l_knight_glove",
-    "itemSlot": 32,
+    "itemSlug": "knight_left_glove",
+    "itemSlot": 6,
     "itemPrefab": null,
     "resourcePath": "Gear/Knight/L_Knight_Glove"
   },
@@ -174,9 +165,27 @@
     "itemID": 702,
     "itemName": "",
     "itemDescription": "",
-    "itemSlug": "r_knight_glove",
-    "itemSlot": 64,
+    "itemSlug": "knight_right_glove",
+    "itemSlot": 7,
     "itemPrefab": null,
     "resourcePath": "Gear/Knight/R_Knight_Glove"
-  } 
+  },
+  {
+    "itemID": 1002,
+    "itemName": "",
+    "itemDescription": "",
+    "itemSlug": "knight_left_knee_plate",
+    "itemSlot": 10,
+    "itemPrefab": null,
+    "resourcePath": "Gear/Knight/L_Knight_LegPlate"
+  },
+  {
+    "itemID": 1102,
+    "itemName": "",
+    "itemDescription": "",
+    "itemSlug": "knight_right_knee_plate",
+    "itemSlot": 11,
+    "itemPrefab": null,
+    "resourcePath": "Gear/Knight/R_Knight_LegPlate"
+  }
 ]

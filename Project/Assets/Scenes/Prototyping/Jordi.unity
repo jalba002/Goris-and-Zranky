@@ -559,94 +559,83 @@ MonoBehaviour:
     itemName: 
     itemDescription: 
     itemSlug: empty_shoulder_l
-    itemSlot: 4
+    itemSlot: 3
     itemPrefab: {fileID: 0}
     resourcePath: 
   - itemID: 4
     itemName: 
     itemDescription: 
     itemSlug: empty_shoulder_r
-    itemSlot: 8
+    itemSlot: 4
     itemPrefab: {fileID: 0}
     resourcePath: 
   - itemID: 5
     itemName: Naked
     itemDescription: 
     itemSlug: naked_body
-    itemSlot: 16
+    itemSlot: 5
     itemPrefab: {fileID: 0}
     resourcePath: 
   - itemID: 6
     itemName: 
     itemDescription: 
     itemSlug: empty_hand_l
-    itemSlot: 32
+    itemSlot: 6
     itemPrefab: {fileID: 0}
     resourcePath: 
   - itemID: 7
     itemName: 
     itemDescription: 
     itemSlug: empty_hand_r
-    itemSlot: 64
+    itemSlot: 7
     itemPrefab: {fileID: 0}
     resourcePath: 
   - itemID: 8
     itemName: 
     itemDescription: 
     itemSlug: empty_belt
-    itemSlot: 128
+    itemSlot: 8
     itemPrefab: {fileID: 0}
     resourcePath: 
   - itemID: 9
     itemName: 
     itemDescription: 
-    itemSlug: empty_legs
-    itemSlot: 256
+    itemSlug: empty_skirt
+    itemSlot: 9
     itemPrefab: {fileID: 0}
     resourcePath: 
   - itemID: 10
     itemName: 
     itemDescription: 
-    itemSlug: empty_feet
-    itemSlot: 512
+    itemSlug: empty_leg_l
+    itemSlot: 10
     itemPrefab: {fileID: 0}
     resourcePath: 
-  - itemID: 101
+  - itemID: 11
     itemName: 
     itemDescription: 
-    itemSlug: buffoon_head
-    itemSlot: 1
-    itemPrefab: {fileID: 919132149155446097, guid: 57e3732787d54dc4ea34ee8712e1a08d,
-      type: 3}
-    resourcePath: Gear/Buffoon/Buffoon_Hat
-  - itemID: 601
+    itemSlug: empty_leg_r
+    itemSlot: 11
+    itemPrefab: {fileID: 0}
+    resourcePath: 
+  - itemID: 12
     itemName: 
     itemDescription: 
-    itemSlug: buffoon_shoulder_l
-    itemSlot: 32
-    itemPrefab: {fileID: 919132149155446097, guid: 5700aff12b2d8ed4ca6feed58cb2acfb,
-      type: 3}
-    resourcePath: Gear/Buffoon/L_Buffoon_Sleeve
-  - itemID: 701
+    itemSlug: empty_foot_l
+    itemSlot: 12
+    itemPrefab: {fileID: 0}
+    resourcePath: 
+  - itemID: 13
     itemName: 
     itemDescription: 
-    itemSlug: buffoon_shoulder_r
-    itemSlot: 64
-    itemPrefab: {fileID: 919132149155446097, guid: 127d4c022f90f1c40a49edca2c5addbd,
-      type: 3}
-    resourcePath: Gear/Buffoon/R_Buffoon_Sleeve
-  - itemID: 901
-    itemName: 
-    itemDescription: 
-    itemSlug: buffoon_legs
-    itemSlot: 256
-    itemPrefab: {fileID: 919132149155446097, guid: 77947f1882f33264cb2de8c3b391afff,
-      type: 3}
-    resourcePath: Gear/Buffoon/Buffoon_Skirt
+    itemSlug: empty_foot_r
+    itemSlot: 13
+    itemPrefab: {fileID: 0}
+    resourcePath: 
   - itemID: 102
     itemName: 
     itemDescription: 
-    itemSlug: knight_head
+    itemSlug: knight_helmet
     itemSlot: 1
     itemPrefab: {fileID: 919132149155446097, guid: a7fa75034fe4865449c64a6cc19f7e8d,
       type: 3}
@@ -654,16 +643,16 @@ MonoBehaviour:
   - itemID: 302
     itemName: 
     itemDescription: 
-    itemSlug: l_knight_shoulder
-    itemSlot: 4
+    itemSlug: knight_left_glove
+    itemSlot: 3
     itemPrefab: {fileID: 919132149155446097, guid: 6a12a06cd442f1b4089ec4f7cd25aded,
       type: 3}
     resourcePath: Gear/Knight/L_Knight_Shoulder
   - itemID: 402
     itemName: 
     itemDescription: 
-    itemSlug: r_knight_shoulder
-    itemSlot: 8
+    itemSlug: knight_right_shoulder
+    itemSlot: 4
     itemPrefab: {fileID: 919132149155446097, guid: 8cd253dea53d36a4eb29dd249459918b,
       type: 3}
     resourcePath: Gear/Knight/R_Knight_Shoulder
@@ -671,26 +660,42 @@ MonoBehaviour:
     itemName: 
     itemDescription: 
     itemSlug: knight_chestplate
-    itemSlot: 16
+    itemSlot: 5
     itemPrefab: {fileID: 919132149155446097, guid: 904edd5467fc40d43ac953fffe20c03c,
       type: 3}
     resourcePath: Gear/Knight/Knight_Chestplate
   - itemID: 602
     itemName: 
     itemDescription: 
-    itemSlug: l_knight_glove
-    itemSlot: 32
+    itemSlug: knight_left_glove
+    itemSlot: 6
     itemPrefab: {fileID: 919132149155446097, guid: 1e1088d466b438e43b3aa1b6523659f2,
       type: 3}
     resourcePath: Gear/Knight/L_Knight_Glove
   - itemID: 702
     itemName: 
     itemDescription: 
-    itemSlug: r_knight_glove
-    itemSlot: 64
+    itemSlug: knight_right_glove
+    itemSlot: 7
     itemPrefab: {fileID: 919132149155446097, guid: 578698316b559d64c861b445a5c20cc7,
       type: 3}
     resourcePath: Gear/Knight/R_Knight_Glove
+  - itemID: 1002
+    itemName: 
+    itemDescription: 
+    itemSlug: knight_left_knee_plate
+    itemSlot: 10
+    itemPrefab: {fileID: 919132149155446097, guid: eace601217538734885496f74fd74c0c,
+      type: 3}
+    resourcePath: Gear/Knight/L_Knight_LegPlate
+  - itemID: 1102
+    itemName: 
+    itemDescription: 
+    itemSlug: knight_right_knee_plate
+    itemSlot: 11
+    itemPrefab: {fileID: 919132149155446097, guid: 4bf363c7c61032a42827fc036f97d8dc,
+      type: 3}
+    resourcePath: Gear/Knight/R_Knight_LegPlate
 --- !u!1 &1841837761
 GameObject:
   m_ObjectHideFlags: 0
@@ -1065,17 +1070,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a69ea0fdb52f9af4e9a31bbf20516638, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  preset: {fileID: 4900000, guid: bab6ed2a0317b374bb2173bdff39f85d, type: 3}
-  wornHead: {fileID: 0}
-  wornNeck: {fileID: 0}
-  wornShoulderLeft: {fileID: 0}
-  wornShoulderRight: {fileID: 0}
-  wornBody: {fileID: 0}
-  wornHandLeft: {fileID: 0}
-  wornHandRight: {fileID: 0}
-  wornBelt: {fileID: 0}
-  wornLegs: {fileID: 0}
-  wornFeet: {fileID: 0}
+  loadPresetOnStart: 0
+  preset: {fileID: 4900000, guid: 4c099dea95314d7499bcf96089cc15ca, type: 3}
   equippedItems: []
 --- !u!1 &4144012787417125075
 GameObject:
