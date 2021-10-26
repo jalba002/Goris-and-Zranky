@@ -1,0 +1,182 @@
+[
+  {
+    "itemID": 1,
+    "itemName": "Bald",
+    "itemDescription": "",
+    "itemSlug": "bald_head",
+    "itemSlot": 1,
+    "itemPrefab": null,
+    "resourcePath": null
+  },
+  {
+    "itemID": 2,
+    "itemName": "",
+    "itemDescription": "",
+    "itemSlug": "empty_neck",
+    "itemSlot": 2,
+    "itemPrefab": null,
+    "resourcePath": null
+  },
+  {
+    "itemID": 3,
+    "itemName": "",
+    "itemDescription": "",
+    "itemSlug": "empty_shoulder_l",
+    "itemSlot": 4,
+    "itemPrefab": null,
+    "resourcePath": null
+  },
+  {
+    "itemID": 4,
+    "itemName": "",
+    "itemDescription": "",
+    "itemSlug": "empty_shoulder_r",
+    "itemSlot": 8,
+    "itemPrefab": null,
+    "resourcePath": null
+  },
+  {
+    "itemID": 5,
+    "itemName": "Naked",
+    "itemDescription": "",
+    "itemSlug": "naked_body",
+    "itemSlot": 16,
+    "itemPrefab": null,
+    "resourcePath": null
+  },
+  {
+    "itemID": 6,
+    "itemName": "",
+    "itemDescription": "",
+    "itemSlug": "empty_hand_l",
+    "itemSlot": 32,
+    "itemPrefab": null,
+    "resourcePath": null
+  },
+  {
+    "itemID": 7,
+    "itemName": "",
+    "itemDescription": "",
+    "itemSlug": "empty_hand_r",
+    "itemSlot": 64,
+    "itemPrefab": null,
+    "resourcePath": null
+  },
+  {
+    "itemID": 8,
+    "itemName": "",
+    "itemDescription": "",
+    "itemSlug": "empty_belt",
+    "itemSlot": 128,
+    "itemPrefab": null,
+    "resourcePath": null
+  },
+  {
+    "itemID": 9,
+    "itemName": "",
+    "itemDescription": "",
+    "itemSlug": "empty_legs",
+    "itemSlot": 256,
+    "itemPrefab": null,
+    "resourcePath": null
+  },
+  {
+    "itemID": 10,
+    "itemName": "",
+    "itemDescription": "",
+    "itemSlug": "empty_feet",
+    "itemSlot": 512,
+    "itemPrefab": null,
+    "resourcePath": null
+  },
+  {
+    "itemID": 101,
+    "itemName": "",
+    "itemDescription": "",
+    "itemSlug": "buffoon_head",
+    "itemSlot": 1,
+    "itemPrefab": null,
+    "resourcePath": "Gear/Buffoon/Buffoon_Hat"
+  },
+  {
+    "itemID": 601,
+    "itemName": "",
+    "itemDescription": "",
+    "itemSlug": "buffoon_shoulder_l",
+    "itemSlot": 32,
+    "itemPrefab": null,
+    "resourcePath": "Gear/Buffoon/L_Buffoon_Sleeve"
+  },
+  {
+    "itemID": 701,
+    "itemName": "",
+    "itemDescription": "",
+    "itemSlug": "buffoon_shoulder_r",
+    "itemSlot": 64,
+    "itemPrefab": null,
+    "resourcePath": "Gear/Buffoon/R_Buffoon_Sleeve"
+  },
+  {
+    "itemID": 901,
+    "itemName": "",
+    "itemDescription": "",
+    "itemSlug": "buffoon_legs",
+    "itemSlot": 256,
+    "itemPrefab": null,
+    "resourcePath": "Gear/Buffoon/Buffoon_Skirt"
+  },
+  {
+    "itemID": 102,
+    "itemName": "",
+    "itemDescription": "",
+    "itemSlug": "knight_head",
+    "itemSlot": 1,
+    "itemPrefab": null,
+    "resourcePath": "Gear/Knight/Knight_Helmet"
+  },
+  {
+    "itemID": 302,
+    "itemName": "",
+    "itemDescription": "",
+    "itemSlug": "l_knight_shoulder",
+    "itemSlot": 4,
+    "itemPrefab": null,
+    "resourcePath": "Gear/Knight/L_Knight_Shoulder"
+  },
+  {
+    "itemID": 402,
+    "itemName": "",
+    "itemDescription": "",
+    "itemSlug": "r_knight_shoulder",
+    "itemSlot": 8,
+    "itemPrefab": null,
+    "resourcePath": "Gear/Knight/R_Knight_Shoulder"
+  },
+  {
+    "itemID": 502,
+    "itemName": "",
+    "itemDescription": "",
+    "itemSlug": "knight_chestplate",
+    "itemSlot": 16,
+    "itemPrefab": null,
+    "resourcePath": "Gear/Knight/Knight_Chestplate"
+  },
+  {
+    "itemID": 602,
+    "itemName": "",
+    "itemDescription": "",
+    "itemSlug": "l_knight_glove",
+    "itemSlot": 32,
+    "itemPrefab": null,
+    "resourcePath": "Gear/Knight/L_Knight_Glove"
+  },
+  {
+    "itemID": 702,
+    "itemName": "",
+    "itemDescription": "",
+    "itemSlug": "r_knight_glove",
+    "itemSlot": 64,
+    "itemPrefab": null,
+    "resourcePath": "Gear/Knight/R_Knight_Glove"
+  } 
+]
