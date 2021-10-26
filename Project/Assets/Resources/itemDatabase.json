@@ -187,5 +187,68 @@
     "itemSlot": 11,
     "itemPrefab": null,
     "resourcePath": "Gear/Knight/R_Knight_LegPlate"
+  },
+  {
+    "itemID": 103,
+    "itemName": "",
+    "itemDescription": "",
+    "itemSlug": "Mad_Scentist_Head",
+    "itemSlot": 1,
+    "itemPrefab": null,
+    "resourcePath": "Gear/Mad_Scientist/Mad_Scentist_Head"
+  },
+  {
+    "itemID": 203,
+    "itemName": "",
+    "itemDescription": "",
+    "itemSlug": "Mad_Scentist_Necklace",
+    "itemSlot": 2,
+    "itemPrefab": null,
+    "resourcePath": "Gear/Mad_Scientist/Mad_Scentist_Necklace"
+  },
+  {
+    "itemID": 503,
+    "itemName": "",
+    "itemDescription": "",
+    "itemSlug": "Mad_Scentist_Jacket",
+    "itemSlot": 5,
+    "itemPrefab": null,
+    "resourcePath": "Gear/Mad_Scientist/Mad_Scentist_Jacket"
+  },
+  {
+    "itemID": 603,
+    "itemName": "",
+    "itemDescription": "",
+    "itemSlug": "Mad_Scentist_L_Globe",
+    "itemSlot": 6,
+    "itemPrefab": null,
+    "resourcePath": "Gear/Mad_Scientist/Mad_Scentist_L_Globe"
+  },
+  {
+    "itemID": 703,
+    "itemName": "",
+    "itemDescription": "",
+    "itemSlug": "Mad_Scentist_R_Globe",
+    "itemSlot": 7,
+    "itemPrefab": null,
+    "resourcePath": "Gear/Mad_Scientist/Mad_Scentist_R_Globe"
+  },
+  {
+    "itemID": 1203,
+    "itemName": "",
+    "itemDescription": "",
+    "itemSlug": "Mad_Scentist_L_Boot",
+    "itemSlot": 12,
+    "itemPrefab": null,
+    "resourcePath": "Gear/Mad_Scientist/Mad_Scentist_L_Boot"
+  },
+  {
+    "itemID": 1303,
+    "itemName": "",
+    "itemDescription": "",
+    "itemSlug": "Mad_Scentist_R_Boot",
+    "itemSlot": 13,
+    "itemPrefab": null,
+    "resourcePath": "Gear/Mad_Scientist/Mad_Scentist_R_Boot"
   }
 ]
