@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a3d3b2f6892ada478311ea331eeb880, type: 3}
+  m_Name: Data_Player
+  m_EditorClassIdentifier: 
+  WalkingSpeed: 12
+  MaxWalkingSpeed: 12
+  ScaledWalkingSpeed: 0.1992
+  JumpingSpeed: 50
+  TurningSpeed: 720
+  GravitySpeed: 80
+  MaxGravity: 80
+  ScaledGravitySpeed: 1.328
+  ScaledJumpingSpeed: 0.83

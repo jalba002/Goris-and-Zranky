@@ -1,0 +1,173 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!319 &31900000
+AvatarMask:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: TorsoMask
+  m_Mask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: Accesories
+    m_Weight: 0
+  - m_Path: Accesories/Belt
+    m_Weight: 0
+  - m_Path: Accesories/Belt/Belt1
+    m_Weight: 0
+  - m_Path: Accesories/Feet
+    m_Weight: 0
+  - m_Path: Accesories/Feet/Buffon_Shoes
+    m_Weight: 0
+  - m_Path: Accesories/Feet/Buffon_Shoes/L_Buffon_Shoe
+    m_Weight: 0
+  - m_Path: Accesories/Feet/Buffon_Shoes/R_Buffon_Shoe
+    m_Weight: 0
+  - m_Path: Accesories/Hands
+    m_Weight: 0
+  - m_Path: Accesories/Hands/Knight_Globes
+    m_Weight: 0
+  - m_Path: Accesories/Hands/Knight_Globes/L_Knight_Glove
+    m_Weight: 0
+  - m_Path: Accesories/Hands/Knight_Globes/R_Knight_Glove
+    m_Weight: 0
+  - m_Path: Accesories/Hands/Sleeve_Long
+    m_Weight: 0
+  - m_Path: Accesories/Hands/Sleeve_Long/L_Sleeve_Long
+    m_Weight: 0
+  - m_Path: Accesories/Hands/Sleeve_Long/R_Sleeve_Long
+    m_Weight: 0
+  - m_Path: Accesories/Hands/Sleeve_Short
+    m_Weight: 0
+  - m_Path: Accesories/Hands/Sleeve_Short/L_Sleeve_Short
+    m_Weight: 0
+  - m_Path: Accesories/Hands/Sleeve_Short/R_Sleeve_Short
+    m_Weight: 0
+  - m_Path: Accesories/Head
+    m_Weight: 0
+  - m_Path: Accesories/Head/Bard_Hat
+    m_Weight: 0
+  - m_Path: Accesories/Head/Bartender_Hat
+    m_Weight: 0
+  - m_Path: Accesories/Head/Buffon_Hat
+    m_Weight: 0
+  - m_Path: Accesories/Head/Crown
+    m_Weight: 0
+  - m_Path: Accesories/Head/Knight_Helmet
+    m_Weight: 0
+  - m_Path: Accesories/Head/Maiden_Hat
+    m_Weight: 0
+  - m_Path: Accesories/Head/Merchant_Hat
+    m_Weight: 0
+  - m_Path: Accesories/Head/Peasant_Hat_1
+    m_Weight: 0
+  - m_Path: Accesories/Head/Peasant_Hat_2
+    m_Weight: 0
+  - m_Path: Accesories/Head/Peasant_Hat_3
+    m_Weight: 0
+  - m_Path: Accesories/Head/Peasant_Hat_4
+    m_Weight: 0
+  - m_Path: Accesories/Head/Witch_Hat
+    m_Weight: 0
+  - m_Path: Accesories/Legs
+    m_Weight: 0
+  - m_Path: Accesories/Legs/Skirt_Long
+    m_Weight: 0
+  - m_Path: Accesories/Legs/Skirt_Short
+    m_Weight: 0
+  - m_Path: Accesories/Neck
+    m_Weight: 0
+  - m_Path: Accesories/Neck/Knecklance_1
+    m_Weight: 0
+  - m_Path: Accesories/Neck/Knecklance_2
+    m_Weight: 0
+  - m_Path: Accesories/Neck/Knecklance_3
+    m_Weight: 0
+  - m_Path: Accesories/Shoulders
+    m_Weight: 0
+  - m_Path: Accesories/Shoulders/Cloth_Shoulders_1
+    m_Weight: 0
+  - m_Path: Accesories/Shoulders/Cloth_Shoulders_1/L_Cloth_Shoulder_1
+    m_Weight: 0
+  - m_Path: Accesories/Shoulders/Cloth_Shoulders_1/R_Cloth_Shoulder_1
+    m_Weight: 0
+  - m_Path: Accesories/Shoulders/Cloth_Shoulders_2
+    m_Weight: 0
+  - m_Path: Accesories/Shoulders/Cloth_Shoulders_2/L_Cloth_Shoulder_2
+    m_Weight: 0
+  - m_Path: Accesories/Shoulders/Cloth_Shoulders_2/R_Cloth_Shoulder_2
+    m_Weight: 0
+  - m_Path: Accesories/Shoulders/Cloth_Shoulders_3
+    m_Weight: 0
+  - m_Path: Accesories/Shoulders/Cloth_Shoulders_3/L_Cloth_Shoulder_3
+    m_Weight: 0
+  - m_Path: Accesories/Shoulders/Cloth_Shoulders_3/R_Cloth_Shoulder_3
+    m_Weight: 0
+  - m_Path: Accesories/Shoulders/Knight_Shoulders
+    m_Weight: 0
+  - m_Path: Accesories/Shoulders/Knight_Shoulders/L_Knight_Shoulder
+    m_Weight: 0
+  - m_Path: Accesories/Shoulders/Knight_Shoulders/R_Knight_Shoulder
+    m_Weight: 0
+  - m_Path: Base_Ctrl
+    m_Weight: 0
+  - m_Path: Base_Ctrl/L_Leg_Ctrl
+    m_Weight: 0
+  - m_Path: Base_Ctrl/L_Leg_Ctrl/L_Shoe_Ctrl
+    m_Weight: 0
+  - m_Path: Base_Ctrl/R_Leg_Ctrl
+    m_Weight: 0
+  - m_Path: Base_Ctrl/R_Leg_Ctrl/R_Shoe_Ctrl
+    m_Weight: 0
+  - m_Path: Base_Ctrl/Waist_Ctrl
+    m_Weight: 0
+  - m_Path: Base_Ctrl/Waist_Ctrl/Belly_Ctrl
+    m_Weight: 0
+  - m_Path: Base_Ctrl/Waist_Ctrl/Belly_Ctrl/Chest_Ctrl
+    m_Weight: 0
+  - m_Path: Base_Ctrl/Waist_Ctrl/Belly_Ctrl/Chest_Ctrl/Head_Ctrl
+    m_Weight: 0
+  - m_Path: Base_Ctrl/Waist_Ctrl/Belly_Ctrl/Chest_Ctrl/Head_Ctrl/Head_Tip_Ctrl
+    m_Weight: 0
+  - m_Path: Base_Ctrl/Waist_Ctrl/Belly_Ctrl/Chest_Ctrl/L_Arm_Ctrl
+    m_Weight: 0
+  - m_Path: Base_Ctrl/Waist_Ctrl/Belly_Ctrl/Chest_Ctrl/R_Arm_Ctrl
+    m_Weight: 0
+  - m_Path: Character 1
+    m_Weight: 0
+  - m_Path: Waist
+    m_Weight: 0
+  - m_Path: Waist/Belly
+    m_Weight: 1
+  - m_Path: Waist/Belly/Chest
+    m_Weight: 1
+  - m_Path: Waist/Belly/Chest/Head 1
+    m_Weight: 1
+  - m_Path: Waist/Belly/Chest/Head 1/Head_Tip
+    m_Weight: 1
+  - m_Path: Waist/Belly/Chest/L_Shoulder
+    m_Weight: 1
+  - m_Path: Waist/Belly/Chest/L_Shoulder/L_Shoulder 1
+    m_Weight: 1
+  - m_Path: Waist/Belly/Chest/R_Shoulder
+    m_Weight: 1
+  - m_Path: Waist/Belly/Chest/R_Shoulder/R_Hand
+    m_Weight: 1
+  - m_Path: Waist/L_Leg
+    m_Weight: 0
+  - m_Path: Waist/L_Leg/L_Feet
+    m_Weight: 0
+  - m_Path: Waist/L_Leg/L_Feet/L_Feet_Shoe
+    m_Weight: 0
+  - m_Path: Waist/L_Leg/L_Feet/L_Feet_Shoe/L_Feet_Tip
+    m_Weight: 0
+  - m_Path: Waist/R_Leg
+    m_Weight: 0
+  - m_Path: Waist/R_Leg/R_Feet
+    m_Weight: 0
+  - m_Path: Waist/R_Leg/R_Feet/R_Feet_Shoe
+    m_Weight: 0
+  - m_Path: Waist/R_Leg/R_Feet/R_Feet_Shoe/R_Feet_Tip
+    m_Weight: 0
