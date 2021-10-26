@@ -23,7 +23,7 @@ public class ItemDatabase : MonoBehaviour
         LoadItemDatabase();
     }
 
-    // [Button("Add defaults")]
+    [Button("Add defaults")]
     private void AddDefaultItems()
     {
         itemList.Add(new Item(1, "Bald", "", "bald_head", Slot.Head));
@@ -34,8 +34,11 @@ public class ItemDatabase : MonoBehaviour
         itemList.Add(new Item(6, "", "", "empty_hand_l", Slot.Left_Hand));
         itemList.Add(new Item(7, "", "", "empty_hand_r", Slot.Right_Hand));
         itemList.Add(new Item(8, "", "", "empty_belt", Slot.Belt));
-        itemList.Add(new Item(9, "", "", "empty_legs", Slot.Legs));
-        itemList.Add(new Item(10, "", "", "empty_feet", Slot.Feet));
+        itemList.Add(new Item(9, "", "", "empty_skirt", Slot.Skirt));
+        itemList.Add(new Item(10, "", "", "empty_leg_l", Slot.Left_Leg));
+        itemList.Add(new Item(11, "", "", "empty_leg_r", Slot.Right_Leg));
+        itemList.Add(new Item(12, "", "", "empty_foot_l", Slot.Left_Foot));
+        itemList.Add(new Item(13, "", "", "empty_foot_r", Slot.Right_Foot));
     }
 
     // [Button("Add Test Set")]
@@ -44,8 +47,7 @@ public class ItemDatabase : MonoBehaviour
         itemList.Add(new Item(101, "", "", "buffon_head", Slot.Head, "Gear/Buffoon/Buffoon_Hat"));
         itemList.Add(new Item(601, "", "", "buffon_shoulder_l", Slot.Left_Hand, "Gear/Buffoon/L_Buffoon_Sleeve"));
         itemList.Add(new Item(701, "", "", "buffon_shoulder_r", Slot.Right_Hand, "Gear/Buffoon/R_Buffoon_Sleeve"));
-        //itemList.Add(new Item(501, "", "", "buffon_body", Slot.Body, (GameObject) Resources.Load("Gear/Buffoon/Buffoon_Body")));
-        itemList.Add(new Item(901, "", "", "buffon_legs", Slot.Legs, "Gear/Buffoon/Buffoon_Skirt"));
+        itemList.Add(new Item(901, "", "", "buffon_legs", Slot.Skirt, "Gear/Buffoon/Buffoon_Skirt"));
         itemList.Add(new Item(102, "", "", "knight_head", Slot.Head, "Gear/Knight/Knight_Helmet"));
     }
 
@@ -65,7 +67,7 @@ public class ItemDatabase : MonoBehaviour
         return itemList.Find(x => x.itemSlug == slugName);
     }
 
-    // [Button("Export List")]
+    [Button("Store Database")]
     public void ExportList()
     {
         var list = JsonConvert.SerializeObject(itemList, Formatting.Indented);

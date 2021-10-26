@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Runtime.InteropServices.WindowsRuntime;
+using Items;
 using ItemSlots;
 using Sirenix.OdinInspector;
 using Sirenix.Serialization;
@@ -12,256 +13,57 @@ using UnityEngine;
 public class AccessoryManager : MonoBehaviour
 {
     private GameObject avatar;
+    public bool loadPresetOnStart = false;
 
     [SerializeField] public TextAsset preset;
 
-    // AQUI SE GUARDAN LAS INSTANCIAS ACTUALES DE CADA OBJETO. 
-    // DESTRUIR ANTES DE EQUIPAR UNO NUEVO.
-    [Title("Individual Slots")] public GameObject wornHead;
-    public GameObject wornNeck;
-    public GameObject wornShoulderLeft;
-    public GameObject wornShoulderRight;
-    public GameObject wornBody;
-    public GameObject wornHandLeft;
-    public GameObject wornHandRight;
-    public GameObject wornBelt;
-    public GameObject wornLegs;
-    public GameObject wornFeet;
-
-    [Title("All items")] public List<Item> equippedItems = new List<Item>();
+   [Title("All items")] public List<EquippableItem> equippedItems = new List<EquippableItem>();
 
     private int totalEquipmentSlots;
 
-    private string presetPaths = "Assets/Resources/Presets/";
-
-    // stitcher?
-
     public Stitcher Stitcher;
 
+    private const string presetPaths = "Assets/Resources/Presets/";
     private IEnumerator EquippingCoroutine;
 
-    public void Start()
+    public void Awake()
     {
         avatar = this.gameObject;
         Stitcher = new Stitcher();
-        InitEquippedItemsList();
     }
 
-    [Button("Init default")]
-    public void InitEquippedItemsList()
+    public void Start()
     {
-        // 
-        totalEquipmentSlots = 10;
-
-        for (int i = 0; i < totalEquipmentSlots; i++)
-        {
-            Item item = new Item();
-            item.itemSlot = (Slot) (1 << i);
-            equippedItems.Add(item);
-            SetBase(i+1);
-        }
-
-        // Add a bunch of default items
-        // SetBase(1);
-        // SetBase(2);
-        // SetBase(3);
-        // SetBase(4);
-        // SetBase(5);
-        // SetBase(6);
-        // SetBase(7);
-        // SetBase(8);
-        // SetBase(9);
-        // SetBase(10);
+        if(loadPresetOnStart)
+            LoadPreset();
     }
-
-    public void SetBase(int id)
-    {
-        int idx = -1;
-        Item item = ItemDatabase.Instance.GetItemByID(id);
-
-        if (item == null) return;
-        
-        idx = equippedItems.FindIndex(x => x.itemSlot == item.itemSlot);
-        if (idx < 0) return;
-        
-        RemoveEquipment(equippedItems[idx]);
-        equippedItems[idx] = ItemDatabase.Instance.GetItemByID(id);
-       
-        // for (int i = 0; i < equippedItems.Count; i++)
-        // {
-        //     equippedItems[i] = ItemDatabase.Instance.GetItemByID(id);
-        //     break;
-        // }
-    }
-    public bool AddEquipmentToList(int id, ref Item equippableItem)
-    {
-        int idx = -1;
-        Item item = ItemDatabase.Instance.GetItemByID(id);
-
-        if (item == null) return false;
-        idx = equippedItems.FindIndex(x => x.itemSlot == item.itemSlot);
-        if (idx < 0) return false;
-        RemoveEquipment(equippedItems[idx]);
-        equippedItems[idx] = ItemDatabase.Instance.GetItemByID(id);
-        equippableItem = equippedItems[idx];
-        return true;
-        // for (int i = 0; i < equippedItems.Count; i++)
-        // {
-        //     equippedItems[i] = ItemDatabase.Instance.GetItemByID(id);
-        //     break;
-        // }
-    }
-
-    void AddEquipment(Item eqToAdd)
-    {
-        if (eqToAdd == null) return;
-
-        switch (eqToAdd.itemSlot)
-        {
-            case Slot.Head:
-                AddEquipmentHelper(ref wornHead, eqToAdd);
-                break;
-            case Slot.Neck:
-                AddEquipmentHelper(ref wornNeck, eqToAdd);
-                break;
-            case Slot.Left_Shoulder:
-                AddEquipmentHelper(ref wornShoulderLeft, eqToAdd);
-                break;
-            case Slot.Right_Shoulder:
-                AddEquipmentHelper(ref wornShoulderRight, eqToAdd);
-                break;
-            case Slot.Body:
-                AddEquipmentHelper(ref wornBody, eqToAdd);
-                break;
-            case Slot.Left_Hand:
-                AddEquipmentHelper(ref wornHandLeft, eqToAdd);
-                break;
-            case Slot.Right_Hand:
-                AddEquipmentHelper(ref wornHandRight, eqToAdd);
-                break;
-            case Slot.Belt:
-                AddEquipmentHelper(ref wornBelt, eqToAdd);
-                break;
-            case Slot.Legs:
-                AddEquipmentHelper(ref wornLegs, eqToAdd);
-                break;
-            case Slot.Feet:
-                AddEquipmentHelper(ref wornFeet, eqToAdd);
-                break;
-            default:
-                Debug.Log("Incorrect slot!");
-                throw new ArgumentOutOfRangeException();
-        }
-    }
-
-    void RemoveEquipment(Item eqToAdd)
-    {
-        if (eqToAdd == null) return;
-
-        switch (eqToAdd.itemSlot)
-        {
-            case Slot.Head:
-                RemoveEquipmentHelper(ref wornHead, 0);
-                break;
-            case Slot.Neck:
-                RemoveEquipmentHelper(ref wornNeck, 1);
-                break;
-            case Slot.Left_Shoulder:
-                RemoveEquipmentHelper(ref wornShoulderLeft, 2);
-                break;
-            case Slot.Right_Shoulder:
-                RemoveEquipmentHelper(ref wornShoulderRight, 3);
-                break;
-            case Slot.Body:
-                RemoveEquipmentHelper(ref wornBody, 4);
-                break;
-            case Slot.Left_Hand:
-                RemoveEquipmentHelper(ref wornHandLeft, 5);
-                break;
-            case Slot.Right_Hand:
-                RemoveEquipmentHelper(ref wornHandRight, 6);
-                break;
-            case Slot.Belt:
-                RemoveEquipmentHelper(ref wornBelt, 7);
-                break;
-            case Slot.Legs:
-                RemoveEquipmentHelper(ref wornLegs, 8);
-                break;
-            case Slot.Feet:
-                RemoveEquipmentHelper(ref wornFeet, 9);
-                break;
-            default:
-                Debug.Log("Incorrect slot!");
-                throw new ArgumentOutOfRangeException();
-        }
-    }
-
-    //[Button("Equip Test Set")]
-    public void EquipTestSet()
-    {
-        EquipItem(102);
-    }
-
 
     [Button("Equip Item with ID")]
     public void EquipItem(int id)
     {
         if (id < 0) return;
-        // try
-        // {
-        Item newItem = new Item();
-        var validOperation = AddEquipmentToList(id, ref newItem);
         
-        if (!validOperation || newItem.itemPrefab == null) return;
-        AddEquipment(newItem);
-        // }
-        // catch (Exception e)
-        // {
-        //     Debug.Log(e.Message);
-        // }
-    }
+        // Find if this item exists in the database.
+        // Recover the exact item
+        // Check if there is an existing item
+        //     If so, call it to destroy the old one and set the new one (.SetNewItem() method)
+        //     If not and there is no slot, create a new one.
+        // Stitch the new gameobject to the correct place.
 
-    public void AddEquipmentHelper(ref GameObject wornItem, Item itemToAddToWornItem)
-    {
-        Wear(itemToAddToWornItem.itemPrefab, ref wornItem);
-        wornItem.name = itemToAddToWornItem.itemSlug; // Superficial!
-    }
+        var listedItem = ItemDatabase.Instance.GetItemByID(id);
+        if (listedItem == null) return;
 
-    public void RemoveEquipmentHelper(ref GameObject wornItem, int nakedItemIndex)
-    {
-        RemoveWorn(wornItem);
-        wornItem = null;
-        equippedItems[nakedItemIndex] = ItemDatabase.Instance.GetItemByID(nakedItemIndex);
-    }
-
-    private void RemoveWorn(GameObject wornClothing)
-    {
-        try
+        var existingItem = equippedItems.Find(x => x.GetSlot() == listedItem.itemSlot);
+        if (existingItem == null)
         {
-#if UNITY_EDITOR
-            if (wornClothing != null)
-                wornClothing.SetActive(false);
-#else
-            GameObject.Destroy(wornClothing);
-#endif
+            // Create a new one with the correspondant slot.
+            existingItem = new EquippableItem(listedItem);
+            equippedItems.Add(existingItem);
         }
-        catch (NullReferenceException)
-        {
-            return;
-        }
-    }
-
-    private void Wear(GameObject prefab, ref GameObject wornClothing)
-    {
-        try
-        {
-            prefab = Instantiate(prefab);
-            wornClothing = Stitcher.Stitch(prefab, avatar);
-        }
-        catch (NullReferenceException)
-        {
-            // ignored
-        }
+        GameObject newGameObject = existingItem.SetNewItem(listedItem);
+        if (newGameObject == null) return;
+        
+        Stitcher.Stitch(newGameObject, avatar);
     }
 
     private string GetAllEquippedID()
@@ -269,7 +71,7 @@ public class AccessoryManager : MonoBehaviour
         string allIds = "";
         foreach (var item in equippedItems)
         {
-            allIds += item.itemID.ToString();
+            allIds += item.GetID().ToString();
             allIds += ",";
         }
 
