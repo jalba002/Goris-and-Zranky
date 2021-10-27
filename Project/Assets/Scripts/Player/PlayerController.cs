@@ -22,7 +22,6 @@ namespace Player
 
         public UnityEngine.CharacterController Controller;
 
-
         [Title("Movement")] public bool AlignToGameobject = false;
         [ShowIf("AlignToGameobject")] public GameObject m_Alignment;
         [HideIf("AlignToGameobject")] public bool UseWorldDirection = false;
@@ -55,16 +54,12 @@ namespace Player
 
         #region Game-Specific Mechanics
 
-        private PickupZone m_ObjectPickUpScript;
-
         #endregion
 
         private PlayerInput _input;
 
         private void Awake()
         {
-            m_ObjectPickUpScript = GetComponentInChildren<PickupZone>();
-
             Controller = GetComponent<UnityEngine.CharacterController>();
             Properties = InstantiateProperties ? Instantiate(Properties) : Properties;
         }
@@ -76,6 +71,7 @@ namespace Player
 
         private void Update()
         {
+            
         }
 
         private void FixedUpdate()

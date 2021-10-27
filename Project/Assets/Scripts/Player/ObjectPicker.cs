@@ -2,69 +2,66 @@ using System;
 using System.Runtime.CompilerServices;
 using Sirenix.OdinInspector;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
-public class PickupZone : MonoBehaviour
+public class ObjectPicker : MonoBehaviour
 {
     public Collider pc;
-    public IPickable lastPickable;
+    public PickableObject lastPickable;
     public Rigidbody connectedRB;
     [Required] public BoxCollider attachedCollider;
     private Vector3 halfSize;
-
-    public bool ignoreStrength = false;
-    public int pickupStrength = 1;
 
     private void Awake()
     {
         //pickJoint = GetComponent<ConfigurableJoint>();
         halfSize = attachedCollider.size * 0.5f;
-        pc=GetComponentInParent<Collider>(); // CHECK IF THERE IS PLAYER ATTACHED
-        
+        pc = GetComponentInParent<Collider>(); // CHECK IF THERE IS PLAYER ATTACHED
     }
 
-    public void LeftClick()
+    public void LeftClick(InputAction.CallbackContext context)
     {
-        //Debug.Log("Left");
-        if (lastPickable != null)
+        if (context.performed)
         {
-            // SHOULD DROP BUT CAN'T!
-            return;
-        }
-
-        IPickable detectedItem = GetNearestItem();
-        try
-        {
-            // If you have the strength to pick it up, proceed.
-            if (ignoreStrength || pickupStrength >= detectedItem?.GetStrengthRequirement())
+            //Debug.Log("Left");
+            if (lastPickable != null)
             {
+                // SHOULD DROP BUT CAN'T!
+                lastPickable.Throw(gameObject.transform.parent.forward);
+                lastPickable = null;
+                return;
+            }
+
+            PickableObject detectedItem = GetNearestItem();
+            try
+            {
+                // If you have the strength to pick it up, proceed.
+
                 lastPickable = detectedItem;
                 lastPickable?.Connect(connectedRB);
             }
-        }
-        catch (Exception ex)
-        {
-            Debug.Log(ex.Message);
+            catch (Exception ex)
+            {
+                Debug.Log(ex.Message);
+            }
         }
     }
 
-    public void RightClick()
+    public void RightClick(InputAction.CallbackContext context)
     {
-        //Debug.Log("Right");
-        // Maybe more like a throw
-        lastPickable?.Throw(this.gameObject.transform.parent.forward);
-        lastPickable = null;
+        if (context.performed)
+        {
+            //Debug.Log("Right");
+            // Maybe more like a throw
+            lastPickable?.Drop();
+            lastPickable = null;
+        }
     }
-
+    
     public void Drop()
     {
         lastPickable?.Disconnect();
         lastPickable = null;
-    }
-
-
-    public void Update()
-    {
-        CheckObjectDisconnection();
     }
 
     private void CheckObjectDisconnection()
@@ -73,7 +70,7 @@ public class PickupZone : MonoBehaviour
             lastPickable = null;
     }
 
-    public IPickable GetNearestItem()
+    public PickableObject GetNearestItem()
     {
         Collider[] allColliders = new Collider[5];
         Physics.OverlapBoxNonAlloc(transform.position, halfSize, allColliders);
@@ -81,7 +78,7 @@ public class PickupZone : MonoBehaviour
         {
             try
             {
-                IPickable item = col.gameObject.GetComponent<IPickable>();
+                PickableObject item = col.gameObject.GetComponent<PickableObject>();
                 if (item != null) return item;
             }
             catch (NullReferenceException)
