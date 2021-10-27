@@ -1,3 +1,4 @@
+using System;
 using System.Numerics;
 using UnityEngine;
 using UnityEngine.Events;
@@ -5,8 +6,12 @@ using Vector3 = UnityEngine.Vector3;
 
 public class PickableObject : RestartableObject
 {
-    public ConfigurableJoint configJoint;
-    public Rigidbody rb;
+    protected ConfigurableJoint configJoint;
+    protected Rigidbody rb;
+    protected bool IsPicked = false;
+    protected bool IsThrown = false;
+
+    private float oldMass;
 
     [Range(1f, 100f)] public float force = 5f;
     
@@ -14,6 +19,7 @@ public class PickableObject : RestartableObject
     {
         base.Awake();
         this.rb = GetComponent<Rigidbody>();
+        oldMass = this.rb.mass;
     }
 
     // public new void Start()
@@ -22,9 +28,6 @@ public class PickableObject : RestartableObject
     // }
 
     #region Joints
-
-    
-
     
     public void CreateJoint()
     {
@@ -38,11 +41,12 @@ public class PickableObject : RestartableObject
         configJoint.angularYMotion = ConfigurableJointMotion.Free;
         configJoint.angularZMotion = ConfigurableJointMotion.Free;
 
+        var mass = rb.mass;
         JointDrive genDrive =new JointDrive()
         {
-            positionSpring = 50000,
-            positionDamper = 250,
-            maximumForce = 100000f
+            positionSpring = 8000 * mass,
+            positionDamper = 5 * mass,
+            maximumForce = mass * 5000f
         };
         configJoint.xDrive = genDrive;
         configJoint.yDrive = genDrive;
@@ -68,14 +72,15 @@ public class PickableObject : RestartableObject
     }
     #endregion
 
-    public void Drop()
+    public virtual void Drop()
     {
         Disconnect();
     }
     
-    public void Throw(Vector3 direction)
+    public virtual void Throw(Vector3 direction)
     {
         this.rb.velocity = direction * force;
+        IsThrown = true;
         Disconnect();
     }
 
@@ -90,12 +95,16 @@ public class PickableObject : RestartableObject
     {
         if(configJoint == null)
             CreateJoint();
+        IsPicked = true;
+        this.rb.mass = 1f;
         configJoint.connectedBody = rb;
     }
 
     public void Disconnect()
     {
+        IsPicked = false;
         DestroyJoint();
+        rb.mass = oldMass;
     }
     
     public bool isEnabled()
@@ -113,10 +122,16 @@ public class PickableObject : RestartableObject
         base.Restart();
         rb.velocity = Vector3.zero;
         rb.angularVelocity = Vector3.zero;
+        rb.mass = oldMass;
     }
 
     public void AddRB()
     {
         rb = this.gameObject.AddComponent<Rigidbody>();
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        IsThrown = false;
     }
 }
