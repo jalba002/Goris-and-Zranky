@@ -192,10 +192,10 @@
     "itemID": 103,
     "itemName": "",
     "itemDescription": "",
-    "itemSlug": "Mad_Scentist_Head",
+    "itemSlug": "Mad_Scientist_Head",
     "itemSlot": 1,
     "itemPrefab": null,
-    "resourcePath": "Gear/Mad_Scientist/Mad_Scentist_Head"
+    "resourcePath": "Gear/Mad_Scientist/Mad_Scientist_Head"
   },
   {
     "itemID": 203,
@@ -250,5 +250,60 @@
     "itemSlot": 13,
     "itemPrefab": null,
     "resourcePath": "Gear/Mad_Scientist/Mad_Scentist_R_Boot"
+  },
+  {
+    "itemID": 104,
+    "itemName": "",
+    "itemDescription": "",
+    "itemSlug": "Scientist_Head",
+    "itemSlot": 1,
+    "itemPrefab": null,
+    "resourcePath": "Gear/Scientist/Scientist_Head"
+  },
+  {
+    "itemID": 504,
+    "itemName": "",
+    "itemDescription": "",
+    "itemSlug": "Scientist_Jacket",
+    "itemSlot": 5,
+    "itemPrefab": null,
+    "resourcePath": "Gear/Scientist/Scientist_Jacket"
+  },
+  {
+    "itemID": 604,
+    "itemName": "",
+    "itemDescription": "",
+    "itemSlug": "Scientist_L_Globe",
+    "itemSlot": 6,
+    "itemPrefab": null,
+    "resourcePath": "Gear/Scientist/Scientist_L_Globe"
+  },
+  {
+    "itemID": 704,
+    "itemName": "",
+    "itemDescription": "",
+    "itemSlug": "Scientist_R_Globe",
+    "itemSlot": 7,
+    "itemPrefab": null,
+    "resourcePath": "Gear/Scientist/Scientist_R_Globe"
+  },
+  {
+    "itemID": 1204,
+    "itemName": "",
+    "itemDescription": "",
+    "itemSlug": "Scientist_L_Boot",
+    "itemSlot": 12,
+    "itemPrefab": null,
+    "resourcePath": "Gear/Scientist/Scientist_L_Boot"
+  },
+  {
+    "itemID": 1304,
+    "itemName": "",
+    "itemDescription": "",
+    "itemSlug": "Scientist_R_Boot",
+    "itemSlot": 13,
+    "itemPrefab": null,
+    "resourcePath": "Gear/Scientist/Scientist_R_Boot"
   }
+  
 ]
