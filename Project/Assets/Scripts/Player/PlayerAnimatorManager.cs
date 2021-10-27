@@ -4,23 +4,22 @@ using UnityEngine;
 public class PlayerAnimatorManager : MonoBehaviour
 {
     private PlayerController pc;
-    private PickupZone _pickupZone;
+    private ObjectPicker _pickupZone;
     private Animator animator;
-    
     
     // Start is called before the first frame update
     void Awake()
     {
         pc = GetComponent<PlayerController>();
-        _pickupZone = GetComponentInChildren<PickupZone>();
+        _pickupZone = GetComponentInChildren<ObjectPicker>();
         animator = GetComponentInChildren<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        Vector3 vel = pc.Controller.velocity;
-        if (vel.y > 2f)
+        Vector3 vel = pc.GetVelocity();
+        if (vel.y > 1f)
         {
             animator.ResetTrigger("Land");   
             animator.SetBool("Jump", true);

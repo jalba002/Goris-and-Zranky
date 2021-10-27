@@ -1,0 +1,254 @@
+[
+  {
+    "itemID": 1,
+    "itemName": "Bald",
+    "itemDescription": "",
+    "itemSlug": "bald_head",
+    "itemSlot": 1,
+    "itemPrefab": null,
+    "resourcePath": null
+  },
+  {
+    "itemID": 2,
+    "itemName": "",
+    "itemDescription": "",
+    "itemSlug": "empty_neck",
+    "itemSlot": 2,
+    "itemPrefab": null,
+    "resourcePath": null
+  },
+  {
+    "itemID": 3,
+    "itemName": "",
+    "itemDescription": "",
+    "itemSlug": "empty_shoulder_l",
+    "itemSlot": 3,
+    "itemPrefab": null,
+    "resourcePath": null
+  },
+  {
+    "itemID": 4,
+    "itemName": "",
+    "itemDescription": "",
+    "itemSlug": "empty_shoulder_r",
+    "itemSlot": 4,
+    "itemPrefab": null,
+    "resourcePath": null
+  },
+  {
+    "itemID": 5,
+    "itemName": "Naked",
+    "itemDescription": "",
+    "itemSlug": "naked_body",
+    "itemSlot": 5,
+    "itemPrefab": null,
+    "resourcePath": null
+  },
+  {
+    "itemID": 6,
+    "itemName": "",
+    "itemDescription": "",
+    "itemSlug": "empty_hand_l",
+    "itemSlot": 6,
+    "itemPrefab": null,
+    "resourcePath": null
+  },
+  {
+    "itemID": 7,
+    "itemName": "",
+    "itemDescription": "",
+    "itemSlug": "empty_hand_r",
+    "itemSlot": 7,
+    "itemPrefab": null,
+    "resourcePath": null
+  },
+  {
+    "itemID": 8,
+    "itemName": "",
+    "itemDescription": "",
+    "itemSlug": "empty_belt",
+    "itemSlot": 8,
+    "itemPrefab": null,
+    "resourcePath": null
+  },
+  {
+    "itemID": 9,
+    "itemName": "",
+    "itemDescription": "",
+    "itemSlug": "empty_skirt",
+    "itemSlot": 9,
+    "itemPrefab": null,
+    "resourcePath": null
+  },
+  {
+    "itemID": 10,
+    "itemName": "",
+    "itemDescription": "",
+    "itemSlug": "empty_leg_l",
+    "itemSlot": 10,
+    "itemPrefab": null,
+    "resourcePath": null
+  },
+  {
+    "itemID": 11,
+    "itemName": "",
+    "itemDescription": "",
+    "itemSlug": "empty_leg_r",
+    "itemSlot": 11,
+    "itemPrefab": null,
+    "resourcePath": null
+  },
+  {
+    "itemID": 12,
+    "itemName": "",
+    "itemDescription": "",
+    "itemSlug": "empty_foot_l",
+    "itemSlot": 12,
+    "itemPrefab": null,
+    "resourcePath": null
+  },
+  {
+    "itemID": 13,
+    "itemName": "",
+    "itemDescription": "",
+    "itemSlug": "empty_foot_r",
+    "itemSlot": 13,
+    "itemPrefab": null,
+    "resourcePath": null
+  },
+  {
+    "itemID": 102,
+    "itemName": "",
+    "itemDescription": "",
+    "itemSlug": "knight_helmet",
+    "itemSlot": 1,
+    "itemPrefab": null,
+    "resourcePath": "Gear/Knight/Knight_Helmet"
+  },
+  {
+    "itemID": 302,
+    "itemName": "",
+    "itemDescription": "",
+    "itemSlug": "knight_left_glove",
+    "itemSlot": 3,
+    "itemPrefab": null,
+    "resourcePath": "Gear/Knight/L_Knight_Shoulder"
+  },
+  {
+    "itemID": 402,
+    "itemName": "",
+    "itemDescription": "",
+    "itemSlug": "knight_right_shoulder",
+    "itemSlot": 4,
+    "itemPrefab": null,
+    "resourcePath": "Gear/Knight/R_Knight_Shoulder"
+  },
+  {
+    "itemID": 502,
+    "itemName": "",
+    "itemDescription": "",
+    "itemSlug": "knight_chestplate",
+    "itemSlot": 5,
+    "itemPrefab": null,
+    "resourcePath": "Gear/Knight/Knight_Chestplate"
+  },
+  {
+    "itemID": 602,
+    "itemName": "",
+    "itemDescription": "",
+    "itemSlug": "knight_left_glove",
+    "itemSlot": 6,
+    "itemPrefab": null,
+    "resourcePath": "Gear/Knight/L_Knight_Glove"
+  },
+  {
+    "itemID": 702,
+    "itemName": "",
+    "itemDescription": "",
+    "itemSlug": "knight_right_glove",
+    "itemSlot": 7,
+    "itemPrefab": null,
+    "resourcePath": "Gear/Knight/R_Knight_Glove"
+  },
+  {
+    "itemID": 1002,
+    "itemName": "",
+    "itemDescription": "",
+    "itemSlug": "knight_left_knee_plate",
+    "itemSlot": 10,
+    "itemPrefab": null,
+    "resourcePath": "Gear/Knight/L_Knight_LegPlate"
+  },
+  {
+    "itemID": 1102,
+    "itemName": "",
+    "itemDescription": "",
+    "itemSlug": "knight_right_knee_plate",
+    "itemSlot": 11,
+    "itemPrefab": null,
+    "resourcePath": "Gear/Knight/R_Knight_LegPlate"
+  },
+  {
+    "itemID": 103,
+    "itemName": "",
+    "itemDescription": "",
+    "itemSlug": "Mad_Scentist_Head",
+    "itemSlot": 1,
+    "itemPrefab": null,
+    "resourcePath": "Gear/Mad_Scientist/Mad_Scentist_Head"
+  },
+  {
+    "itemID": 203,
+    "itemName": "",
+    "itemDescription": "",
+    "itemSlug": "Mad_Scentist_Necklace",
+    "itemSlot": 2,
+    "itemPrefab": null,
+    "resourcePath": "Gear/Mad_Scientist/Mad_Scentist_Necklace"
+  },
+  {
+    "itemID": 503,
+    "itemName": "",
+    "itemDescription": "",
+    "itemSlug": "Mad_Scentist_Jacket",
+    "itemSlot": 5,
+    "itemPrefab": null,
+    "resourcePath": "Gear/Mad_Scientist/Mad_Scentist_Jacket"
+  },
+  {
+    "itemID": 603,
+    "itemName": "",
+    "itemDescription": "",
+    "itemSlug": "Mad_Scentist_L_Globe",
+    "itemSlot": 6,
+    "itemPrefab": null,
+    "resourcePath": "Gear/Mad_Scientist/Mad_Scentist_L_Globe"
+  },
+  {
+    "itemID": 703,
+    "itemName": "",
+    "itemDescription": "",
+    "itemSlug": "Mad_Scentist_R_Globe",
+    "itemSlot": 7,
+    "itemPrefab": null,
+    "resourcePath": "Gear/Mad_Scientist/Mad_Scentist_R_Globe"
+  },
+  {
+    "itemID": 1203,
+    "itemName": "",
+    "itemDescription": "",
+    "itemSlug": "Mad_Scentist_L_Boot",
+    "itemSlot": 12,
+    "itemPrefab": null,
+    "resourcePath": "Gear/Mad_Scientist/Mad_Scentist_L_Boot"
+  },
+  {
+    "itemID": 1303,
+    "itemName": "",
+    "itemDescription": "",
+    "itemSlug": "Mad_Scentist_R_Boot",
+    "itemSlot": 13,
+    "itemPrefab": null,
+    "resourcePath": "Gear/Mad_Scientist/Mad_Scentist_R_Boot"
+  }
+]

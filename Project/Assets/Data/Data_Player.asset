@@ -14,10 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WalkingSpeed: 12
   MaxWalkingSpeed: 12
-  ScaledWalkingSpeed: 0.1992
-  JumpingSpeed: 50
-  TurningSpeed: 720
+  JumpingSpeed: 30
+  CoyoteFrames: 10
+  TurningSpeed: 1200
   GravitySpeed: 80
   MaxGravity: 80
-  ScaledGravitySpeed: 1.328
-  ScaledJumpingSpeed: 0.83

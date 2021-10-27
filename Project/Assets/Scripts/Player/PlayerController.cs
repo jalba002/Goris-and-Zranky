@@ -22,7 +22,6 @@ namespace Player
 
         public UnityEngine.CharacterController Controller;
 
-
         [Title("Movement")] public bool AlignToGameobject = false;
         [ShowIf("AlignToGameobject")] public GameObject m_Alignment;
         [HideIf("AlignToGameobject")] public bool UseWorldDirection = false;
@@ -55,16 +54,12 @@ namespace Player
 
         #region Game-Specific Mechanics
 
-        private PickupZone m_ObjectPickUpScript;
-
         #endregion
 
         private PlayerInput _input;
 
         private void Awake()
         {
-            m_ObjectPickUpScript = GetComponentInChildren<PickupZone>();
-
             Controller = GetComponent<UnityEngine.CharacterController>();
             Properties = InstantiateProperties ? Instantiate(Properties) : Properties;
         }
@@ -76,15 +71,17 @@ namespace Player
 
         private void Update()
         {
+            
         }
 
         private void FixedUpdate()
         {
             ApplyVerticalVelocity();
-            Vector3 vel = MoveCharacter();
+            Vector3 playerVel;
+            Vector3 vel = MoveCharacter(out playerVel);
 
             if (RotateTowardsDirection)
-                RotateToFaceMovement(vel);
+                RotateToFaceMovement(playerVel);
         }
 
         void ApplyVerticalVelocity()
@@ -129,12 +126,12 @@ namespace Player
                 Velocity.y = Mathf.Max(Velocity.y, -Properties.MaxGravity);
         }
 
-        Vector3 MoveCharacter()
+        Vector3 MoveCharacter(out Vector3 playerVel)
         {
             LimitVelocity();
-
-            Vector3 velocityVector = AlignVelocity(Velocity) * Time.deltaTime;
-
+            playerVel = AlignVelocity(Velocity);
+            Vector3 velocityVector = (playerVel + Inertia) * Time.deltaTime;
+            
             Controller.Move(velocityVector);
             return velocityVector;
             // Maybe rely the movement calculation to an external manager so you can rotate camera?
@@ -144,15 +141,15 @@ namespace Player
         {
             if (AlignToGameobject)
             {
-                return (m_Alignment.transform.TransformDirection(vel) + Inertia);
+                return (m_Alignment.transform.TransformDirection(vel));
             }
             else if (UseWorldDirection)
             {
-                return (vel + Inertia);
+                return (vel);
             }
             else
             {
-                return (transform.TransformDirection(vel) + Inertia);
+                return (transform.TransformDirection(vel));
             }
         }
 
@@ -229,7 +226,7 @@ namespace Player
             try
             {
                 IPlayerCollide go = hit.gameObject.GetComponent<IPlayerCollide>();
-                go.Collide(gameObject, gameObject.transform.position + Vector3.down * (Controller.height * 0.5f));
+                go.Collide(gameObject, hit.point);
                 //Debug.Log("Player detected collision with " + hit.gameObject.name);
             }
             catch (Exception ex)
@@ -243,6 +240,11 @@ namespace Player
 
         #region Getters
 
+        public Vector3 GetVelocity()
+        {
+            return Velocity;
+        }
+        
         #endregion
 
         #region Enablers
