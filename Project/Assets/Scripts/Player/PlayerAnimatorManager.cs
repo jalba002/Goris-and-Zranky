@@ -19,8 +19,8 @@ public class PlayerAnimatorManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 vel = pc.Controller.velocity;
-        if (vel.y > 2f)
+        Vector3 vel = pc.GetVelocity();
+        if (vel.y > 1f)
         {
             animator.ResetTrigger("Land");   
             animator.SetBool("Jump", true);
