@@ -12,12 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a3d3b2f6892ada478311ea331eeb880, type: 3}
   m_Name: Data_Player
   m_EditorClassIdentifier: 
-  WalkingSpeed: 10
-  MaxWalkingSpeed: 10
-  ScaledWalkingSpeed: 0.166
+  WalkingSpeed: 12
+  MaxWalkingSpeed: 12
   JumpingSpeed: 30
+  CoyoteFrames: 10
   TurningSpeed: 1200
   GravitySpeed: 80
   MaxGravity: 80
-  ScaledGravitySpeed: 1.328
-  ScaledJumpingSpeed: 0.498

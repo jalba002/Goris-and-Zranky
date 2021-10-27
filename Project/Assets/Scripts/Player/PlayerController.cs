@@ -55,16 +55,12 @@ namespace Player
 
         #region Game-Specific Mechanics
 
-        private PickupZone m_ObjectPickUpScript;
-
         #endregion
 
         private PlayerInput _input;
 
         private void Awake()
         {
-            m_ObjectPickUpScript = GetComponentInChildren<PickupZone>();
-
             Controller = GetComponent<UnityEngine.CharacterController>();
             Properties = InstantiateProperties ? Instantiate(Properties) : Properties;
         }

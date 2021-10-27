@@ -3,7 +3,7 @@ using System.Runtime.CompilerServices;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-public class PickupZone : MonoBehaviour
+public class ObjectPicker : MonoBehaviour
 {
     public Collider pc;
     public IPickable lastPickable;
