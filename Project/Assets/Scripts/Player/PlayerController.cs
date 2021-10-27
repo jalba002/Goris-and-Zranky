@@ -22,7 +22,6 @@ namespace Player
 
         public UnityEngine.CharacterController Controller;
 
-
         [Title("Movement")] public bool AlignToGameobject = false;
         [ShowIf("AlignToGameobject")] public GameObject m_Alignment;
         [HideIf("AlignToGameobject")] public bool UseWorldDirection = false;
@@ -72,6 +71,7 @@ namespace Player
 
         private void Update()
         {
+            
         }
 
         private void FixedUpdate()

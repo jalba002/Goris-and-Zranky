@@ -67,6 +67,11 @@ public class PickableObject : RestartableObject
         Destroy(configJoint);
     }
     #endregion
+
+    public void Drop()
+    {
+        Disconnect();
+    }
     
     public void Throw(Vector3 direction)
     {
