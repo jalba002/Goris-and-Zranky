@@ -11,7 +11,6 @@ public class SoundPlayerBehaviour : StateMachineBehaviour
     {
         audioSource.clip = clip as AudioClip;
         audioSource.Play();
-        Debug.Log("Playing Jump");
     }
 
     //OnStateEnter is called when a transition starts and the state machine starts to evaluate this state

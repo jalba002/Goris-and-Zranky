@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using Vector3 = UnityEngine.Vector3;
 
+[RequireComponent(typeof(Rigidbody))]
 public class PickableObject : RestartableObject
 {
     protected ConfigurableJoint configJoint;
