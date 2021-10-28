@@ -11,10 +11,14 @@ public class SimpleIA : MonoBehaviour
     private NavMeshAgent agent;
     private IEnumerator updateDestination;
 
-    public void Start()
+    public void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
         updateDestination = DestinationUpdater();
+    }
+
+    private void Start()
+    {
         StartCoroutine(updateDestination);
     }
 
