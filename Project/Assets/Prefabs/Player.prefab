@@ -345,7 +345,18 @@ MonoBehaviour:
     m_ActionId: 3d34a0e5-194f-42a4-932d-46c42808f054
     m_ActionName: Player/Jump[/Keyboard/space]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8740130120699820629}
+        m_MethodName: Interact
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 1ed68211-e054-47b1-9bff-6be2fd6e5f11
     m_ActionName: Player/Interact[/Keyboard/e]
   - m_PersistentCalls:
@@ -451,6 +462,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13148067712829d498ce384829df9a8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnInteractSuccess:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &2785531822241912591
 BoxCollider:
   m_ObjectHideFlags: 0
