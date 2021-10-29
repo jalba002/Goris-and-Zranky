@@ -6,4 +6,5 @@ public class FrankensteinObject : PickableObject
         Disconnect();
         this.gameObject.SetActive(false);
     }
+
 }

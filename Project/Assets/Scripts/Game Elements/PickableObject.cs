@@ -1,8 +1,10 @@
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody))]
+//[RequireComponent(typeof(Rigidbody))]
 public class PickableObject : RestartableObject
 {
+    [Range(1f, 100f)] public float force = 5f;
+    
     protected ConfigurableJoint configJoint;
     protected Rigidbody rb;
     protected bool IsPicked = false;
@@ -10,12 +12,13 @@ public class PickableObject : RestartableObject
 
     private float oldMass;
 
-    [Range(1f, 100f)] public float force = 5f;
-    
+    protected Collider _collider;
+
     public new void Awake()
     {
         base.Awake();
         this.rb = GetComponent<Rigidbody>();
+        _collider = GetComponent<Collider>();
         oldMass = this.rb.mass;
     }
 
@@ -84,6 +87,7 @@ public class PickableObject : RestartableObject
     public virtual void Deactivate()
     {
         meshRenderer.enabled = false;
+        _collider.enabled = false;
         Disconnect();
         this.gameObject.SetActive(false);
     }
@@ -102,6 +106,14 @@ public class PickableObject : RestartableObject
         IsPicked = false;
         DestroyJoint();
         rb.mass = oldMass;
+    }
+    
+    public void Inert()
+    {
+        Disconnect();
+        IsPicked = false;
+        Destroy(_collider);
+        Destroy(this.rb);
     }
     
     public bool isEnabled()
