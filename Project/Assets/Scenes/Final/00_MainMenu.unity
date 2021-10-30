@@ -1175,6 +1175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36d43b95bc385f64eaa38eb799fec550, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneToLoad: Frankenstein_Minigame
   MainMenParent: {fileID: 1965574857}
   OptionsParent: {fileID: 324137958}
   CustomsParent: {fileID: 0}

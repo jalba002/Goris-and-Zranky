@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Sirenix.OdinInspector.Editor.Drawers;
+using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Video;
 
@@ -8,6 +9,8 @@ public class CinematicPlayer : MonoBehaviour
     public UnityEvent OnVideoEnd = new UnityEvent();
     private void Awake()
     {
+        //transform.parent = null;
+        //DontDestroyOnLoad(this.gameObject);
         videoPlayer.loopPointReached += VideoEnded;
     }
     
@@ -16,5 +19,7 @@ public class CinematicPlayer : MonoBehaviour
         // When the video ends the Event triggers.
         OnVideoEnd.Invoke();
         Debug.Log("Video ended!");
+        OnVideoEnd.RemoveAllListeners();
     }
+
 }

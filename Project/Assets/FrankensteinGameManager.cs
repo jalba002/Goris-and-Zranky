@@ -8,6 +8,7 @@ public class FrankensteinGameManager : MonoBehaviour
 {
     //public bool startGame = false;
     public AudioSource gameMusic;
+    public bool skipMusic = false;
     
     public UnityEvent OnGameStart = new UnityEvent();
     public UnityEvent OnGameEnd = new UnityEvent();
@@ -45,7 +46,8 @@ public class FrankensteinGameManager : MonoBehaviour
 
     private IEnumerator MinigameManage()
     {
-        while (gameMusic.isPlaying)
+        gameMusic.Play();
+        while (gameMusic.isPlaying && !skipMusic)
         {
             //
             Debug.Log("Waiting for music to end.");

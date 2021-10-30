@@ -36,8 +36,8 @@ public class GameManager : MonoBehaviour, IUpdateOnSceneLoad
     public void Awake()
     {
         GM = this;
-        transform.parent = null;
-        DontDestroyOnLoad(this.gameObject);
+        // transform.parent = null;
+        // DontDestroyOnLoad(this.gameObject);
         // gameObject.name = "[LITERAL GOD]";
         m_Camera = Camera.main;
     }
