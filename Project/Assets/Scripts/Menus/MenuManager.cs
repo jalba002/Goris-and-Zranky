@@ -11,6 +11,8 @@ public class MenuManager : MonoBehaviour
     public GameObject MainMenParent;
     public GameObject OptionsParent;
     public GameObject CreditsParent;
+
+    public Animation Animation;
     
     public void ToggleCustomization()
     {
@@ -37,5 +39,10 @@ public class MenuManager : MonoBehaviour
         {
             Application.Quit();
         }
+    }
+
+    public void Start()
+    {
+        Animation.Play();
     }
 }
