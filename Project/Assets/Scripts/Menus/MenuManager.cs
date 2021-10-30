@@ -10,12 +10,12 @@ public class MenuManager : MonoBehaviour
     
     public GameObject MainMenParent;
     public GameObject OptionsParent;
-    public GameObject CustomsParent;
+    public GameObject CreditsParent;
     
     public void ToggleCustomization()
     {
-        MainMenParent.SetActive(CustomsParent.activeInHierarchy);
-        CustomsParent.SetActive(!CustomsParent.activeInHierarchy);
+        MainMenParent.SetActive(CreditsParent.activeInHierarchy);
+        CreditsParent.SetActive(!CreditsParent.activeInHierarchy);
     }
     
     public void ToggleOptions()
@@ -23,7 +23,7 @@ public class MenuManager : MonoBehaviour
         MainMenParent.SetActive(OptionsParent.activeInHierarchy);
         OptionsParent.SetActive(!OptionsParent.activeInHierarchy);
     }
-    
+        
     public void LoadGame()
     {
         // Load the game dumbass.
