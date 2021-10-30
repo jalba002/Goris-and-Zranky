@@ -75,7 +75,7 @@ Animator:
   m_GameObject: {fileID: 1165320085097315446}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 58b2ba4f13045a54988ac5475a3c9d35, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 034d185f3d156cd42a0457d7ffe2a67d, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -96,8 +96,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a69ea0fdb52f9af4e9a31bbf20516638, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loadPresetOnStart: 0
-  preset: {fileID: 4900000, guid: 4c099dea95314d7499bcf96089cc15ca, type: 3}
+  loadPresetOnStart: 1
+  preset: {fileID: 4900000, guid: f9eea68f5bf50374999cb886de268c13, type: 3}
   equippedItems: []
 --- !u!1 &1515766221864181411
 GameObject:
@@ -222,11 +222,11 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 3
-  m_Speed: 8
-  m_Acceleration: 8
+  m_Speed: 2.5
+  m_Acceleration: 4
   avoidancePriority: 50
-  m_AngularSpeed: 720
-  m_StoppingDistance: 0
+  m_AngularSpeed: 360
+  m_StoppingDistance: 0.5
   m_AutoTraverseOffMeshLink: 0
   m_AutoBraking: 1
   m_AutoRepath: 0
@@ -369,8 +369,8 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 86839ada080a49d438b5b3daba4c520d, type: 2}
-  - {fileID: 2100000, guid: d2c417f4248dce04b83ed9213cbbd639, type: 2}
+  - {fileID: 2100000, guid: 5e4d92d27cf42904e965626c70dd96a3, type: 2}
+  - {fileID: 2100000, guid: 1017a6a12de58ed44ba528856f01ba49, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
