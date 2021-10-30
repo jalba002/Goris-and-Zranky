@@ -1,0 +1,57 @@
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.Events;
+
+public class FrankensteinGameManager : MonoBehaviour
+{
+    //public bool startGame = false;
+    public AudioSource gameMusic;
+    
+    public UnityEvent OnGameStart = new UnityEvent();
+    public UnityEvent OnGameEnd = new UnityEvent();
+
+    // private void Start()
+    // {
+    //     if (startGame)
+    //     {
+    //         // This will start playing a cinematic.
+    //         StartGame();
+    //     }
+    // }
+
+    private IEnumerator MinigameController;
+
+    public void Awake()
+    {
+        
+    }
+
+    public void StartGame()
+    {
+        // Play music.
+        // Play sounds?
+        if (MinigameController != null) return;
+        OnGameStart.Invoke();
+        PlayGame();
+    }
+
+    private void PlayGame()
+    {
+        MinigameController = MinigameManage();
+        StartCoroutine(MinigameController);
+    }
+
+    private IEnumerator MinigameManage()
+    {
+        while (gameMusic.isPlaying)
+        {
+            //
+            Debug.Log("Waiting for music to end.");
+            yield return new WaitForSeconds(1f);
+        }
+        Debug.Log("MUSIC ENDED!");
+        OnGameEnd.Invoke();
+    }
+}

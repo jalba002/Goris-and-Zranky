@@ -131,10 +131,10 @@ public class AccessoryManager : MonoBehaviour
     public void LoadPreset()
     {
         string text = "";
-        string path = presetPaths + this.presetAsset.name + ".txt";
+        string path = presetPaths + this.presetAsset.name;
 
 #if UNITY_EDITOR
-        StreamReader reader = new StreamReader("Assets/Resources/Presets/" + this.presetAsset.name + ".txt");
+        StreamReader reader = new StreamReader("Assets/Resources/Presets/" + presetAsset.name + ".txt");
         text = reader.ReadToEnd();
         reader.Close();
 #else

@@ -44,9 +44,9 @@ public class PickableObject : RestartableObject
         var mass = rb.mass;
         JointDrive genDrive =new JointDrive()
         {
-            positionSpring = 8000 * mass,
-            positionDamper = 5 * mass,
-            maximumForce = mass * 5000f
+            positionSpring = 5000f * mass,
+            positionDamper = 500f * mass,
+            maximumForce = 10000f
         };
         configJoint.xDrive = genDrive;
         configJoint.yDrive = genDrive;
@@ -97,7 +97,7 @@ public class PickableObject : RestartableObject
         if(configJoint == null)
             CreateJoint();
         IsPicked = true;
-        this.rb.mass = 1f;
+        //this.rb.mass = 1f;
         configJoint.connectedBody = rb;
     }
 

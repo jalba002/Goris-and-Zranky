@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Audio;
 
-public class AudioManager : MonoBehaviour
+public class AudioManager : MonoBehaviour, IUpdateOnSceneLoad
 {
     private static AudioManager _audioManager;
 
@@ -21,8 +21,12 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    
     public AudioMixer Mixer;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     public void SetMixerVariable(string varName, float value)
     {
@@ -34,10 +38,9 @@ public class AudioManager : MonoBehaviour
         Mixer.GetFloat(varName, out value);
     }
 
-    private void Awake()
+
+    public void UpdateOnSceneLoad()
     {
-        Instance = this;
+        // Stop all audios when scene loads.
     }
-    
-    
 }

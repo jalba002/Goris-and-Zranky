@@ -7,7 +7,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 // This class is a literal god.
-public class GameManager : MonoBehaviour
+public class GameManager : MonoBehaviour, IUpdateOnSceneLoad
 {
     private static GameManager _gameManager;
 
@@ -98,7 +98,8 @@ public class GameManager : MonoBehaviour
             i++;
         }
     }
-
+    
+    
     // public void TeleportPlayerToWaitingRoom(PlayerController pc)
     // {
     //     TeleportController(pc, waitingRoom.position);
@@ -120,4 +121,8 @@ public class GameManager : MonoBehaviour
     //     m_Camera.transform.rotation = cameraSpot.transform.rotation;
     //     m_Camera.fieldOfView = cameraSpot.FOV;
     // }
+    public void UpdateOnSceneLoad()
+    {
+        // 
+    }
 }
