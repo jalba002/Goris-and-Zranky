@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Project/Assets/Plugins/Sirenix/Demos.meta
 guid: ea9123c061588dc47b848832fb85817b
+=======
+guid: 2eb9705fd77fbf747bab58a1a632c5c2
+>>>>>>> develop:Project/Assets/Scenes/Prototyping/Showcase.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
