@@ -1,33 +1,57 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using Sirenix.OdinInspector;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.InputSystem;
 
-public class InteractableManager : MonoBehaviour
+// ReSharper disable InconsistentNaming
+
+namespace Player
 {
-    public Collider pc;
-    public PickableObject lastPickable;
-    public Rigidbody connectedRB;
-    [Required] public BoxCollider attachedCollider;
-    private Vector3 halfSize;
-    
-    public T GetNearestItem<T>() where T : InteractableObject
+    public class InteractableManager : MonoBehaviour
     {
-        Collider[] allColliders = new Collider[5];
-        Physics.OverlapBoxNonAlloc(transform.position, halfSize, allColliders);
-        foreach (Collider col in allColliders)
+        BoxCollider attachedCollider;
+        private Vector3 halfSize;
+    
+        public UnityEvent OnInteractSuccess = new UnityEvent();
+
+        private void Awake()
         {
-            try
+            attachedCollider = GetComponent<BoxCollider>();
+        }
+
+        private void Start()
+        {
+            halfSize = attachedCollider.size * 0.5f;
+        }
+
+        public void Interact(InputAction.CallbackContext context)
+        {
+            if (!context.performed) return;
+            
+            var item = GetNearestItem<InteractableObject>();
+            if (item.Interact())
             {
-                T item = col.gameObject.GetComponent<T>();
-                if (item != null) return item;
-            }
-            catch (NullReferenceException)
-            {
+                OnInteractSuccess.Invoke(); // This could mean, play sounds or play animations.
             }
         }
 
-        return null;
+        private T GetNearestItem<T>() where T : InteractableObject
+        {
+            Collider[] allColliders = new Collider[5];
+            Physics.OverlapBoxNonAlloc(transform.position, halfSize, allColliders);
+            foreach (Collider col in allColliders)
+            {
+                try
+                {
+                    T item = col.gameObject.GetComponent<T>();
+                    if (item != null) return item;
+                }
+                catch (NullReferenceException)
+                {
+                }
+            }
+
+            return null;
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using ItemSlots;
 using Sirenix.OdinInspector;
@@ -17,45 +18,45 @@ public class ItemDatabase : MonoBehaviour
     {
         Instance = this;
         // DontDestroyOnLoad(Instance);
-        
+
         itemList = new List<Item>();
         //AddDefaultItems();
         LoadItemDatabase();
     }
 
-    [Button("Add defaults")]
-    private void AddDefaultItems()
-    {
-        itemList.Add(new Item(1, "Bald", "", "bald_head", Slot.Head));
-        itemList.Add(new Item(2, "", "", "empty_neck", Slot.Neck));
-        itemList.Add(new Item(3, "", "", "empty_shoulder_l", Slot.Left_Shoulder));
-        itemList.Add(new Item(4, "", "", "empty_shoulder_r", Slot.Right_Shoulder));
-        itemList.Add(new Item(5, "Naked", "", "naked_body", Slot.Body));
-        itemList.Add(new Item(6, "", "", "empty_hand_l", Slot.Left_Hand));
-        itemList.Add(new Item(7, "", "", "empty_hand_r", Slot.Right_Hand));
-        itemList.Add(new Item(8, "", "", "empty_belt", Slot.Belt));
-        itemList.Add(new Item(9, "", "", "empty_skirt", Slot.Skirt));
-        itemList.Add(new Item(10, "", "", "empty_leg_l", Slot.Left_Leg));
-        itemList.Add(new Item(11, "", "", "empty_leg_r", Slot.Right_Leg));
-        itemList.Add(new Item(12, "", "", "empty_foot_l", Slot.Left_Foot));
-        itemList.Add(new Item(13, "", "", "empty_foot_r", Slot.Right_Foot));
-    }
-
-    // [Button("Add Test Set")]
-    private void AddTestSet()
-    {
-        itemList.Add(new Item(101, "", "", "buffon_head", Slot.Head, "Gear/Buffoon/Buffoon_Hat"));
-        itemList.Add(new Item(601, "", "", "buffon_shoulder_l", Slot.Left_Hand, "Gear/Buffoon/L_Buffoon_Sleeve"));
-        itemList.Add(new Item(701, "", "", "buffon_shoulder_r", Slot.Right_Hand, "Gear/Buffoon/R_Buffoon_Sleeve"));
-        itemList.Add(new Item(901, "", "", "buffon_legs", Slot.Skirt, "Gear/Buffoon/Buffoon_Skirt"));
-        itemList.Add(new Item(102, "", "", "knight_head", Slot.Head, "Gear/Knight/Knight_Helmet"));
-    }
-
-    // [Button("Clear List")]
-    public void ClearList()
-    {
-        itemList = new List<Item>();
-    }
+    // [Button("Add defaults")]
+    // private void AddDefaultItems()
+    // {
+    //     itemList.Add(new Item(1, "Bald", "", "bald_head", Slot.Head));
+    //     itemList.Add(new Item(2, "", "", "empty_neck", Slot.Neck));
+    //     itemList.Add(new Item(3, "", "", "empty_shoulder_l", Slot.Left_Shoulder));
+    //     itemList.Add(new Item(4, "", "", "empty_shoulder_r", Slot.Right_Shoulder));
+    //     itemList.Add(new Item(5, "Naked", "", "naked_body", Slot.Body));
+    //     itemList.Add(new Item(6, "", "", "empty_hand_l", Slot.Left_Hand));
+    //     itemList.Add(new Item(7, "", "", "empty_hand_r", Slot.Right_Hand));
+    //     itemList.Add(new Item(8, "", "", "empty_belt", Slot.Belt));
+    //     itemList.Add(new Item(9, "", "", "empty_skirt", Slot.Skirt));
+    //     itemList.Add(new Item(10, "", "", "empty_leg_l", Slot.Left_Leg));
+    //     itemList.Add(new Item(11, "", "", "empty_leg_r", Slot.Right_Leg));
+    //     itemList.Add(new Item(12, "", "", "empty_foot_l", Slot.Left_Foot));
+    //     itemList.Add(new Item(13, "", "", "empty_foot_r", Slot.Right_Foot));
+    // }
+    //
+    // // [Button("Add Test Set")]
+    // private void AddTestSet()
+    // {
+    //     itemList.Add(new Item(101, "", "", "buffon_head", Slot.Head, "Gear/Buffoon/Buffoon_Hat"));
+    //     itemList.Add(new Item(601, "", "", "buffon_shoulder_l", Slot.Left_Hand, "Gear/Buffoon/L_Buffoon_Sleeve"));
+    //     itemList.Add(new Item(701, "", "", "buffon_shoulder_r", Slot.Right_Hand, "Gear/Buffoon/R_Buffoon_Sleeve"));
+    //     itemList.Add(new Item(901, "", "", "buffon_legs", Slot.Skirt, "Gear/Buffoon/Buffoon_Skirt"));
+    //     itemList.Add(new Item(102, "", "", "knight_head", Slot.Head, "Gear/Knight/Knight_Helmet"));
+    // }
+    //
+    // // [Button("Clear List")]
+    // public void ClearList()
+    // {
+    //     itemList = new List<Item>();
+    // }
 
     public Item GetItemByID(int id)
     {
@@ -79,17 +80,23 @@ public class ItemDatabase : MonoBehaviour
     [Button("Load Database")]
     public void LoadItemDatabase()
     {
-        StreamReader stream;
         var itemsString = "";
+        string path = "itemDatabase.json";
         try
         {
-            stream = new StreamReader("Assets/Resources/itemDatabase.json");
+#if UNITY_EDITOR
+            StreamReader stream = new StreamReader("Assets/Resources/" + path);
             itemsString = stream.ReadToEnd();
             stream.Close();
+#else
+            // AssetDatabase.ImportAsset(path.Replace(".json", "");
+            TextAsset preset = Resources.Load(path.Replace(".json", "")) as TextAsset;
+            itemsString = preset.text;
+#endif
         }
-        catch (FileNotFoundException e)
+        catch (Exception e)
         {
-            Debug.LogError("Item database file not found in Resources folder.");
+            Debug.LogError(e.Message);
             return;
         }
 

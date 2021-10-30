@@ -96,8 +96,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a69ea0fdb52f9af4e9a31bbf20516638, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loadPresetOnStart: 0
-  preset: {fileID: 4900000, guid: 4c099dea95314d7499bcf96089cc15ca, type: 3}
+  loadPresetOnStart: 1
+  presetAsset: {fileID: 4900000, guid: 30929289e4ef8a649a5cf541329e0c35, type: 3}
   equippedItems: []
 --- !u!1 &1691751188058820803
 GameObject:
@@ -345,7 +345,18 @@ MonoBehaviour:
     m_ActionId: 3d34a0e5-194f-42a4-932d-46c42808f054
     m_ActionName: Player/Jump[/Keyboard/space]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8740130120699820629}
+        m_MethodName: Interact
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 1ed68211-e054-47b1-9bff-6be2fd6e5f11
     m_ActionName: Player/Interact[/Keyboard/e]
   - m_PersistentCalls:
@@ -451,6 +462,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13148067712829d498ce384829df9a8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnInteractSuccess:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &2785531822241912591
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -592,7 +606,7 @@ SkinnedMeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 86839ada080a49d438b5b3daba4c520d, type: 2}
-  - {fileID: 2100000, guid: d2c417f4248dce04b83ed9213cbbd639, type: 2}
+  - {fileID: 2100000, guid: 42cba87733903b94491ffe7e3f01406c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
