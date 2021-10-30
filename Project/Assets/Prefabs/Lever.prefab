@@ -89,7 +89,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6749379165394218131}
   m_Layer: 0
-  m_Name: Level
+  m_Name: Lever
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

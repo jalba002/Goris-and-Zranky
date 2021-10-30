@@ -14,6 +14,7 @@ public class SimpleIA : MonoBehaviour
     public void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
+        if (destination == null) enabled = false;
         updateDestination = DestinationUpdater();
     }
 

@@ -6,6 +6,7 @@ using Player;
 using UnityEngine;
 // ReSharper disable InconsistentNaming
 
+[RequireComponent(typeof(Rigidbody))]
 public class MovingPlatform : MonoBehaviour, IPlayerCollide
 {
     public enum PlatformType
@@ -49,8 +50,7 @@ public class MovingPlatform : MonoBehaviour, IPlayerCollide
     private void CreatePlane()
     {
         var transform1 = transform;
-        var up = transform1.up;
-        platformPlane = new Plane(up, _boxCollider.ClosestPointOnBounds(transform1.position + up));
+        platformPlane = new Plane(transform1.up, transform1.position);
     }
 
     private void EnablePlatform()
@@ -80,8 +80,8 @@ public class MovingPlatform : MonoBehaviour, IPlayerCollide
                 movementDirection = Vector3.zero;
                 moveToNextPosition = false;
                 IncreaseDestination();
-                yield return new WaitForSecondsRealtime(timeBetweenStops);
                 movementDirection = (destination - transform.position).normalized;
+                yield return new WaitForSecondsRealtime(timeBetweenStops);
                 moveToNextPosition = true;
             }
             movementDirection = (destination - transform.position).normalized;
@@ -126,9 +126,22 @@ public class MovingPlatform : MonoBehaviour, IPlayerCollide
     {
         if (!player) 
             player = self.GetComponent<PlayerController>();
-        if (platformPlane.GetSide(collisionPoint))
+        CreatePlane();
+        if (platformPlane.GetSide(player.transform.position))
             player.SetInertia(movementDirection * m_MaxSpeed);
         return true;
+    }
+
+    public bool CollideTop()
+    {
+        // 
+        return false;
+    }
+
+    public void StopColliding()
+    {
+        // throw new NotImplementedException();
+        moveToNextPosition = true;
     }
 
     #endregion

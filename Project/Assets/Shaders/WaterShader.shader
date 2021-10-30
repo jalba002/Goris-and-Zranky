@@ -40,14 +40,14 @@
 	Subshader
 	{
 		//Tags{ "Queue" = "Transparent" "RenderType" = "Opaque" "IgnoreProjector" = "True"  }
-		Tags{ "RenderType" = "Transparent" "IgnoreProjector" = "False"  }
-		LOD 100
+		Tags{ "RenderType" = "Opaque" "IgnoreProjector" = "False"  }
+		LOD 150
 
         Blend One Zero
 		Pass
 		{
 			//Blend SrcAlpha OneMinusSrcAlpha
-			ZWrite Off
+			ZWrite On
 
 			CGPROGRAM
 			#pragma vertex vert

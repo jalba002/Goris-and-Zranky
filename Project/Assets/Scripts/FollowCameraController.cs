@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+// ReSharper disable InconsistentNaming
 
 namespace ECM.Examples
 {
@@ -7,10 +8,13 @@ namespace ECM.Examples
         #region PUBLIC FIELDS
 
         [SerializeField]
-        private Transform _targetTransform;
+        private CharacterController _target;
 
         [SerializeField]
         private float _distanceToTarget = 15.0f;
+        
+        [SerializeField]
+        private float _shoulderHeight = 2.0f;
 
         [SerializeField]
         private float _followSpeed = 3.0f;
@@ -19,16 +23,22 @@ namespace ECM.Examples
 
         #region PROPERTIES
 
-        public Transform targetTransform
+        public CharacterController target
         {
-            get { return _targetTransform; }
-            set { _targetTransform = value; }
+            get { return _target; }
+            set { _target = value; }
         }
 
         public float distanceToTarget
         {
             get { return _distanceToTarget; }
             set { _distanceToTarget = Mathf.Max(0.0f, value); }
+        }
+        
+        public float shoulderHeight
+        {
+            get { return _shoulderHeight; }
+            set { _shoulderHeight = Mathf.Max(0.0f, value); }
         }
 
         public float followSpeed
@@ -39,7 +49,12 @@ namespace ECM.Examples
 
         private Vector3 cameraRelativePosition
         {
-            get { return targetTransform.position - transform.forward * distanceToTarget; }
+            get
+            {
+                Vector3 velocity = target.velocity;
+                velocity.y = 0f;
+                return (target.transform.position + velocity.normalized + target.transform.up * shoulderHeight)- transform.forward * distanceToTarget;
+            }
         }
 
         #endregion

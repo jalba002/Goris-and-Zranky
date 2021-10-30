@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: emissivewata
+  m_Name: Mat_ResidualWater_Shader
   m_Shader: {fileID: 4800000, guid: d7a0eacbb4041c44e87d175f9ef5ccf8, type: 3}
   m_ShaderKeywords: _EMISSION
   m_LightmapFlags: 2
@@ -44,8 +44,8 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 43896eeeb4a4c3a479feac961b4cef4f, type: 3}
-        m_Scale: {x: 1, y: 1}
+        m_Texture: {fileID: 2800000, guid: 13bf3e96b5f8e6940854b2d7782bb1cd, type: 3}
+        m_Scale: {x: 2, y: 2}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}
@@ -102,7 +102,7 @@ Material:
     - _EmissionColor: {r: 0.19171506, g: 0.7924528, b: 0.13082945, a: 1}
     - _FoamDirection: {r: 1, g: 0, b: 0, a: 0}
     - _NoiseDir: {r: 0.5, g: 0, b: 0, a: 0}
-    - _WaterColor: {r: 0.67607903, g: 1, b: 0, a: 1}
+    - _WaterColor: {r: 0.43240526, g: 0.6226415, b: 0.038180865, a: 1}
     - _WaterDir1: {r: 1.2, g: 0, b: 0, a: 0}
     - _WaterDir2: {r: 1, g: 0.02, b: 0, a: 0}
     - _WaveDir: {r: 0, g: 0, b: 0, a: 0}

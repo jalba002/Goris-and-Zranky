@@ -34,7 +34,7 @@ namespace Player
         #region DebugZone
 
         [Title("Debug")] public bool debugMode = false;
-        
+
         #endregion
 
         #region Inputs
@@ -71,7 +71,6 @@ namespace Player
 
         private void Update()
         {
-            
         }
 
         private void FixedUpdate()
@@ -131,7 +130,7 @@ namespace Player
             LimitVelocity();
             playerVel = AlignVelocity(Velocity);
             Vector3 velocityVector = (playerVel + Inertia) * Time.deltaTime;
-            
+
             Controller.Move(velocityVector);
             return velocityVector;
             // Maybe rely the movement calculation to an external manager so you can rotate camera?
@@ -226,7 +225,15 @@ namespace Player
             try
             {
                 IPlayerCollide go = hit.gameObject.GetComponent<IPlayerCollide>();
-                go.Collide(gameObject, hit.point);
+                if (go != null)
+                {
+                    if ((Controller.collisionFlags & CollisionFlags.Above) != 0)
+                    {
+                        go.Collide(gameObject, hit.point);
+                        
+                    }
+                }
+
                 //Debug.Log("Player detected collision with " + hit.gameObject.name);
             }
             catch (NullReferenceException)
@@ -242,7 +249,7 @@ namespace Player
         {
             return Velocity;
         }
-        
+
         #endregion
 
         #region Enablers
