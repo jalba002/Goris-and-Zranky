@@ -257,7 +257,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c6bb6f4ca028c546a584810d4a5ad2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: Jordi
+  sceneToLoad: clavaguerasdemierda
   clip: {fileID: 32900000, guid: d1c4f017b5bfa4c4ea81726321cae847, type: 3}
   videoPlayer: {fileID: 1548062868}
 --- !u!1 &332775309
