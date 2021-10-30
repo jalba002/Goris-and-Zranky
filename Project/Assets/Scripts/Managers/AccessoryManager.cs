@@ -38,6 +38,27 @@ public class AccessoryManager : MonoBehaviour
             LoadPreset();
     }
 
+    [Button("Equip Set with ID")]
+    public void EquipSet(int id)
+    {
+        string strID = id.ToString();
+        if (id < 10)
+               strID = "0" + id.ToString();
+
+        string[] itemIDs = new string[14];
+        string idx = "";
+        for (int i = 1; i < 14; i++)
+        {
+            itemIDs[i] = i.ToString() + strID;
+        }
+        
+        if (EquippingCoroutine != null)
+            StopCoroutine(EquippingCoroutine);
+
+        EquippingCoroutine = EquipItemsByFrame(itemIDs);
+        StartCoroutine(EquippingCoroutine);
+    }
+
     [Button("Equip Item with ID")]
     public void EquipItem(int id)
     {
@@ -100,7 +121,6 @@ public class AccessoryManager : MonoBehaviour
     {
         string path = presetPaths + "/" + preset.name + ".txt";
         StreamWriter writer = new StreamWriter(@path);
-        //writer.WriteLine("Testing");
         writer.WriteLine(GetAllEquippedID());
         writer.Close();
     }

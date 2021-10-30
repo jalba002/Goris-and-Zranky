@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
+    public string sceneToLoad = "Jordi";
+    
     public GameObject MainMenParent;
     public GameObject OptionsParent;
     public GameObject CustomsParent;
@@ -26,7 +28,7 @@ public class MenuManager : MonoBehaviour
     {
         // Load the game dumbass.
         //Debug.Log("Trying to load the game but it isn't programmed!");
-        SceneManager.LoadScene("");
+        SceneManager.LoadScene(sceneToLoad);
     }
     
     public void ExitApplication()

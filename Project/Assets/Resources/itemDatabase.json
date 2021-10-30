@@ -219,19 +219,19 @@
     "itemID": 603,
     "itemName": "",
     "itemDescription": "",
-    "itemSlug": "Mad_Scentist_L_Globe",
+    "itemSlug": "Mad_Scentist_L_Glove",
     "itemSlot": 6,
     "itemPrefab": null,
-    "resourcePath": "Gear/Mad_Scientist/Mad_Scentist_L_Globe"
+    "resourcePath": "Gear/Mad_Scientist/Mad_Scentist_L_Glove"
   },
   {
     "itemID": 703,
     "itemName": "",
     "itemDescription": "",
-    "itemSlug": "Mad_Scentist_R_Globe",
+    "itemSlug": "Mad_Scentist_R_Glove",
     "itemSlot": 7,
     "itemPrefab": null,
-    "resourcePath": "Gear/Mad_Scientist/Mad_Scentist_R_Globe"
+    "resourcePath": "Gear/Mad_Scientist/Mad_Scentist_R_Glove"
   },
   {
     "itemID": 1203,
@@ -273,19 +273,19 @@
     "itemID": 604,
     "itemName": "",
     "itemDescription": "",
-    "itemSlug": "Scientist_L_Globe",
+    "itemSlug": "Scientist_L_Glove",
     "itemSlot": 6,
     "itemPrefab": null,
-    "resourcePath": "Gear/Scientist/Scientist_L_Globe"
+    "resourcePath": "Gear/Scientist/Scientist_L_Glove"
   },
   {
     "itemID": 704,
     "itemName": "",
     "itemDescription": "",
-    "itemSlug": "Scientist_R_Globe",
+    "itemSlug": "Scientist_R_Glove",
     "itemSlot": 7,
     "itemPrefab": null,
-    "resourcePath": "Gear/Scientist/Scientist_R_Globe"
+    "resourcePath": "Gear/Scientist/Scientist_R_Glove"
   },
   {
     "itemID": 1204,
@@ -304,6 +304,50 @@
     "itemSlot": 13,
     "itemPrefab": null,
     "resourcePath": "Gear/Scientist/Scientist_R_Boot"
+  },
+  {
+    "itemID": 505,
+    "itemName": "",
+    "itemDescription": "",
+    "itemSlug": "Zombie_Scientist_Jacket",
+    "itemSlot": 5,
+    "itemPrefab": null,
+    "resourcePath": "Gear/Zombie_Scientist/Scientist_Jacket"
+  },
+  {
+    "itemID": 605,
+    "itemName": "",
+    "itemDescription": "",
+    "itemSlug": "Zombie_Scientist_L_Glove",
+    "itemSlot": 6,
+    "itemPrefab": null,
+    "resourcePath": "Gear/Zombie_Scientist/Scientist_L_Glove"
+  },
+  {
+    "itemID": 705,
+    "itemName": "",
+    "itemDescription": "",
+    "itemSlug": "Zombie_Scientist_R_Glove",
+    "itemSlot": 7,
+    "itemPrefab": null,
+    "resourcePath": "Gear/Zombie_Scientist/Scientist_R_Glove"
+  },
+  {
+    "itemID": 1205,
+    "itemName": "",
+    "itemDescription": "",
+    "itemSlug": "Zombie_Scientist_L_Boot",
+    "itemSlot": 12,
+    "itemPrefab": null,
+    "resourcePath": "Gear/Zombie_Scientist/Scientist_L_Boot"
+  },
+  {
+    "itemID": 1305,
+    "itemName": "",
+    "itemDescription": "",
+    "itemSlug": "Zombie_Scientist_R_Boot",
+    "itemSlot": 13,
+    "itemPrefab": null,
+    "resourcePath": "Gear/Zombie_Scientist/Scientist_R_Boot"
   }
-  
 ]
