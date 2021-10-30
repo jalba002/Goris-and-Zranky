@@ -41,5 +41,5 @@ public class PlayerAnimatorManager : MonoBehaviour
         
         vel.y = 0f;
         animator.SetFloat("Movement", vel.magnitude);
-    }
+    }       
 }
