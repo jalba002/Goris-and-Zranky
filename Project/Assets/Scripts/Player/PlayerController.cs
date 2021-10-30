@@ -229,10 +229,8 @@ namespace Player
                 go.Collide(gameObject, hit.point);
                 //Debug.Log("Player detected collision with " + hit.gameObject.name);
             }
-            catch (Exception ex)
+            catch (NullReferenceException)
             {
-                // Ignored
-                // Debug.Log(ex.Message);
             }
         }
 

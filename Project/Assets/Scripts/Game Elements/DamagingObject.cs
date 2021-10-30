@@ -14,7 +14,7 @@ public class DamagingObject : PickableObject
     [Title("Events")] [Tooltip("Triggers when any collision above the required speed happens.")]
     public UnityEvent OnObjectCollision = new UnityEvent();
 
-    private new void OnCollisionEnter(Collision other)
+    private void OnCollisionEnter(Collision other)
     {
         if (!IsThrown) return;
         

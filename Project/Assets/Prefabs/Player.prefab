@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loadPresetOnStart: 1
-  preset: {fileID: 4900000, guid: 30929289e4ef8a649a5cf541329e0c35, type: 3}
+  presetAsset: {fileID: 4900000, guid: 30929289e4ef8a649a5cf541329e0c35, type: 3}
   equippedItems: []
 --- !u!1 &1691751188058820803
 GameObject:

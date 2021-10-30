@@ -15,15 +15,13 @@ public class AccessoryManager : MonoBehaviour
     private GameObject avatar;
     public bool loadPresetOnStart = false;
 
-    [SerializeField] public TextAsset preset;
+    [SerializeField] public TextAsset presetAsset;
 
-   [Title("All items")] public List<EquippableItem> equippedItems = new List<EquippableItem>();
-
-    private int totalEquipmentSlots;
+    [Title("All items")] public List<EquippableItem> equippedItems = new List<EquippableItem>();
 
     public Stitcher Stitcher;
 
-    private const string presetPaths = "Assets/Resources/Presets/";
+    private const string presetPaths = "Presets/";
     private IEnumerator EquippingCoroutine;
 
     public void Awake()
@@ -34,7 +32,7 @@ public class AccessoryManager : MonoBehaviour
 
     public void Start()
     {
-        if(loadPresetOnStart)
+        if (loadPresetOnStart)
             LoadPreset();
     }
 
@@ -43,15 +41,14 @@ public class AccessoryManager : MonoBehaviour
     {
         string strID = id.ToString();
         if (id < 10)
-               strID = "0" + id.ToString();
+            strID = "0" + id.ToString();
 
         string[] itemIDs = new string[14];
-        string idx = "";
         for (int i = 1; i < 14; i++)
         {
             itemIDs[i] = i.ToString() + strID;
         }
-        
+
         if (EquippingCoroutine != null)
             StopCoroutine(EquippingCoroutine);
 
@@ -63,7 +60,7 @@ public class AccessoryManager : MonoBehaviour
     public void EquipItem(int id)
     {
         if (id < 0) return;
-        
+
         // Find if this item exists in the database.
         // Recover the exact item
         // Check if there is an existing item
@@ -81,9 +78,10 @@ public class AccessoryManager : MonoBehaviour
             existingItem = new EquippableItem(listedItem);
             equippedItems.Add(existingItem);
         }
+
         GameObject newGameObject = existingItem.SetNewItem(listedItem);
         if (newGameObject == null) return;
-        
+
         Stitcher.Stitch(newGameObject, avatar);
     }
 
@@ -116,24 +114,34 @@ public class AccessoryManager : MonoBehaviour
         }
     }
 
+    // THIS NEEDS TO BE UPDATED SO IT WORKS WITH THE BUILDS
+#if UNITY_EDITOR
     [ButtonGroup("Store Preset")]
     public void StorePreset()
     {
-        string path = presetPaths + "/" + preset.name + ".txt";
+// THIS IN GAME IS THE EQUIVALENT OF LOADING THE CLOTHING PREFERENCES.
+        string path = presetPaths + "/" + presetAsset.name + ".txt";
         StreamWriter writer = new StreamWriter(@path);
         writer.WriteLine(GetAllEquippedID());
         writer.Close();
     }
+#endif
 
     [ButtonGroup("Load Preset")]
     public void LoadPreset()
     {
-        string path = presetPaths + "/" + preset.name + ".txt";
-        //AssetDatabase.ImportAsset(@path);
-        StreamReader reader = new StreamReader(@path);
-        //preset = Resources.Load(path) as TextAsset;
-        string text = reader.ReadToEnd();
+        string text = "";
+        string path = presetPaths + this.presetAsset.name + ".txt";
 
+#if UNITY_EDITOR
+        StreamReader reader = new StreamReader("Assets/Resources/Presets/" + this.presetAsset.name + ".txt");
+        text = reader.ReadToEnd();
+        reader.Close();
+#else
+        // AssetDatabase.ImportAsset(path.Replace(".txt", ""));
+        TextAsset preset = Resources.Load(path.Replace(".txt", "")) as TextAsset;
+        text = preset.text;
+#endif
         var stringSeparated = text.Split(new[] {',', ' '});
         //EquipMultipleItems(stringSeparated);
 
@@ -142,8 +150,6 @@ public class AccessoryManager : MonoBehaviour
 
         EquippingCoroutine = EquipItemsByFrame(stringSeparated);
         StartCoroutine(EquippingCoroutine);
-
-        reader.Close();
     }
 
     IEnumerator EquipItemsByFrame(string[] list)
