@@ -64,6 +64,7 @@ public class MovingPlatform : MonoBehaviour, IPlayerCollide
 
     private void SetRandomStart()
     {
+        if (!randomStart) return;
         timeBetweenStops = UnityEngine.Random.Range(0.01f, timeBetweenStops);
     }
 
