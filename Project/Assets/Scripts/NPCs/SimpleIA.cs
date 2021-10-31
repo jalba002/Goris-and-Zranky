@@ -46,7 +46,7 @@ public class SimpleIA : RestartableObject
 
     private void OnDisable()
     {
-        if(destination != null)
+        //(destination != null)
             StopCoroutine(updateDestination);
     }
 }

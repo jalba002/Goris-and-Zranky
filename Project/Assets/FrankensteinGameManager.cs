@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class FrankensteinGameManager : MonoBehaviour
 {
     //public bool startGame = false;
+    public bool startMinigame = false;
     public AudioSource gameMusic;
     public bool skipMusic = false;
     
@@ -34,6 +36,7 @@ public class FrankensteinGameManager : MonoBehaviour
         // Play music.
         // Play sounds?
         if (MinigameController != null) return;
+        if (!startMinigame) return;
         OnGameStart.Invoke();
         PlayGame();
     }
@@ -42,6 +45,12 @@ public class FrankensteinGameManager : MonoBehaviour
     {
         MinigameController = MinigameManage();
         StartCoroutine(MinigameController);
+    }
+
+    [Button("End Minigame")]
+    private void EndGame()
+    {
+        OnGameEnd.Invoke();
     }
 
     private IEnumerator MinigameManage()
