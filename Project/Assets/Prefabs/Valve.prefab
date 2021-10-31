@@ -11,6 +11,11 @@ GameObject:
   - component: {fileID: 1000192626029926464}
   - component: {fileID: 4201504897666226149}
   - component: {fileID: 2137601479239099183}
+  - component: {fileID: 6112189392049554010}
+  - component: {fileID: 2434587743293337781}
+  - component: {fileID: 1101938185315109329}
+  - component: {fileID: 8809868930682298782}
+  - component: {fileID: 5232185358454029015}
   m_Layer: 0
   m_Name: Valve
   m_TagString: Untagged
@@ -25,13 +30,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 480395633254646522}
-  m_LocalRotation: {x: 0.7043791, y: -0.053832214, z: -0.053728595, w: 0.70573753}
+  m_LocalRotation: {x: 0.7043789, y: -0.05383826, z: -0.053727426, w: 0.7057373}
   m_LocalPosition: {x: -34.06, y: 16.3, z: -30.17}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3.687697, y: 3.687697, z: 3.687697}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 81.275, y: -89.281006, z: -89.272}
 --- !u!33 &4201504897666226149
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -79,3 +84,105 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &6112189392049554010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 480395633254646522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 984a1da71812a8e48b05dcc9fefb6015, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 1
+  buttonActivationDuration: 5
+  OnEnableInteraction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1101938185315109329}
+        m_MethodName: PlayClip
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 7400000, guid: db84bf43741a0c6448fc584f3a845623,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AnimationClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnDisableInteraction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1101938185315109329}
+        m_MethodName: PlayClip
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 7400000, guid: e5fb3680a6162da49b4c5b58ff3f2c5e,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AnimationClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!111 &2434587743293337781
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 480395633254646522}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: db84bf43741a0c6448fc584f3a845623, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: db84bf43741a0c6448fc584f3a845623, type: 2}
+  - {fileID: 7400000, guid: e5fb3680a6162da49b4c5b58ff3f2c5e, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
+--- !u!114 &1101938185315109329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 480395633254646522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82f37d1ff2b0373449b5b2fb1f805c3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Animation: {fileID: 2434587743293337781}
+--- !u!64 &8809868930682298782
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 480395633254646522}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5076798556035486163, guid: 08153e77fd206d942abf6c289acf367f, type: 3}
+--- !u!64 &5232185358454029015
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 480395633254646522}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5076798556035486163, guid: 08153e77fd206d942abf6c289acf367f, type: 3}

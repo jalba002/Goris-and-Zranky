@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 9140944231458659658}
   - component: {fileID: 6727847307941863439}
   - component: {fileID: 3283772765272572675}
+  - component: {fileID: 7470267597224923100}
   m_Layer: 0
   m_Name: Reception_BigLongPipeCorner
   m_TagString: Untagged
@@ -79,6 +80,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &7470267597224923100
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 411979353555779752}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -1957204050726756817, guid: d53b29884794d304ba5a45b690737214, type: 3}
 --- !u!1 &4426596921896310923
 GameObject:
   m_ObjectHideFlags: 0
@@ -90,6 +105,7 @@ GameObject:
   - component: {fileID: 2155709859239540503}
   - component: {fileID: 2404423255320342080}
   - component: {fileID: 8181039094737745678}
+  - component: {fileID: 8389282799771256067}
   m_Layer: 0
   m_Name: Reception_BigLongPipe3
   m_TagString: Untagged
@@ -158,6 +174,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &8389282799771256067
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4426596921896310923}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -1225911536446126597, guid: d53b29884794d304ba5a45b690737214, type: 3}
 --- !u!1 &6998428732696918271
 GameObject:
   m_ObjectHideFlags: 0
@@ -183,7 +213,7 @@ Transform:
   m_GameObject: {fileID: 6998428732696918271}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.21329, y: 0.21329, z: 0.16532321}
   m_Children:
   - {fileID: 1739936990204756978}
   - {fileID: 2170325913829500561}
@@ -204,6 +234,7 @@ GameObject:
   - component: {fileID: 1378572173070188505}
   - component: {fileID: 1651065625989036755}
   - component: {fileID: 6264650309391930975}
+  - component: {fileID: 8974781804273026831}
   m_Layer: 0
   m_Name: Reception_BigLongPipeCorner2
   m_TagString: Untagged
@@ -272,6 +303,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &8974781804273026831
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8598693395638956253}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2066124317721518599, guid: d53b29884794d304ba5a45b690737214, type: 3}
 --- !u!1 &9179236375402593270
 GameObject:
   m_ObjectHideFlags: 0
@@ -283,6 +328,7 @@ GameObject:
   - component: {fileID: 1739936990204756978}
   - component: {fileID: 8805710545279562042}
   - component: {fileID: 1571990605102035401}
+  - component: {fileID: 7487725533563974222}
   m_Layer: 0
   m_Name: Reception_BigLongPipe
   m_TagString: Untagged
@@ -351,6 +397,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &7487725533563974222
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9179236375402593270}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 3161452368605546496, guid: d53b29884794d304ba5a45b690737214, type: 3}
 --- !u!1 &9195877221375082166
 GameObject:
   m_ObjectHideFlags: 0
@@ -362,6 +422,7 @@ GameObject:
   - component: {fileID: 2170325913829500561}
   - component: {fileID: 8719926096536350279}
   - component: {fileID: 6435505311586735711}
+  - component: {fileID: 6711852253836904716}
   m_Layer: 0
   m_Name: Reception_BigLongPipe2
   m_TagString: Untagged
@@ -430,3 +491,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &6711852253836904716
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9195877221375082166}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -1200500297969881277, guid: d53b29884794d304ba5a45b690737214, type: 3}

@@ -88,6 +88,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6749379165394218131}
+  - component: {fileID: 1201072413}
+  - component: {fileID: 1201072411}
+  - component: {fileID: 1201072412}
+  - component: {fileID: 1201072414}
+  - component: {fileID: 1201072410}
   m_Layer: 0
   m_Name: Lever
   m_TagString: Untagged
@@ -104,7 +109,7 @@ Transform:
   m_GameObject: {fileID: 6260368776748791337}
   m_LocalRotation: {x: 0, y: -1, z: 0, w: 0}
   m_LocalPosition: {x: 21.06, y: 21.25, z: 26.61}
-  m_LocalScale: {x: 0.35, y: 0.35, z: 0.35}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 2729498947605966859}
   - {fileID: 4555698804188202997}
@@ -112,6 +117,105 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
+--- !u!65 &1201072413
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6260368776748791337}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.229477, y: 13.612907, z: 7.335449}
+  m_Center: {x: 23.29385, y: 0.4021454, z: 16.059814}
+--- !u!111 &1201072411
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6260368776748791337}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: c3ee9b90290c7af4ebc1a2c66476a494, type: 2}
+  m_Animations:
+  - {fileID: 0}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
+--- !u!114 &1201072412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6260368776748791337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 984a1da71812a8e48b05dcc9fefb6015, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 1
+  buttonActivationDuration: 5
+  OnEnableInteraction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1201072410}
+        m_MethodName: PlayClip
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 7400000, guid: 4c40c2f948bce4b458aba804d6e16380,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AnimationClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnDisableInteraction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1201072410}
+        m_MethodName: PlayClip
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 7400000, guid: c3ee9b90290c7af4ebc1a2c66476a494,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AnimationClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!65 &1201072414
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6260368776748791337}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1201072410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6260368776748791337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82f37d1ff2b0373449b5b2fb1f805c3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Animation: {fileID: 1201072411}
 --- !u!1 &8358761750690441510
 GameObject:
   m_ObjectHideFlags: 0
@@ -230,7 +334,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8904357005274863682}
   m_LocalRotation: {x: -1.7112914e-15, y: 1, z: -0.000000021855694, w: -0.0000000754979}
-  m_LocalPosition: {x: 23.33162, y: 4.0103574, z: 16.057404}
+  m_LocalPosition: {x: 23.33162, y: 4.0103574, z: 16.0574}
   m_LocalScale: {x: 0.254, y: 0.254, z: 0.254}
   m_Children: []
   m_Father: {fileID: 6749379165394218131}
