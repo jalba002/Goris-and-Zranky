@@ -53,5 +53,10 @@ namespace Utils
 
             return false;
         }
+
+        public static float DistanceBetween(GameObject one, GameObject two)
+        {
+            return Vector3.Distance(one.transform.position, two.transform.position);
+        }
     }
 }

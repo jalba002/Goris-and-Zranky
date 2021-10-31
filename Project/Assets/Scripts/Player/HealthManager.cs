@@ -5,7 +5,9 @@ using UnityEngine.Events;
 public class HealthManager : MonoBehaviour
 {
     [Header("General Settings")] public bool m_DisableOnDeath;
+
     public bool m_SpawnLootOnDeath;
+    [ShowIf("m_SpawnLootOnDeath")]public GameObject loot;
     [HideInInspector] public bool m_GodMode;
 
     [Header("Stats")] public int m_MaxHealth;
@@ -33,6 +35,7 @@ public class HealthManager : MonoBehaviour
         //Register into the Events
         onDamageTaken.AddListener(CheckDeath);
         onCharacterDeath.AddListener(OnCharacterDeath);
+        onCharacterDeath.AddListener(SpawnLoot);
         onCharacterRespawn.AddListener(OnCharacterRespawn);
     }
 
@@ -115,6 +118,14 @@ public class HealthManager : MonoBehaviour
         {
             m_CurrentHealth = 0;
             onCharacterDeath.Invoke();
+        }
+    }
+
+    private void SpawnLoot()
+    {
+        if (m_SpawnLootOnDeath)
+        {
+            Instantiate(loot, this.gameObject.transform.position, Quaternion.identity);
         }
     }
 
