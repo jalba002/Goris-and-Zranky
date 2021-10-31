@@ -63,6 +63,7 @@ public class HealthManager : MonoBehaviour
         onDamageTaken.Invoke();
     }
 
+    [Button("Kill")]
     public void Kill()
     {
         DealDamage(m_MaxHealth);
