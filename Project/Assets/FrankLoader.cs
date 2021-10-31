@@ -16,6 +16,7 @@ public class FrankLoader : MonoBehaviour, IUpdateOnSceneLoad
     {
         frank.transform.position = pos;
         frank.SetActive(true);
+        frank.GetComponent<Animation>().Play();
     }
 
     public void UpdateOnSceneLoad()
