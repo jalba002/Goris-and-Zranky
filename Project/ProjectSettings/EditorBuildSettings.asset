@@ -12,9 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Final/01_Frankenstein.unity
     guid: 559b3f0269c19f04b9b41111fa39e1f7
   - enabled: 1
-    path: Assets/Scenes/Prototyping/Jordi.unity
-    guid: e70b0531dce6617409aa5cb9dd9ac64d
-  - enabled: 1
-    path: Assets/Scenes/Blockout/clavaguerasdemierda.unity
-    guid: f407772f0a572d3489dab4d3687138b0
+    path: Assets/Scenes/Final/02_Sewers.unity
+    guid: b081698e585da904f88cbbc56bdf4a9d
   m_configObjects: {}

@@ -1,5 +1,4 @@
-﻿using Sirenix.OdinInspector.Editor.Drawers;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Video;
 
