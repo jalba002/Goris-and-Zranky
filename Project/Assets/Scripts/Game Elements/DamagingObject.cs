@@ -17,15 +17,16 @@ public class DamagingObject : PickableObject
     private void OnCollisionEnter(Collision other)
     {
         if (!IsThrown) return;
-        
         if (rb.velocity.magnitude >= minimumSpeedToCollide)
         {
+            Debug.Log(other.gameObject.name);
             OnObjectCollision.Invoke();
             IsThrown = false;
             
             var hm = other.gameObject.GetComponent<HealthManager>();
             if (hm != null)
             {
+                Debug.Log("DEALING DAMAGE");
                 hm.DealDamage(velocityDeterminesDamage ? (rb.velocity.magnitude * rb.mass) : damage);
             }
         }

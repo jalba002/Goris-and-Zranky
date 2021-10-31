@@ -1,18 +1,17 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Linq;
 using Interfaces;
+using Player;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
 using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
 using UnityEngine.Video;
 
-public class SceneLoadAsyncWithCinematic : MonoBehaviour
+public class SceneLoadAsync : MonoBehaviour
 {
-    public string sceneToLoad = "Jordi";
-    public VideoClip clip;
-    public VideoPlayer videoPlayer;
-
-    private bool videoEnded = false;
+    public string sceneToLoad = "03_C_Final";
 
     private IEnumerator Coroutine;
 
@@ -29,14 +28,8 @@ public class SceneLoadAsyncWithCinematic : MonoBehaviour
 
         Coroutine = SceneLoadAsyncWithVideo();
         StartCoroutine(Coroutine);
-
-        videoPlayer.loopPointReached += VideoEnded;
     }
 
-    private void VideoEnded(VideoPlayer vp)
-    {
-        videoEnded = true;
-    }
 
     private void UpdateAllNeeded()
     {
@@ -47,18 +40,21 @@ public class SceneLoadAsyncWithCinematic : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.GetComponent<PlayerController>())
+            LoadScene();
+    }
+
     IEnumerator SceneLoadAsyncWithVideo()
     {
         string m_Text = "";
         
-        videoPlayer.clip = this.clip;
-        videoPlayer.enabled = true;
-        videoPlayer.Play();
         UpdateAllNeeded();
         var task = SceneManager.LoadSceneAsync(sceneToLoad);
         task.allowSceneActivation = false;
         
-        yield return new WaitForSeconds((float)videoPlayer.clip.length);
+        yield return new WaitForSeconds(2f);
 
         while (!task.isDone)
         {
