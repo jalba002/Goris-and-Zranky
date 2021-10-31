@@ -219,12 +219,6 @@ namespace Player
                 Velocity.y = Properties.JumpingSpeed;
             }
         }
-        
-        private void JumpSpeed()
-        {
-            // USED WHEN KILLING ZOMBIES. DELETE AFTER
-            Velocity.y = Properties.JumpingSpeed;
-        }
 
         public void Move(InputAction.CallbackContext context)
         {
@@ -247,11 +241,6 @@ namespace Player
                     if ((Controller.collisionFlags & CollisionFlags.Above) != 0)
                     {
                         go.CollideTop();
-                    }
-                    else if ((Controller.collisionFlags & CollisionFlags.Below) != 0)
-                    {
-                        if(go.CollideBottom())
-                            JumpSpeed();
                     }
                 }
 

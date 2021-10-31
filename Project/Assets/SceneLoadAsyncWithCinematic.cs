@@ -50,7 +50,6 @@ public class SceneLoadAsyncWithCinematic : MonoBehaviour
     IEnumerator SceneLoadAsyncWithVideo()
     {
         string m_Text = "";
-        
         videoPlayer.clip = this.clip;
         videoPlayer.enabled = true;
         videoPlayer.Play();

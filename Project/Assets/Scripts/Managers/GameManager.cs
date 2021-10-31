@@ -41,12 +41,11 @@ public class GameManager : MonoBehaviour, IUpdateOnSceneLoad
         // DontDestroyOnLoad(this.gameObject);
         // gameObject.name = "[LITERAL GOD]";
         m_Camera = Camera.main;
-        GetPlayers();
     }
 
     private void Start()
     {
-        
+        GetPlayers();
         // PlayGame();
     }
 
@@ -127,10 +126,5 @@ public class GameManager : MonoBehaviour, IUpdateOnSceneLoad
     public void UpdateOnSceneLoad()
     {
         // 
-    }
-
-    public GameObject GetPlayerGO()
-    {
-        return m_Players[0].gameObject;
     }
 }

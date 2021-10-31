@@ -29,12 +29,6 @@ public class ObjectResetter : MonoBehaviour, IPlayerCollide
         //throw new NotImplementedException();
     }
 
-    public bool CollideBottom()
-    {
-        // 
-        return false;
-    }
-
     public void StopColliding()
     {
         //throw new NotImplementedException();

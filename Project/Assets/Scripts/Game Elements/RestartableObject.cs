@@ -9,8 +9,8 @@ public class RestartableObject : MonoBehaviour
 
     public void Awake()
     {
-        startingPosition = transform.position;
-        startingRotation = transform.rotation;
+        startingPosition = transform.localPosition;
+        startingRotation = transform.localRotation;
         
         meshRenderer = GetComponent<MeshRenderer>();
         if (meshRenderer == null)
@@ -22,7 +22,7 @@ public class RestartableObject : MonoBehaviour
         this.gameObject.SetActive(true);
         meshRenderer.enabled = true;
         
-        transform.position = startingPosition;
-        transform.rotation = startingRotation;
+        transform.localPosition = startingPosition;
+        transform.localRotation = startingRotation;
     }
 }

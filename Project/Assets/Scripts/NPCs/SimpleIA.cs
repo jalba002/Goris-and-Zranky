@@ -7,22 +7,10 @@ using UnityEngine.PlayerLoop;
 
 public class SimpleIA : RestartableObject
 {
-    private Transform _destination;
-
-    public Transform destination
-    {
-        get
-        {
-            if (_destination == null)
-                _destination = GameManager.GM.GetPlayerGO().transform;
-            return _destination;
-        }
-        set { _destination = value; }
-    }
+    public Transform destination;
     public float attackRange = 0.2f;
     public float brainUpdate = 0.5f;
-    public float detectionRadius = 5f;
-
+    
     private NavMeshAgent agent;
     private IEnumerator updateDestination;
 
@@ -30,29 +18,21 @@ public class SimpleIA : RestartableObject
     {
         base.Awake();
         agent = GetComponent<NavMeshAgent>();
+        updateDestination = DestinationUpdater();
     }
 
     private void Start()
     {
-        //if (destination == null) return;
-        if(updateDestination!=null) StopCoroutine(updateDestination);
-        updateDestination = DestinationUpdater();
+        if (destination == null) return;
+
         StartCoroutine(updateDestination);
     }
 
     private IEnumerator DestinationUpdater()
     {
-        yield return null;
         while (enabled)
         {
-            if (Utils.Utils.DistanceBetween(this.gameObject, GameManager.GM.GetPlayerGO()) < detectionRadius && !agent.isPathStale)
-            {
-                agent.SetDestination(destination.position);
-            }
-            else
-            {
-                agent.SetDestination(startingPosition);
-            }
+            agent.SetDestination(!agent.isPathStale ? destination.position : startingPosition);
             yield return new WaitForSeconds(brainUpdate);
         }
 
@@ -67,6 +47,6 @@ public class SimpleIA : RestartableObject
     private void OnDisable()
     {
         //(destination != null)
-        StopCoroutine(updateDestination);
+            StopCoroutine(updateDestination);
     }
 }
