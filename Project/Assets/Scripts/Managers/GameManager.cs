@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using ECM.Examples;
 using Player;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -84,6 +85,7 @@ public class GameManager : MonoBehaviour, IUpdateOnSceneLoad
     public void TeleportPlayer(Vector3 pos)
     {
         TeleportController(m_Players[0], pos);
+        m_Camera.GetComponent<FollowCameraController>().ForceNewPos();
     }
     
     [Button("Get Players")]

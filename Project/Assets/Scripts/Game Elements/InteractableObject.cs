@@ -35,6 +35,7 @@ public class InteractableObject : MonoBehaviour
 
     public bool Interact()
     {
+        if (!enabled) return false;
         switch (type)
         {
             case InteractionType.OnlyOnce:

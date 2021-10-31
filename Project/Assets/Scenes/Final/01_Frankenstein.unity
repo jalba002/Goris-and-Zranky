@@ -1221,6 +1221,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc8f2775cb4ec584fa6f950865bb29a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startMinigame: 0
   gameMusic: {fileID: 624855139}
   skipMusic: 0
   OnGameStart:
@@ -2003,6 +2004,7 @@ MonoBehaviour:
   _target: {fileID: 977931989}
   _distanceToTarget: 20
   _shoulderHeight: 10
+  _velocityStrength: 2
   _followSpeed: 3
 --- !u!1001 &1134413453
 PrefabInstance:

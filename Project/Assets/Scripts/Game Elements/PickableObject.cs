@@ -136,6 +136,7 @@ public class PickableObject : RestartableObject
 
     public void AddRB()
     {
+        if(rb == null)    
         rb = this.gameObject.AddComponent<Rigidbody>();
     }
 
