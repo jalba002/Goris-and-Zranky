@@ -26,6 +26,7 @@ public class ElectricParticleEvent : MonoBehaviour
     public GameObject ElectricityBody;
     public GameObject NucleElectricity;
     public GameObject ThrowElectricity;
+    public GameObject ElectricityMonster;
 
     public float ElectricityTime = 0f;
 
@@ -40,14 +41,20 @@ public class ElectricParticleEvent : MonoBehaviour
             if (ElectricityTime > 7f)
             {
                 NucleElectricity.SetActive(false);
-                ThrowElectricity.SetActive(true);         
-            }            
+                ThrowElectricity.SetActive(true);   
+            }       
+            if(ElectricityTime >=7.5f)
+            {
+                ElectricityMonster.SetActive(true);
+            }
+            if(ElectricityTime >= 9.9f)
+            {
+                ThrowElectricity.SetActive(false);
+            }
+            if(ElectricityTime > 11f)
+            {
+                ElectricityMonster.SetActive(false);
+            }
         }
     }
-
-
-
-
-
-
 }
