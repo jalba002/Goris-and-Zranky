@@ -59,12 +59,15 @@
             fixed4 c = tex2D (_MainTex, IN.uv_MainTex) * _Color;
             o.Albedo = c.rgb; 
             
+            fixed4 a = tex2D(_MetallicGlossMap, IN.uv_MetallicGlossMap);
+            o.Metallic = a.rgb;
+            o.Smoothness = _Glossiness * a.a;
+            
             o.Normal = UnpackNormal(tex2D(_BumpMap, IN.uv_BumpMap));
             
-            
             // Metallic and smoothness come from slider variables
-            o.Metallic = _Metallic;
-            o.Smoothness = _Glossiness;
+            //o.Metallic = _Metallic;
+            //o.Smoothness = _Glossiness;
  
             // Fade the pixels as they get close to the camera (Start fading at _MaxDistance and become fully transparent at _MinDistance)
             float distanceFromCamera = distance(IN.worldPos, _WorldSpaceCameraPos);

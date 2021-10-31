@@ -9,7 +9,7 @@ using Sirenix.Serialization;
 namespace Player
 {
     [RequireComponent(typeof(UnityEngine.CharacterController))]
-    public class PlayerController : MonoBehaviour
+    public class PlayerController : RestartableObject
     {
         [Title("Properties")] [Tooltip("Instantiate properties.")]
         public bool InstantiateProperties = true;
@@ -58,8 +58,9 @@ namespace Player
 
         private PlayerInput _input;
 
-        private void Awake()
+        private new void Awake()
         {
+            base.Awake();
             Controller = GetComponent<UnityEngine.CharacterController>();
             Properties = InstantiateProperties ? Instantiate(Properties) : Properties;
         }
@@ -289,7 +290,12 @@ namespace Player
 
         #endregion
 
-        #region Interfaces
+        #region Interfaces / Heritage
+
+        public override void Restart()
+        {
+            GameManager.GM.TeleportPlayer(startingPosition);
+        }
 
         #endregion
     }
