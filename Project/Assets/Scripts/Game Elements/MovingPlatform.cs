@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Interfaces;
 using Player;
 using UnityEngine;
+
 // ReSharper disable InconsistentNaming
 
 [RequireComponent(typeof(Rigidbody))]
@@ -17,9 +19,9 @@ public class MovingPlatform : MonoBehaviour, IPlayerCollide
 
     public PlatformType platformType;
     public List<Transform> m_PatrolPositions;
-    
+
     public float m_MaxSpeed;
-    public float timeBetweenStops;
+    public float timeBetweenStops = 2f;
     Vector3 movementDirection;
     Vector3 destination;
     public float distanceToReachPosition = 0.1f;
@@ -27,26 +29,33 @@ public class MovingPlatform : MonoBehaviour, IPlayerCollide
     public bool moveToNextPosition = false;
 
     Rigidbody m_RigidBody;
-    private BoxCollider _boxCollider;
+    private MeshCollider _collider;
     private PlayerController player;
     public Mesh Mesh;
 
     private Plane platformPlane;
     private IEnumerator platformMovement;
+    private IEnumerator safetyCoroutine;
+    private bool IsStopped = false;
 
+    private Vector3 halfExtents;
     void Awake()
     {
         m_RigidBody = GetComponent<Rigidbody>();
-        _boxCollider = GetComponent<BoxCollider>();
+        _collider = GetComponent<MeshCollider>();
+        halfExtents = _collider.bounds.size * 0.5f;
+        halfExtents.y *= 5f;
         CreatePlane();
+        safetyCoroutine = PlayerCheck();
     }
 
     private void Start()
     {
         destination = m_PatrolPositions[0].transform.position;
         EnablePlatform();
+        StartCoroutine(safetyCoroutine);
     }
-    
+
     private void CreatePlane()
     {
         var transform1 = transform;
@@ -55,7 +64,7 @@ public class MovingPlatform : MonoBehaviour, IPlayerCollide
 
     private void EnablePlatform()
     {
-        switch(platformType)
+        switch (platformType)
         {
             case PlatformType.Standard:
                 movementDirection = (destination - transform.position).normalized;
@@ -70,7 +79,7 @@ public class MovingPlatform : MonoBehaviour, IPlayerCollide
                 throw new ArgumentOutOfRangeException();
         }
     }
-    
+
     private IEnumerator PlatformMovement()
     {
         while (this.enabled)
@@ -84,15 +93,19 @@ public class MovingPlatform : MonoBehaviour, IPlayerCollide
                 yield return new WaitForSecondsRealtime(timeBetweenStops);
                 moveToNextPosition = true;
             }
+
             movementDirection = (destination - transform.position).normalized;
 
             yield return null;
         }
+
         platformMovement = null;
     }
 
     void FixedUpdate()
     {
+        if (IsStopped) return;
+        
         if (moveToNextPosition)
         {
             m_RigidBody.MovePosition(transform.position + movementDirection * (m_MaxSpeed * Time.fixedDeltaTime));
@@ -103,28 +116,30 @@ public class MovingPlatform : MonoBehaviour, IPlayerCollide
     {
         int idx = m_PatrolPositions.FindIndex(x => x.transform.position == destination);
         idx++;
-        if (idx >=  m_PatrolPositions.Count)
+        if (idx >= m_PatrolPositions.Count)
         {
             idx = 0;
         }
 
         destination = m_PatrolPositions[idx].transform.position;
     }
-    
+
     public void OnDrawGizmos()
     {
-        for (int i = 0; i < m_PatrolPositions.Count; i++)
-        {
-            Gizmos.DrawLine(this.gameObject.transform.position, m_PatrolPositions[i].transform.position);
-            Gizmos.DrawWireMesh(Mesh, m_PatrolPositions[i].transform.position, Quaternion.identity, transform.localScale);
-        }
+        // for (int i = 0; i < m_PatrolPositions.Count; i++)
+        // {
+        //     Gizmos.DrawLine(this.gameObject.transform.position, m_PatrolPositions[i].transform.position);
+        //     Gizmos.DrawWireMesh(Mesh, m_PatrolPositions[i].transform.position, Quaternion.identity,
+        //         transform.localScale);
+        // }
+        Gizmos.DrawCube(transform.position - transform.up, halfExtents * 2f);
     }
-    
+
     #region Interfaces
 
     public bool Collide(GameObject self, Vector3 collisionPoint)
     {
-        if (!player) 
+        if (!player)
             player = self.GetComponent<PlayerController>();
         CreatePlane();
         if (platformPlane.GetSide(player.transform.position))
@@ -132,17 +147,46 @@ public class MovingPlatform : MonoBehaviour, IPlayerCollide
         return true;
     }
 
-    public bool CollideTop()
+    public void CollideTop()
     {
-        // 
-        return false;
+        // if (safetyCoroutine != null)
+        //     StopCoroutine(safetyCoroutine);
+        // safetyCoroutine = Safety();
+        // StartCoroutine(safetyCoroutine);
     }
 
     public void StopColliding()
     {
-        // throw new NotImplementedException();
         moveToNextPosition = true;
     }
 
     #endregion
+
+    // IEnumerator Safety()
+    // {
+    //     moveToNextPosition = false;
+    //     yield return new WaitForSecondsRealtime(0.2f);
+    //     moveToNextPosition = true;
+    // }
+
+    IEnumerator PlayerCheck()
+    {
+        while (enabled)
+        {
+            if (moveToNextPosition)
+            {
+                IsStopped = Physics.OverlapBox(transform.position - transform.up, halfExtents).ToList().Find(x=> x.gameObject.GetComponent<PlayerController>() != null);
+                if (IsStopped)
+                {
+                    yield return new WaitForSecondsRealtime(0.05f);
+                }
+                else
+                {
+                    yield return new WaitForSecondsRealtime(0.2f);
+                }
+            }
+
+            yield return null;
+        }
+    }
 }

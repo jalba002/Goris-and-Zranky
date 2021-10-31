@@ -14,12 +14,13 @@ public class SimpleIA : MonoBehaviour
     public void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
-        if (destination == null) enabled = false;
         updateDestination = DestinationUpdater();
     }
 
     private void Start()
     {
+        if (destination == null) return;
+
         StartCoroutine(updateDestination);
     }
 
@@ -36,11 +37,12 @@ public class SimpleIA : MonoBehaviour
 
     private void OnEnable()
     {
-        StartCoroutine(updateDestination);
+        Start();
     }
 
     private void OnDisable()
     {
-        StopCoroutine(updateDestination);
+        if(destination != null)
+            StopCoroutine(updateDestination);
     }
 }
