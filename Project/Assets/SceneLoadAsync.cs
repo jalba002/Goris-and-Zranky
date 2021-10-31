@@ -3,6 +3,7 @@ using System.Collections;
 using System.Linq;
 using Interfaces;
 using Player;
+using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
 using UnityEngine.SceneManagement;
@@ -21,6 +22,7 @@ public class SceneLoadAsync : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
     }
 
+    [Button("Trigger Load")]
     public void LoadScene()
     {
         // Play video animation and while that, load the scene async...
