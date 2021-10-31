@@ -92,7 +92,7 @@ Material:
     - _SrcBlend: 1
     - _UVSec: 0
     - _WaterSpeed1: 0.005
-    - _WaterSpeed2: 0.01
+    - _WaterSpeed2: 0.05
     - _WaveMaxHeight: 0
     - _WaveSpeed: 0
     - _ZWrite: 1
@@ -103,6 +103,6 @@ Material:
     - _FoamDirection: {r: 1, g: 0, b: 0, a: 0}
     - _NoiseDir: {r: 0.5, g: 0, b: 0, a: 0}
     - _WaterColor: {r: 0.43240526, g: 0.6226415, b: 0.038180865, a: 1}
-    - _WaterDir1: {r: 1.2, g: 0, b: 0, a: 0}
-    - _WaterDir2: {r: 1, g: 0.02, b: 0, a: 0}
+    - _WaterDir1: {r: 1, g: -1, b: 0, a: 0}
+    - _WaterDir2: {r: 1, g: 1, b: 0, a: 0}
     - _WaveDir: {r: 0, g: 0, b: 0, a: 0}

@@ -71,8 +71,17 @@ namespace Player
 
         private void Update()
         {
+            CheckHead();
         }
 
+        private void CheckHead()
+        {
+            if ((Controller.collisionFlags & CollisionFlags.Above) != 0 && !Controller.isGrounded)
+            {
+                Velocity.y = 0f;
+            }
+        }
+        
         private void FixedUpdate()
         {
             ApplyVerticalVelocity();
@@ -227,10 +236,10 @@ namespace Player
                 IPlayerCollide go = hit.gameObject.GetComponent<IPlayerCollide>();
                 if (go != null)
                 {
+                    go.Collide(gameObject, hit.point);
                     if ((Controller.collisionFlags & CollisionFlags.Above) != 0)
                     {
-                        go.Collide(gameObject, hit.point);
-                        
+                        go.CollideTop();
                     }
                 }
 
