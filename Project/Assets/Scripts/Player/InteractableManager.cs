@@ -29,6 +29,8 @@ namespace Player
             if (!context.performed) return;
             
             var item = GetNearestItem<InteractableObject>();
+            if (item == null) return;
+            
             if (item.Interact())
             {
                 OnInteractSuccess.Invoke(); // This could mean, play sounds or play animations.
