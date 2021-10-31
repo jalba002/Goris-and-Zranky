@@ -1873,7 +1873,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!65 &1110340763
 BoxCollider:
@@ -1946,8 +1946,8 @@ Transform:
   m_LocalPosition: {x: -8.5, y: -35, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1184861419}
-  m_RootOrder: 10
+  m_Father: {fileID: 2064368735}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1110340767
 MonoBehaviour:
@@ -2329,7 +2329,6 @@ Transform:
   - {fileID: 543450653372652300}
   - {fileID: 222375006}
   - {fileID: 113973387}
-  - {fileID: 1110340766}
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4104,6 +4103,7 @@ Transform:
   - {fileID: 624855137}
   - {fileID: 1548062870}
   - {fileID: 140665272}
+  - {fileID: 1110340766}
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

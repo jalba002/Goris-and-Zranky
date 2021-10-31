@@ -5,14 +5,18 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.PlayerLoop;
 
-public class SimpleIA : MonoBehaviour
+public class SimpleIA : RestartableObject
 {
     public Transform destination;
+    public float attackRange = 0.2f;
+    public float brainUpdate = 0.5f;
+    
     private NavMeshAgent agent;
     private IEnumerator updateDestination;
 
-    public void Awake()
+    public new void Awake()
     {
+        base.Awake();
         agent = GetComponent<NavMeshAgent>();
         updateDestination = DestinationUpdater();
     }
@@ -28,8 +32,8 @@ public class SimpleIA : MonoBehaviour
     {
         while (enabled)
         {
-            agent.SetDestination(destination.position);
-            yield return new WaitForSeconds(1f);
+            agent.SetDestination(!agent.isPathStale ? destination.position : startingPosition);
+            yield return new WaitForSeconds(brainUpdate);
         }
 
         yield return null;

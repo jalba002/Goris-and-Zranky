@@ -5,6 +5,7 @@ using System.Linq;
 using Interfaces;
 using Player;
 using UnityEngine;
+using Random = System.Random;
 
 // ReSharper disable InconsistentNaming
 
@@ -33,6 +34,9 @@ public class MovingPlatform : MonoBehaviour, IPlayerCollide
     private PlayerController player;
     public Mesh Mesh;
 
+    public bool deparentOnStart = false;
+    private bool randomStart = false;
+
     private Plane platformPlane;
     private IEnumerator platformMovement;
     private IEnumerator safetyCoroutine;
@@ -54,6 +58,23 @@ public class MovingPlatform : MonoBehaviour, IPlayerCollide
         destination = m_PatrolPositions[0].transform.position;
         EnablePlatform();
         StartCoroutine(safetyCoroutine);
+        Deparent();
+        SetRandomStart();
+    }
+
+    private void SetRandomStart()
+    {
+        timeBetweenStops = UnityEngine.Random.Range(0.01f, timeBetweenStops);
+    }
+
+    private void Deparent()
+    {
+        if (!deparentOnStart) return;
+
+        foreach (var item in m_PatrolPositions)
+        {
+            item.transform.parent = null;
+        }
     }
 
     private void CreatePlane()

@@ -172,6 +172,7 @@ GameObject:
   - component: {fileID: 2655832438137467233}
   - component: {fileID: 2655832438137467234}
   - component: {fileID: 2655832438137467235}
+  - component: {fileID: 5761756928809331167}
   m_Layer: 0
   m_Name: Zombie
   m_TagString: Player
@@ -259,6 +260,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destination: {fileID: 0}
+--- !u!114 &5761756928809331167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2655832438137467232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43405f0913a1ea6458701c0365a2de06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_DisableOnDeath: 0
+  m_SpawnLootOnDeath: 0
+  m_GodMode: 0
+  m_MaxHealth: 100
+  m_MaxShield: 0
+  m_ShieldAbsorbption: 0
+  onDamageTaken:
+    m_PersistentCalls:
+      m_Calls: []
+  onCharacterDeath:
+    m_PersistentCalls:
+      m_Calls: []
+  onCharacterRespawn:
+    m_PersistentCalls:
+      m_Calls: []
+  DebugMode: 0
 --- !u!1 &2921773894210398280
 GameObject:
   m_ObjectHideFlags: 0
