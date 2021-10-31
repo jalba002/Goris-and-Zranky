@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 311450554215135004}
   - component: {fileID: 3746332108991789241}
   - component: {fileID: 1448279454903733363}
+  - component: {fileID: 788880286882577709}
   m_Layer: 0
   m_Name: Antena_Lab
   m_TagString: Untagged
@@ -80,6 +81,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &788880286882577709
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1088092158455917990}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 1472323987022375196, guid: 060308d4f09c48f4ebc0d62f3904cf6b, type: 3}
 --- !u!1 &6300949080596395797
 GameObject:
   m_ObjectHideFlags: 0
