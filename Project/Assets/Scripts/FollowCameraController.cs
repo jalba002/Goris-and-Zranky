@@ -15,6 +15,9 @@ namespace ECM.Examples
         
         [SerializeField]
         private float _shoulderHeight = 2.0f;
+        
+        [SerializeField]
+        private float _velocityStrength = 2.0f;
 
         [SerializeField]
         private float _followSpeed = 3.0f;
@@ -40,6 +43,12 @@ namespace ECM.Examples
             get { return _shoulderHeight; }
             set { _shoulderHeight = Mathf.Max(0.0f, value); }
         }
+        
+        public float velocityStrength
+        {
+            get { return _velocityStrength; }
+            set { _velocityStrength = Mathf.Max(0.0f, value); }
+        }
 
         public float followSpeed
         {
@@ -51,9 +60,9 @@ namespace ECM.Examples
         {
             get
             {
-                Vector3 velocity = target.velocity;
-                velocity.y = 0f;
-                return (target.transform.position + velocity.normalized + target.transform.up * shoulderHeight)- transform.forward * distanceToTarget;
+                //Vector3 tg = target.velocity;
+                //tg.y = 0f;
+                return (target.transform.position + target.transform.up * shoulderHeight)- transform.forward * distanceToTarget;
             }
         }
 
@@ -75,6 +84,11 @@ namespace ECM.Examples
         public void LateUpdate()
         {
             transform.position = Vector3.Lerp(transform.position, cameraRelativePosition, followSpeed * Time.deltaTime);
+        }
+
+        public void ForceNewPos()
+        {
+            transform.position = cameraRelativePosition;
         }
 
         #endregion

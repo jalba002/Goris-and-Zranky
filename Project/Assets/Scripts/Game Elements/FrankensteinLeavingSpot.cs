@@ -52,5 +52,6 @@ public class FrankensteinLeavingSpot : MonoBehaviour
         go.transform.SetPositionAndRotation(
             _attachedTransform.transform.position,
             _attachedTransform.transform.rotation);
+        go.transform.parent = this.transform;
     }
 }

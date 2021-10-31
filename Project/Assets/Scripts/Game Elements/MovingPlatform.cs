@@ -30,13 +30,16 @@ public class MovingPlatform : MonoBehaviour, IPlayerCollide
     public bool moveToNextPosition = false;
 
     Rigidbody m_RigidBody;
-    private MeshCollider _collider;
+    private Collider _collider;
     private PlayerController player;
     public Mesh Mesh;
 
     public bool deparentOnStart = false;
-    private bool randomStart = false;
+    public bool randomStart = false;
+    public bool safetyMode = true;
 
+    public float startDelay = 1.0f;
+    
     private Plane platformPlane;
     private IEnumerator platformMovement;
     private IEnumerator safetyCoroutine;
@@ -46,7 +49,7 @@ public class MovingPlatform : MonoBehaviour, IPlayerCollide
     void Awake()
     {
         m_RigidBody = GetComponent<Rigidbody>();
-        _collider = GetComponent<MeshCollider>();
+        _collider = GetComponent<Collider>();
         halfExtents = _collider.bounds.size * 0.5f;
         halfExtents.y *= 5f;
         CreatePlane();
@@ -57,7 +60,10 @@ public class MovingPlatform : MonoBehaviour, IPlayerCollide
     {
         destination = m_PatrolPositions[0].transform.position;
         EnablePlatform();
-        StartCoroutine(safetyCoroutine);
+            
+        if(safetyMode)
+            StartCoroutine(safetyCoroutine);
+        
         Deparent();
         SetRandomStart();
     }
@@ -66,6 +72,7 @@ public class MovingPlatform : MonoBehaviour, IPlayerCollide
     {
         if (!randomStart) return;
         timeBetweenStops = UnityEngine.Random.Range(0.01f, timeBetweenStops);
+        startDelay = UnityEngine.Random.Range(0.1f, startDelay);
     }
 
     private void Deparent()
@@ -104,6 +111,7 @@ public class MovingPlatform : MonoBehaviour, IPlayerCollide
 
     private IEnumerator PlatformMovement()
     {
+        yield return new WaitForSecondsRealtime(startDelay);
         while (this.enabled)
         {
             if ((Vector3.Distance(transform.position, destination) < distanceToReachPosition))
@@ -154,7 +162,8 @@ public class MovingPlatform : MonoBehaviour, IPlayerCollide
         //     Gizmos.DrawWireMesh(Mesh, m_PatrolPositions[i].transform.position, Quaternion.identity,
         //         transform.localScale);
         // }
-        Gizmos.DrawCube(transform.position - transform.up, halfExtents * 2f);
+        if(safetyMode)
+            Gizmos.DrawCube(transform.position - transform.up, halfExtents * 2f);
     }
 
     #region Interfaces

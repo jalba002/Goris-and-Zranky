@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Final/02_Sewers.unity
     guid: b081698e585da904f88cbbc56bdf4a9d
+  - enabled: 1
+    path: Assets/Scenes/Final/03_C_Final.unity
+    guid: 0f2d167c4201dc04e9ab5956def7353e
   m_configObjects: {}
