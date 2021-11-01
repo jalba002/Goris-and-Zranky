@@ -14,9 +14,9 @@ public class ZombieHealthManager : HealthManager, IPlayerCollide
         //throw new System.NotImplementedException();
     }
 
-    public bool CollideBottom(float speed)
+    public bool CollideBottom(Vector3 collisionPoint)
     {
-        if (speed < 1f)
+        if (collisionPoint.y > transform.position.y)
         {
             this.gameObject.GetComponent<HealthManager>().Kill();
             return true;

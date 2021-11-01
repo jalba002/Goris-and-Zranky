@@ -6,7 +6,7 @@ public class PlayerAnimatorManager : MonoBehaviour
     private PlayerController pc;
     private ObjectPicker _pickupZone;
     private Animator animator;
-    
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -18,16 +18,24 @@ public class PlayerAnimatorManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 vel = pc.GetVelocity();
-        if (vel.y > 1f)
+        if (pc != null)
         {
-            animator.ResetTrigger("Land");   
-            animator.SetBool("Jump", true);
-        }
-        if (pc.Controller.isGrounded && animator.GetBool("Jump"))
-        {
-            animator.SetTrigger("Land");
-            animator.SetBool("Jump", false);
+            Vector3 vel = pc.GetVelocity();
+
+            if (vel.y > 1f)
+            {
+                animator.ResetTrigger("Land");
+                animator.SetBool("Jump", true);
+            }
+
+            if (pc.Controller.isGrounded && animator.GetBool("Jump"))
+            {
+                animator.SetTrigger("Land");
+                animator.SetBool("Jump", false);
+            }
+
+            vel.y = 0f;
+            animator.SetFloat("Movement", vel.magnitude);
         }
 
         if (_pickupZone.lastPickable != null)
@@ -36,10 +44,7 @@ public class PlayerAnimatorManager : MonoBehaviour
         }
         else
         {
-           animator.SetBool("Carrying", false); 
+            animator.SetBool("Carrying", false);
         }
-        
-        vel.y = 0f;
-        animator.SetFloat("Movement", vel.magnitude);
-    }       
+    }
 }

@@ -10,6 +10,7 @@ public class CinematicManager : MonoBehaviour
     void Start()
     {
         FrankLoader f = FindObjectOfType<FrankLoader>();
+        if (f == null) return;
         f.LoadFrank(Frankestein.transform.position);
         Destroy(Frankestein);
         f.gameObject.AddComponent<Animation>().clip = Animation;

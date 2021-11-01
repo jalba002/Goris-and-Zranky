@@ -6,7 +6,7 @@ namespace Interfaces
     {
         bool Collide(GameObject self, Vector3 collisionPoint);
         void CollideTop();
-        bool CollideBottom(float speed);
+        bool CollideBottom(Vector3 collisionPoint);
         void StopColliding();
     }
 }

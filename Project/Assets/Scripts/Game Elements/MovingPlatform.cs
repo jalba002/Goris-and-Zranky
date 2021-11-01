@@ -186,7 +186,7 @@ public class MovingPlatform : MonoBehaviour, IPlayerCollide
         // StartCoroutine(safetyCoroutine);
     }
 
-    public bool CollideBottom(float speed)
+    public bool CollideBottom(Vector3 pos)
     {
         // throw new NotImplementedException();
         return false;

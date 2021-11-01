@@ -4,8 +4,6 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using Interfaces;
 using Sirenix.OdinInspector;
-using Sirenix.OdinInspector.Editor;
-using Sirenix.Serialization;
 
 namespace Player
 {
@@ -251,7 +249,7 @@ namespace Player
                     }
                     else if ((Controller.collisionFlags & CollisionFlags.Below) != 0)
                     {
-                        if(go.CollideBottom(Velocity.y))
+                        if(go.CollideBottom(gameObject.transform.position))
                             JumpSpeed();
                     }
                 }
