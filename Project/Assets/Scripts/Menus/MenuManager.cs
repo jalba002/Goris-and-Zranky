@@ -6,23 +6,30 @@ public class MenuManager : MonoBehaviour
     public string sceneToLoad = "Jordi";
     
     public GameObject MainMenParent;
+    public GameObject ControlsParent;
     public GameObject OptionsParent;
     public GameObject CreditsParent;
-
+    
     public Animation Animation;
-    
-    public void ToggleCustomization()
-    {
-        MainMenParent.SetActive(CreditsParent.activeInHierarchy);
-        CreditsParent.SetActive(!CreditsParent.activeInHierarchy);
-    }
-    
+   
     public void ToggleOptions()
     {
         MainMenParent.SetActive(OptionsParent.activeInHierarchy);
         OptionsParent.SetActive(!OptionsParent.activeInHierarchy);
     }
-        
+
+    public void ToggleControls()
+    {
+        MainMenParent.SetActive(ControlsParent.activeInHierarchy);
+        ControlsParent.SetActive(!ControlsParent.activeInHierarchy);
+    }
+
+    public void ToggleCredits()
+    {
+        MainMenParent.SetActive(CreditsParent.activeInHierarchy);
+        CreditsParent.SetActive(!CreditsParent.activeInHierarchy);
+    }
+
     public void LoadGame()
     {
         // Load the game dumbass.
