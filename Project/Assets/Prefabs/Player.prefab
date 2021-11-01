@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 1807218037808261292}
   - component: {fileID: 5761418863921115862}
   - component: {fileID: 1323873119064896023}
+  - component: {fileID: 888594899394956306}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -99,6 +100,26 @@ MonoBehaviour:
   loadPresetOnStart: 1
   presetAsset: {fileID: 4900000, guid: 30929289e4ef8a649a5cf541329e0c35, type: 3}
   equippedItems: []
+--- !u!114 &888594899394956306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1323873119064896022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df51ab5c9e2277b46b0662ec15811e71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startRay: {fileID: 2785531822228111108}
+  LayerMask:
+    serializedVersion: 2
+    m_Bits: 785
+  sounds:
+  - associatedMaterial: Water
+    sounds:
+    - {fileID: 8300000, guid: 9f03f16d3e4c8da409851f6566cdf105, type: 3}
 --- !u!1 &1691751188058820803
 GameObject:
   m_ObjectHideFlags: 0
@@ -413,7 +434,7 @@ GameObject:
   - component: {fileID: 2785531822241912590}
   - component: {fileID: 8740130120699820629}
   - component: {fileID: 2785531822241912591}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: ItemCatcher
   m_TagString: Untagged
   m_Icon: {fileID: 0}

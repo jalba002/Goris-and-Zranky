@@ -38,7 +38,7 @@ ModelImporter:
       name: Jump_Start
       takeName: Take 001
       internalID: 0
-      firstFrame: 1
+      firstFrame: 0
       lastFrame: 12
       wrapMode: 0
       orientationOffsetY: 0
@@ -58,7 +58,15 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.19940473
+        functionName: PlaySound
+        data: 
+        objectReferenceParameter: {fileID: 8300000, guid: b686308809ce8fd4e96afa9ab9be279f,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
