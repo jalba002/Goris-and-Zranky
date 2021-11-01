@@ -134,6 +134,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chain (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fc5e07f6d723f3b4587064c8373ead51,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc5e07f6d723f3b4587064c8373ead51, type: 3}
 --- !u!4 &765542263945458283 stripped
@@ -229,6 +234,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chain (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fc5e07f6d723f3b4587064c8373ead51,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc5e07f6d723f3b4587064c8373ead51, type: 3}
 --- !u!4 &4412075479778755242 stripped
@@ -323,6 +333,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Platform2
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 925c1bce8c684b346bf76fa9d8e7db3c,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 925c1bce8c684b346bf76fa9d8e7db3c, type: 3}

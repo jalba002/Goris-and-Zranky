@@ -220,10 +220,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1485940411834730015}
     m_Modifications:
+    - target: {fileID: 417871978021152565, guid: 302ea44cbc325984bb7b63d7d522f587,
+        type: 3}
+      propertyPath: m_ScaleInLightmap
+      value: 0.85
+      objectReference: {fileID: 0}
     - target: {fileID: 1753296014032525521, guid: 302ea44cbc325984bb7b63d7d522f587,
         type: 3}
       propertyPath: m_Name
       value: Column_02
+      objectReference: {fileID: 0}
+    - target: {fileID: 5977204302265964481, guid: 302ea44cbc325984bb7b63d7d522f587,
+        type: 3}
+      propertyPath: m_ScaleInLightmap
+      value: 0.82
       objectReference: {fileID: 0}
     - target: {fileID: 7091043956639296759, guid: 302ea44cbc325984bb7b63d7d522f587,
         type: 3}
