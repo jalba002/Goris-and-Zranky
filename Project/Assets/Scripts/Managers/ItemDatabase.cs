@@ -1,23 +1,36 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using ItemSlots;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using Newtonsoft.Json;
-using Sirenix.Serialization;
-using UnityEditor;
 
 public class ItemDatabase : MonoBehaviour
 {
     public List<Item> itemList = new List<Item>();
 
-    public static ItemDatabase Instance;
+    private static ItemDatabase _instance;
+
+    public static ItemDatabase Instance
+    {
+        get { return _instance; }
+        set
+        {
+            if (_instance != null)
+            {
+                Destroy(value);
+                return;
+            }
+
+            _instance = value;
+        }
+    }
 
     private void Awake()
     {
         Instance = this;
-        // DontDestroyOnLoad(Instance);
+        this.gameObject.transform.parent = null;
+        DontDestroyOnLoad(Instance);
 
         itemList = new List<Item>();
         //AddDefaultItems();
@@ -68,7 +81,6 @@ public class ItemDatabase : MonoBehaviour
         return itemList.Find(x => x.itemSlug == slugName);
     }
 
-    [Button("Store Database")]
     public void ExportList()
     {
         var list = JsonConvert.SerializeObject(itemList, Formatting.Indented);
@@ -77,7 +89,7 @@ public class ItemDatabase : MonoBehaviour
         stream.Close();
     }
 
-    [Button("Load Database")]
+    [Button("Force Load Database")]
     public void LoadItemDatabase()
     {
         var itemsString = "";
