@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.PlayerLoop;
 
-[RequireComponent(typeof(NavMeshAgent))]
-public class SimpleIA : RestartableObject
+public class ZombieIA : RestartableObject
 {
     private Transform _destination;
 
@@ -46,9 +42,18 @@ public class SimpleIA : RestartableObject
         yield return null;
         while (enabled)
         {
-            agent.SetDestination(startingPosition);
+            if (Utils.Utils.DistanceBetween(this.gameObject, GameManager.GM.GetPlayerGO()) < detectionRadius && !agent.isPathStale)
+            {
+                agent.SetDestination(destination.position);
+            }
+            else
+            {
+                agent.SetDestination(startingPosition);
+            }
             yield return new WaitForSeconds(brainUpdate);
         }
+
+        yield return null;
     }
 
     private void OnEnable()

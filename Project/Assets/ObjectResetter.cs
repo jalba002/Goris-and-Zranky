@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ObjectResetter : MonoBehaviour, IPlayerCollide
 {
-    private void OnCollisionEnter(Collision other)
+    private void OnTriggerEnter(Collider other)
     {
         //throw new NotImplementedException();
         try
