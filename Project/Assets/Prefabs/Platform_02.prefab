@@ -136,6 +136,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chain (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fc5e07f6d723f3b4587064c8373ead51,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc5e07f6d723f3b4587064c8373ead51, type: 3}
 --- !u!4 &455897141801640618 stripped
@@ -230,6 +235,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Platform2
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 925c1bce8c684b346bf76fa9d8e7db3c,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 925c1bce8c684b346bf76fa9d8e7db3c, type: 3}
@@ -326,6 +336,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chain (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fc5e07f6d723f3b4587064c8373ead51,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc5e07f6d723f3b4587064c8373ead51, type: 3}
 --- !u!4 &5934179610784996618 stripped
@@ -421,6 +436,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chain (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fc5e07f6d723f3b4587064c8373ead51,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc5e07f6d723f3b4587064c8373ead51, type: 3}
 --- !u!4 &6451513193508790841 stripped
@@ -515,6 +535,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Chain (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fc5e07f6d723f3b4587064c8373ead51,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc5e07f6d723f3b4587064c8373ead51, type: 3}

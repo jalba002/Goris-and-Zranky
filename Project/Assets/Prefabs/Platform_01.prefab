@@ -229,6 +229,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chain (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fc5e07f6d723f3b4587064c8373ead51,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc5e07f6d723f3b4587064c8373ead51, type: 3}
 --- !u!4 &8043158044943158479 stripped
@@ -323,6 +328,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Chain
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fc5e07f6d723f3b4587064c8373ead51,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc5e07f6d723f3b4587064c8373ead51, type: 3}
