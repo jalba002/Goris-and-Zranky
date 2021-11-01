@@ -26,23 +26,23 @@ public class FrankensteinGameManager : MonoBehaviour
 
     private IEnumerator MinigameController;
 
-    public void Awake()
+    private void Start()
     {
-        
+        StartGame();
     }
 
     public void StartGame()
     {
         // Play music.
         // Play sounds?
-        if (MinigameController != null) return;
-        if (!startMinigame) return;
-        OnGameStart.Invoke();
-        PlayGame();
+        if (startMinigame)
+            PlayGame();
     }
 
     private void PlayGame()
     {
+        if (MinigameController != null) return;
+        
         MinigameController = MinigameManage();
         StartCoroutine(MinigameController);
     }
@@ -55,6 +55,8 @@ public class FrankensteinGameManager : MonoBehaviour
 
     private IEnumerator MinigameManage()
     {
+        yield return new WaitForSeconds(1f);
+        OnGameStart.Invoke();
         gameMusic.Play();
         while (gameMusic.isPlaying && !skipMusic)
         {
@@ -64,5 +66,6 @@ public class FrankensteinGameManager : MonoBehaviour
         }
         Debug.Log("MUSIC ENDED!");
         OnGameEnd.Invoke();
+        MinigameController = null;
     }
 }
