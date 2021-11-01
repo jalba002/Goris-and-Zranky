@@ -22,6 +22,7 @@ public class HealthManager : MonoBehaviour
     private int m_CurrentShield;
 
     private GameObject m_AttachedGameObject;
+    private bool IsDead = false;
 
     [Title("Debug")] public bool DebugMode = false;
 
@@ -42,7 +43,7 @@ public class HealthManager : MonoBehaviour
     public void DealDamage(float amount)
     {
         int l_Damage = (int) amount;
-        if (m_GodMode) return;
+        if (m_GodMode || IsDead) return;
         if (l_Damage <= 0 && DebugMode)
         {
             Debug.LogError($"Someone sent incorrect damage values to {this.gameObject.name}");
@@ -117,6 +118,7 @@ public class HealthManager : MonoBehaviour
         if (m_CurrentHealth <= 0)
         {
             m_CurrentHealth = 0;
+            IsDead = true;
             onCharacterDeath.Invoke();
         }
     }

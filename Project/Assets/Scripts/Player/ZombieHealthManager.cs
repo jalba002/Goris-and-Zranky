@@ -1,7 +1,5 @@
 ﻿using Interfaces;
-using Sirenix.OdinInspector;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class ZombieHealthManager : HealthManager, IPlayerCollide
 {

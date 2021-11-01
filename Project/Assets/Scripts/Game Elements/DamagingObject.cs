@@ -34,7 +34,7 @@ public class DamagingObject : PickableObject
     
     public override void Throw(Vector3 direction)
     {
-        this.rb.AddForce(direction * force, ForceMode.Impulse);
+        this.rb.AddForce(direction * force, ForceMode.VelocityChange);
         if (rb.velocity.magnitude >= minimumSpeedToCollide)
             IsThrown = true;
         Disconnect();
