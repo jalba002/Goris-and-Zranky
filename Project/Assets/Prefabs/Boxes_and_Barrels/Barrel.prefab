@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 6216216590998115433}
   - component: {fileID: 8187692849010434211}
   - component: {fileID: -726734887102582502}
+  - component: {fileID: 4024112158312010425}
+  - component: {fileID: 2387788429319883959}
   m_Layer: 0
   m_Name: Barrel
   m_TagString: Untagged
@@ -94,3 +96,38 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -5076798556035486163, guid: cd0900dd83f683241814b32ad465fd60, type: 3}
+--- !u!114 &4024112158312010425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7683276428198691190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2265a54f4c826c40a2c63083805ce38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  force: 50
+  velocityDeterminesDamage: 1
+  damage: 0
+  minimumSpeedToCollide: 0.1
+  OnObjectCollision:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!54 &2387788429319883959
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7683276428198691190}
+  serializedVersion: 2
+  m_Mass: 20
+  m_Drag: 0.02
+  m_AngularDrag: 0.2
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
