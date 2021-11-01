@@ -1,11 +1,12 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class ZombieIA : RestartableObject
 {
+    
     private Transform _destination;
-
     public Transform destination
     {
         get
@@ -16,10 +17,14 @@ public class ZombieIA : RestartableObject
         }
         set { _destination = value; }
     }
+    
+    [Header("Settings")]
     public float attackRange = 0.2f;
     public float brainUpdate = 0.5f;
     public float detectionRadius = 5f;
 
+    [Header("Components")]
+    private Animator animator;
     private NavMeshAgent agent;
     private IEnumerator updateDestination;
 
@@ -27,6 +32,7 @@ public class ZombieIA : RestartableObject
     {
         base.Awake();
         agent = GetComponent<NavMeshAgent>();
+        animator = GetComponentInChildren<Animator>();
     }
 
     private void Start()
@@ -37,6 +43,27 @@ public class ZombieIA : RestartableObject
         StartCoroutine(updateDestination);
     }
 
+    public void Update()
+    {
+        Vector3 vel = agent.velocity;
+        vel.y = 0f;
+        animator.SetFloat("Movement", vel.magnitude);
+    }
+
+    public void HitReaction()
+    {
+        animator.SetTrigger("Hit");
+    }
+
+    public void Kill()
+    {
+        animator.SetTrigger("Death");
+        StopAllCoroutines();
+        agent.enabled = false;
+        GetComponent<Collider>().enabled = false;
+        this.enabled = false;
+    }
+    
     private IEnumerator DestinationUpdater()
     {
         yield return null;

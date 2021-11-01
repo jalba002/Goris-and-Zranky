@@ -29,11 +29,12 @@ public class ObjectResetter : MonoBehaviour, IPlayerCollide
         //throw new NotImplementedException();
     }
 
-    public bool CollideBottom()
+    public bool CollideBottom(float speed)
     {
-        // 
+        //throw new NotImplementedException();
         return false;
     }
+    
 
     public void StopColliding()
     {

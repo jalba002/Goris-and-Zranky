@@ -14,14 +14,28 @@ public class ZombieHealthManager : HealthManager, IPlayerCollide
         //throw new System.NotImplementedException();
     }
 
-    public bool CollideBottom()
+    public bool CollideBottom(float speed)
     {
-        this.gameObject.GetComponent<HealthManager>().Kill();
-        return true;
+        if (speed < 1f)
+        {
+            this.gameObject.GetComponent<HealthManager>().Kill();
+            return true;
+        }
+
+        return false;
     }
 
     public void StopColliding()
     {
         //throw new System.NotImplementedException();
+    }
+
+    protected override void SpawnLoot()
+    {
+        if (m_SpawnLootOnDeath)
+        {
+            var it = Instantiate(loot, this.gameObject.transform.position + Vector3.up, Quaternion.identity);
+            it.GetComponent<Rigidbody>().AddForce((transform.forward + transform.up).normalized * 10f, ForceMode.VelocityChange);
+        }
     }
 }

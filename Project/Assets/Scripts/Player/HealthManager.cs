@@ -34,7 +34,6 @@ public class HealthManager : MonoBehaviour
         m_CurrentShield = m_MaxShield;
 
         //Register into the Events
-        onDamageTaken.AddListener(CheckDeath);
         onCharacterDeath.AddListener(OnCharacterDeath);
         onCharacterDeath.AddListener(SpawnLoot);
         onCharacterRespawn.AddListener(OnCharacterRespawn);
@@ -64,7 +63,17 @@ public class HealthManager : MonoBehaviour
 
         if(DebugMode)
             Debug.Log(this.gameObject.name + ": " + m_CurrentHealth + "/" + m_MaxHealth + " HP. Damage: " + l_Damage);
-        onDamageTaken.Invoke();
+
+        if (m_CurrentHealth <= 0)
+        {
+            m_CurrentHealth = 0;
+            IsDead = true;
+            onCharacterDeath.Invoke();
+        }
+        else
+        {
+            onDamageTaken.Invoke();
+        }
     }
 
     [Button("Kill")]
@@ -113,17 +122,7 @@ public class HealthManager : MonoBehaviour
 
     #endregion
     
-    private void CheckDeath()
-    {
-        if (m_CurrentHealth <= 0)
-        {
-            m_CurrentHealth = 0;
-            IsDead = true;
-            onCharacterDeath.Invoke();
-        }
-    }
-
-    private void SpawnLoot()
+    protected virtual void SpawnLoot()
     {
         if (m_SpawnLootOnDeath)
         {

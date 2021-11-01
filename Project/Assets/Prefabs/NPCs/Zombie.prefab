@@ -4922,7 +4922,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2655832438137467236}
   - component: {fileID: 2655832438137467233}
-  - component: {fileID: 2655832438137467234}
   - component: {fileID: 2655832438137467235}
   - component: {fileID: 7100348292035172655}
   - component: {fileID: 4450603200653417771}
@@ -4972,18 +4971,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 5
   m_ObstacleAvoidanceType: 3
---- !u!114 &2655832438137467234
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2655832438137467232}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ddc7ce5a99532cb4589f8485fd88cc93, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2655832438137467235
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5012,7 +4999,7 @@ CapsuleCollider:
   m_Radius: 1.5
   m_Height: 5
   m_Direction: 1
-  m_Center: {x: 0, y: 2, z: 0}
+  m_Center: {x: 0, y: 2.5, z: 0}
 --- !u!54 &4450603200653417771
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5041,7 +5028,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4aed4381c7703641a91ba1d93ed8daa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_DisableOnDeath: 1
+  m_DisableOnDeath: 0
   m_SpawnLootOnDeath: 1
   loot: {fileID: 4398879182215085854, guid: 0bd99404c4bde3d43872f74bf0248912, type: 3}
   m_GodMode: 0
@@ -5050,23 +5037,34 @@ MonoBehaviour:
   m_ShieldAbsorbption: 0
   onDamageTaken:
     m_PersistentCalls:
-      m_Calls: []
-  onCharacterDeath:
-    m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1181573165}
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 2655832438137467235}
+        m_MethodName: HitReaction
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 1
+          m_BoolArgument: 0
         m_CallState: 2
+  onCharacterDeath:
+    m_PersistentCalls:
+      m_Calls:
       - m_Target: {fileID: 1181573168}
         m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2655832438137467235}
+        m_MethodName: Kill
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
