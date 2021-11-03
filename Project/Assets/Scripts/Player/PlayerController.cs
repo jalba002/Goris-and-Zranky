@@ -62,11 +62,13 @@ namespace Player
             base.Awake();
             Controller = GetComponent<UnityEngine.CharacterController>();
             Properties = InstantiateProperties ? Instantiate(Properties) : Properties;
+            _input = GetComponent<PlayerInput>();
         }
 
         void Start()
         {
-            Velocity = Vector3.zero;
+            // Velocity = Vector3.zero;
+            _input.actions.FindAction("Pause").performed += Escape;
         }
 
         private void Update()
@@ -232,6 +234,16 @@ namespace Player
             //LastWalkingSpeed = LimitValue(Properties.WalkingSpeed * Time.deltaTime, LastWalkingSpeed, 1.1f);
             Velocity.x = movement.x * WalkingSpeed;
             Velocity.z = movement.y * WalkingSpeed;
+        }
+        
+        // I hate it but okay...
+        public void Escape(InputAction.CallbackContext context)
+        {
+            // Debug.Log("ESCAPE!");
+            if (context.performed)
+            {
+                GameManager.GM.Pause();
+            }
         }
 
         private void OnControllerColliderHit(ControllerColliderHit hit)

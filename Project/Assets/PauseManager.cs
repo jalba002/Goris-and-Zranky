@@ -6,21 +6,22 @@ public class PauseManager : MonoBehaviour
     public GameObject MenuPause;
     public FrankensteinGameManager FrankensteinMiniGame;
 
-
-    public void PauseOn()
+    public void TogglePause()
     {
         MenuPause.SetActive(!MenuPause.activeInHierarchy);
         if (MenuPause.activeInHierarchy)
         {
             Time.timeScale = 0;
-            if (FrankensteinMiniGame == null) return;
-            FrankensteinMiniGame.PauseGame();
+            
+            if (FrankensteinMiniGame != null)
+                FrankensteinMiniGame.PauseGame();
         }
         else
         {
             Time.timeScale = 1;
-            if (FrankensteinMiniGame == null) return;
-            FrankensteinMiniGame.UnPause();
+            
+            if (FrankensteinMiniGame != null)
+                FrankensteinMiniGame.UnPause();
         }     
     }    
 }

@@ -82,6 +82,7 @@ public class MovingPlatform : MonoBehaviour, IPlayerCollide
         foreach (var item in m_PatrolPositions)
         {
             item.transform.parent = null;
+            item.hideFlags = HideFlags.HideInHierarchy;
         }
     }
 

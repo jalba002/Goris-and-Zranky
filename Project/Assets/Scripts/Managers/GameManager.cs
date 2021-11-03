@@ -27,12 +27,11 @@ public class GameManager : MonoBehaviour, IUpdateOnSceneLoad
         }
     }
 
-    public Camera m_Camera;
+    private Camera m_Camera;
     
     public List<PlayerController> m_Players;
 
-    [FoldoutGroup("Game Start")] public bool playGame = false;
-    [FoldoutGroup("Game Start")] public Transform startSpawn;
+    private PauseManager _pauseManager;
 
     public void Awake()
     {
@@ -41,6 +40,7 @@ public class GameManager : MonoBehaviour, IUpdateOnSceneLoad
         // DontDestroyOnLoad(this.gameObject);
         // gameObject.name = "[LITERAL GOD]";
         m_Camera = Camera.main;
+        _pauseManager = FindObjectOfType<PauseManager>();
         GetPlayers();
     }
 
@@ -48,15 +48,6 @@ public class GameManager : MonoBehaviour, IUpdateOnSceneLoad
     {
         
         // PlayGame();
-    }
-
-    [ButtonGroup("Game Start/Force Start Game")]
-    public void PlayGame()
-    {
-        if (playGame)
-        {
-            
-        }
     }
 
     // public void SetMovementReferenceToPlayers(CameraSpot cameraSpot)
@@ -89,7 +80,6 @@ public class GameManager : MonoBehaviour, IUpdateOnSceneLoad
         m_Camera.GetComponent<FollowCameraController>().ForceNewPos();
     }
     
-    [Button("Get Players")]
     public void GetPlayers()
     {
         m_Players = new List<PlayerController>();
@@ -124,6 +114,16 @@ public class GameManager : MonoBehaviour, IUpdateOnSceneLoad
     //     m_Camera.transform.rotation = cameraSpot.transform.rotation;
     //     m_Camera.fieldOfView = cameraSpot.FOV;
     // }
+
+    public void Pause()
+    {
+        // Get the pause menu and toggle it.
+        // If the pause menu is null ignore it.
+        if (_pauseManager == null) return;
+        
+        _pauseManager.TogglePause();
+    }
+    
     public void UpdateOnSceneLoad()
     {
         // 

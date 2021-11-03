@@ -15,7 +15,7 @@ public class AudioManager : MonoBehaviour
         {
             if (_audioManager != null)
             {
-                Destroy(value);
+                Destroy(value); 
                 return;
             }
 

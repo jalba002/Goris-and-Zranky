@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -16,6 +17,7 @@ public class ObjectPicker : MonoBehaviour
         //pickJoint = GetComponent<ConfigurableJoint>();
         halfSize = attachedCollider.size * 0.5f;
         pc = GetComponentInParent<Collider>(); // CHECK IF THERE IS PLAYER ATTACHED
+        StartCoroutine(CheckObjectDisconnection());
     }
 
     public void LeftClick(InputAction.CallbackContext context)
@@ -52,21 +54,28 @@ public class ObjectPicker : MonoBehaviour
         {
             //Debug.Log("Right");
             // Maybe more like a throw
-            lastPickable?.Drop();
-            lastPickable = null;
+            if (lastPickable != null)
+            {
+                lastPickable.Drop();
+                lastPickable = null;
+            }
         }
     }
-    
+
     public void Drop()
     {
-        lastPickable?.Disconnect();
+        lastPickable.Disconnect();
         lastPickable = null;
     }
 
-    private void CheckObjectDisconnection()
+    IEnumerator CheckObjectDisconnection()
     {
-        if (lastPickable != null && (!lastPickable.isEnabled() || lastPickable.GetConnectedRB() != connectedRB))
-            lastPickable = null;
+        while (enabled)
+        {
+            if (lastPickable != null && (!lastPickable.isEnabled() || lastPickable.GetConnectedRB() != connectedRB))
+                lastPickable = null;
+            yield return new WaitForSecondsRealtime(0.2f);
+        }
     }
 
     public PickableObject GetNearestItem()

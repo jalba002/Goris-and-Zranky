@@ -7,8 +7,16 @@ public class FrankLoader : MonoBehaviour, IUpdateOnSceneLoad
 {
     public GameObject frank;
 
+    public static FrankLoader Instance;
+    
     private void Awake()
     {
+        if (Instance != null)
+        {
+            Instance.Cleanup();
+        }
+        Instance = this;
+        this.transform.parent = null;
         DontDestroyOnLoad(this.gameObject);
     }
 
@@ -22,7 +30,17 @@ public class FrankLoader : MonoBehaviour, IUpdateOnSceneLoad
     public void UpdateOnSceneLoad()
     {
         DontDestroyOnLoad(frank);
-        Debug.Log("BYE FRANK");
+        //Debug.Log("BYE FRANK");
+        var list = frank.GetComponentsInChildren<ParticleSystem>();
+        foreach (var item in list)
+        {
+            Destroy(item.gameObject);
+        }
         frank.gameObject.SetActive(false);
+    }
+
+    private void Cleanup()
+    {
+        Destroy(frank);        
     }
 }

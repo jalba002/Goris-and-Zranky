@@ -43,6 +43,7 @@ public class ItemSpawner : MonoBehaviour
         GameObject go = Instantiate(Resources.Load(path) as GameObject, m_ParentTransform);
         go.transform.position = position;
         // go.transform.rotation = spawnPoints[i].rotation;
+        go.GetComponent<RestartableObject>()?.SetSpawnSettings(position, Quaternion.identity);
         
         spawnedPrefabs.Add(go);
     }

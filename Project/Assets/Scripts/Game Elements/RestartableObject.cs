@@ -25,4 +25,10 @@ public class RestartableObject : MonoBehaviour
         transform.position = startingPosition;
         transform.rotation = startingRotation;
     }
+
+    public void SetSpawnSettings(Vector3 position, Quaternion rotation)
+    {
+        this.startingPosition = position;
+        this.startingRotation = rotation;
+    }
 }

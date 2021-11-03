@@ -47,6 +47,11 @@ public class MenuManager : MonoBehaviour
 
     public void Start()
     {
+        if (Animation == null)
+        {
+            Debug.LogWarning("No animation set in script MenuManager!");
+            return;
+        }
         Animation.Play();
     }
 }

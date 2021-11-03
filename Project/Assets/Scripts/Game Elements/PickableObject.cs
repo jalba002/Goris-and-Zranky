@@ -1,10 +1,11 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 //[RequireComponent(typeof(Rigidbody))]
 public class PickableObject : RestartableObject
 {
     [Range(1f, 100f)] public float force = 5f;
-    
+
     protected ConfigurableJoint configJoint;
     protected Rigidbody rb;
     protected bool IsPicked = false;
@@ -13,6 +14,9 @@ public class PickableObject : RestartableObject
     private float oldMass;
 
     protected Collider _collider;
+
+    public UnityEvent OnPickup = new UnityEvent();
+    public UnityEvent OnDrop = new UnityEvent();
 
     public new void Awake()
     {
@@ -28,7 +32,7 @@ public class PickableObject : RestartableObject
     // }
 
     #region Joints
-    
+
     public void CreateJoint()
     {
         configJoint = this.gameObject.AddComponent<ConfigurableJoint>();
@@ -42,7 +46,7 @@ public class PickableObject : RestartableObject
         configJoint.angularZMotion = ConfigurableJointMotion.Free;
 
         var mass = rb.mass;
-        JointDrive genDrive =new JointDrive()
+        JointDrive genDrive = new JointDrive()
         {
             positionSpring = 50000f,
             positionDamper = 250f,
@@ -70,13 +74,14 @@ public class PickableObject : RestartableObject
         configJoint.connectedBody = null;
         Destroy(configJoint);
     }
+
     #endregion
 
     public virtual void Drop()
     {
         Disconnect();
     }
-    
+
     public virtual void Throw(Vector3 direction)
     {
         this.rb.velocity = direction * force;
@@ -94,28 +99,38 @@ public class PickableObject : RestartableObject
 
     public void Connect(Rigidbody rb)
     {
-        if(configJoint == null)
+        // if (rb == null) return;
+        if (configJoint == null)
             CreateJoint();
         IsPicked = true;
+        OnPickup.Invoke();
         //this.rb.mass = 1f;
         configJoint.connectedBody = rb;
     }
 
     public void Disconnect()
     {
+        if (!enabled) return;
+        
         IsPicked = false;
         DestroyJoint();
-        rb.mass = oldMass;
+        if (rb != null)
+        {
+            rb.mass = oldMass;
+        }
+
+        OnDrop.Invoke();
     }
-    
+
     public void Inert()
     {
         Disconnect();
         IsPicked = false;
+        OnPickup.Invoke();
         Destroy(_collider);
         Destroy(this.rb);
     }
-    
+
     public bool isEnabled()
     {
         return this.gameObject.activeInHierarchy;
@@ -136,8 +151,8 @@ public class PickableObject : RestartableObject
 
     public void AddRB()
     {
-        if(rb == null)    
-        rb = this.gameObject.AddComponent<Rigidbody>();
+        if (rb == null)
+            rb = this.gameObject.AddComponent<Rigidbody>();
     }
 
     private void OnCollisionEnter(Collision other)
