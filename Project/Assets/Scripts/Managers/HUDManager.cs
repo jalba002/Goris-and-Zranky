@@ -1,4 +1,5 @@
 ﻿using System;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 public class HUDManager : MonoBehaviour
@@ -7,16 +8,7 @@ public class HUDManager : MonoBehaviour
     public static HUDManager Instance
     {
         get => _instance;
-        private set
-        {
-            if (_instance != null)
-            {
-                Destroy(value);
-                return;    
-            }
-
-            _instance = value;
-        }
+        private set => _instance = value;
     }
 
     public Animation animation;
@@ -50,6 +42,7 @@ public class HUDManager : MonoBehaviour
     {
         animation.clip = fadeBlack;
         animation.Play();
+        //Debug.Log("Fading to black.");
         return animation.clip.length;
     }
 
@@ -57,6 +50,7 @@ public class HUDManager : MonoBehaviour
     {
         animation.clip = fadeWhite;
         animation.Play();
+        //Debug.Log("Fading to white.");
         return animation.clip.length;
     }
 }

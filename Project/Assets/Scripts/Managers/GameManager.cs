@@ -151,7 +151,8 @@ public class GameManager : MonoBehaviour, IUpdateOnSceneLoad
         // If the pause menu is null ignore it.
         if (_pauseManager == null) return;
         
-        _pauseManager.TogglePause();
+        _pauseManager.PauseOn();
+        
     }
 
     public GameObject GetPlayerGO()
@@ -164,5 +165,6 @@ public class GameManager : MonoBehaviour, IUpdateOnSceneLoad
     {
         player = FindObjectOfType<PlayerController>();
         m_Camera = FindObjectOfType<Camera>();
+        _pauseManager = FindObjectOfType<PauseManager>();
     }
 }
