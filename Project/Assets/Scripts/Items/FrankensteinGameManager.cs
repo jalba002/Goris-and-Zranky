@@ -68,10 +68,11 @@ public class FrankensteinGameManager : MonoBehaviour
         while (gameMusic.isPlaying && !skipMusic)
         {
             //
-            Debug.Log("Waiting for music to end.");
+            //Debug.Log("Waiting for music to end.");
             yield return new WaitForSeconds(1f);
         }
-        Debug.Log("MUSIC ENDED!");
+        //Debug.Log("MUSIC ENDED!");
+        yield return new WaitForSeconds(HUDManager.Instance.FadeToBlack());
         OnGameEnd.Invoke();
         MinigameController = null;
     }

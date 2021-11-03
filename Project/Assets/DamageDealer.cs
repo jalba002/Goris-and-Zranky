@@ -7,7 +7,7 @@ public class DamageDealer : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Something here!" + other.gameObject.name);
+        //Debug.Log("Something here!" + other.gameObject.name);
         var hpman = other.gameObject.GetComponent<HealthManager>();
         try
         {

@@ -56,7 +56,6 @@ public class SceneLoadAsync : MonoBehaviour
         yield return new WaitForSeconds(1f);
         var task = SceneManager.LoadSceneAsync(sceneToLoad);
         task.allowSceneActivation = false;
-        
 
         while (!task.isDone)
         {
@@ -74,7 +73,7 @@ public class SceneLoadAsync : MonoBehaviour
             yield return new WaitForSeconds(0.1f);
         }
 
-        Debug.Log("ENDED!");
+        //Debug.Log("ENDED!");
         task.allowSceneActivation = true;
         Destroy(this.gameObject);
     }
