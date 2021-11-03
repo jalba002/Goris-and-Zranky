@@ -19,6 +19,18 @@ public class HUDManager : MonoBehaviour
         animation = GetComponent<Animation>();
     }
 
+    public void ToggleFade(bool enable)
+    {
+        if (enable) 
+        {
+            FadeToBlack();
+        }
+        else
+        {
+            FadeToWhite();
+        }
+    }
+
     public float FadeToBlack()
     {
         animation.clip = fadeBlack;

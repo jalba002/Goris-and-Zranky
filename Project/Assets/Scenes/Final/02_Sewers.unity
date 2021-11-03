@@ -796,6 +796,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   force: 20
+  OnPickup:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDrop:
+    m_PersistentCalls:
+      m_Calls: []
   velocityDeterminesDamage: 1
   damage: 20
   minimumSpeedToCollide: 0.01
@@ -23792,6 +23798,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   force: 20
+  OnPickup:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDrop:
+    m_PersistentCalls:
+      m_Calls: []
   velocityDeterminesDamage: 1
   damage: 20
   minimumSpeedToCollide: 0.01
@@ -30916,6 +30928,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   force: 20
+  OnPickup:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDrop:
+    m_PersistentCalls:
+      m_Calls: []
   velocityDeterminesDamage: 1
   damage: 20
   minimumSpeedToCollide: 0.01
@@ -31310,6 +31328,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   force: 20
+  OnPickup:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDrop:
+    m_PersistentCalls:
+      m_Calls: []
   velocityDeterminesDamage: 1
   damage: 20
   minimumSpeedToCollide: 0.01
@@ -31356,7 +31380,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 374772374}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -4.16, z: -5}
+  m_LocalPosition: {x: -0.21, y: -4.65, z: -3.18}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1415347537}
@@ -32416,6 +32440,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   force: 20
+  OnPickup:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDrop:
+    m_PersistentCalls:
+      m_Calls: []
   velocityDeterminesDamage: 1
   damage: 20
   minimumSpeedToCollide: 0.01
@@ -33928,6 +33958,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   force: 20
+  OnPickup:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDrop:
+    m_PersistentCalls:
+      m_Calls: []
   velocityDeterminesDamage: 1
   damage: 20
   minimumSpeedToCollide: 0.01
@@ -34151,6 +34187,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   force: 20
+  OnPickup:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDrop:
+    m_PersistentCalls:
+      m_Calls: []
   velocityDeterminesDamage: 1
   damage: 20
   minimumSpeedToCollide: 0.01
@@ -36392,6 +36434,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   force: 20
+  OnPickup:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDrop:
+    m_PersistentCalls:
+      m_Calls: []
   velocityDeterminesDamage: 1
   damage: 20
   minimumSpeedToCollide: 0.01
@@ -36529,6 +36577,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   force: 20
+  OnPickup:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDrop:
+    m_PersistentCalls:
+      m_Calls: []
   velocityDeterminesDamage: 1
   damage: 20
   minimumSpeedToCollide: 0.01
@@ -36956,6 +37010,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   force: 20
+  OnPickup:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDrop:
+    m_PersistentCalls:
+      m_Calls: []
   velocityDeterminesDamage: 1
   damage: 20
   minimumSpeedToCollide: 0.01
@@ -37328,11 +37388,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48afc803bac23b04183416d1f17799d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Camera: {fileID: 237249475}
   m_Players:
   - {fileID: 831522442}
-  playGame: 0
-  startSpawn: {fileID: 0}
 --- !u!1001 &817582601
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -37603,6 +37660,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   force: 20
+  OnPickup:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDrop:
+    m_PersistentCalls:
+      m_Calls: []
   velocityDeterminesDamage: 1
   damage: 20
   minimumSpeedToCollide: 0.01
@@ -61447,6 +61510,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   force: 20
+  OnPickup:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDrop:
+    m_PersistentCalls:
+      m_Calls: []
   velocityDeterminesDamage: 1
   damage: 0
   minimumSpeedToCollide: 0.2
@@ -62750,7 +62819,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1415347537}
-  - component: {fileID: 1415347536}
   - component: {fileID: 1415347538}
   - component: {fileID: 1415347539}
   m_Layer: 0
@@ -62760,48 +62828,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1415347536
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1415347535}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4ac07f75f1f6ee489d53b45c81beb32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timeBetweenEvents: 0.2
-  BeforeTeleportation:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1495346204}
-        m_MethodName: FadeToBlack
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  playerTeleporter: {fileID: 1415347538}
-  AfterTeleportation:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1495346204}
-        m_MethodName: FadeToWhite
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!4 &1415347537
 Transform:
   m_ObjectHideFlags: 0
@@ -62810,7 +62836,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1415347535}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -19.64, y: 7.37, z: -33.59}
+  m_LocalPosition: {x: -19.64, y: 7.37, z: -33.31}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 374772375}
@@ -64685,6 +64711,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   force: 20
+  OnPickup:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDrop:
+    m_PersistentCalls:
+      m_Calls: []
   velocityDeterminesDamage: 1
   damage: 20
   minimumSpeedToCollide: 0.01
@@ -66351,7 +66383,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1661307293}
-  - component: {fileID: 1661307292}
   - component: {fileID: 1661307291}
   - component: {fileID: 1661307294}
   m_Layer: 0
@@ -66374,48 +66405,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destination: {fileID: 374772375}
---- !u!114 &1661307292
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1661307290}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4ac07f75f1f6ee489d53b45c81beb32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timeBetweenEvents: 0.2
-  BeforeTeleportation:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1495346204}
-        m_MethodName: FadeToBlack
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  playerTeleporter: {fileID: 1661307291}
-  AfterTeleportation:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1495346204}
-        m_MethodName: FadeToWhite
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!4 &1661307293
 Transform:
   m_ObjectHideFlags: 0
@@ -72378,7 +72367,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2078866270}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -4.93, z: 5.27}
+  m_LocalPosition: {x: 0, y: -5.28, z: 4.91}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1661307293}
