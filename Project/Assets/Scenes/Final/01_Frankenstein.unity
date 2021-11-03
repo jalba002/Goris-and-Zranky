@@ -1105,11 +1105,6 @@ PrefabInstance:
       propertyPath: m_Alignment
       value: 
       objectReference: {fileID: 2012578609}
-    - target: {fileID: 2785531822228111105, guid: 617e8dd3b6bdaea42bd5e14336781786,
-        type: 3}
-      propertyPath: AlignToGameobject
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2785531822228111108, guid: 617e8dd3b6bdaea42bd5e14336781786,
         type: 3}
       propertyPath: m_RootOrder
@@ -4066,7 +4061,8 @@ Animation:
   serializedVersion: 3
   m_Animation: {fileID: 7400000, guid: 172115cdc77d82c48bb8f78fdeaf2d42, type: 2}
   m_Animations:
-  - {fileID: 7400000, guid: 0311d133925c4104cb96eeef20d6c8a3, type: 2}
+  - {fileID: 7400000, guid: 82a0a3d8b48b1ca49818660357a28ea7, type: 2}
+  - {fileID: 7400000, guid: d28a365c428753643a1949d9487ef055, type: 2}
   - {fileID: 7400000, guid: 172115cdc77d82c48bb8f78fdeaf2d42, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 1
@@ -4085,8 +4081,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animation: {fileID: 1587074741}
-  fadeBlack: {fileID: 7400000, guid: 0311d133925c4104cb96eeef20d6c8a3, type: 2}
-  fadeWhite: {fileID: 7400000, guid: 172115cdc77d82c48bb8f78fdeaf2d42, type: 2}
+  fadeBlack: {fileID: 7400000, guid: 82a0a3d8b48b1ca49818660357a28ea7, type: 2}
+  fadeWhite: {fileID: 7400000, guid: d28a365c428753643a1949d9487ef055, type: 2}
 --- !u!4 &1616902022 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7091043956639296759, guid: 302ea44cbc325984bb7b63d7d522f587,

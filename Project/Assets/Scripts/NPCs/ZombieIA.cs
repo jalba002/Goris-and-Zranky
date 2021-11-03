@@ -19,7 +19,7 @@ public class ZombieIA : RestartableObject
     }
     
     [Header("Settings")]
-    public float attackRange = 0.2f;
+    public float attackRadius = 1f;
     public float brainUpdate = 0.5f;
     public float detectionRadius = 5f;
 
@@ -69,9 +69,16 @@ public class ZombieIA : RestartableObject
         yield return null;
         while (enabled)
         {
-            if (Utils.Utils.DistanceBetween(this.gameObject, GameManager.GM.GetPlayerGO()) < detectionRadius && !agent.isPathStale)
+            float distance = Utils.Utils.DistanceBetween(this.gameObject, GameManager.GM.GetPlayerGO());
+            if (distance < detectionRadius && distance > attackRadius && !agent.isPathStale)
             {
                 agent.SetDestination(destination.position);
+            }
+            else if (distance < attackRadius && !agent.isPathStale)
+            {
+                animator.SetTrigger("Attack");
+                agent.isStopped = true;
+                //Debug.Log("ATTACK");
             }
             else
             {

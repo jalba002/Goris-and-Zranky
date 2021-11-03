@@ -47,4 +47,15 @@ public class PlayerAnimatorManager : MonoBehaviour
             animator.SetBool("Carrying", false);
         }
     }
+
+    public void Kill()
+    {
+        animator.SetTrigger("Death");
+    }
+
+    public void Restart()
+    {
+        animator.Rebind();
+        animator.Update(0f);
+    }
 }

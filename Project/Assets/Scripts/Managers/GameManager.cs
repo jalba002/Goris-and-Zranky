@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using ECM.Examples;
 using Player;
-using Sirenix.OdinInspector;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 // This class is a literal god.
-public class GameManager : MonoBehaviour, IUpdateOnSceneLoad
+public class GameManager : MonoBehaviour
 {
     private static GameManager _gameManager;
 
@@ -32,6 +29,7 @@ public class GameManager : MonoBehaviour, IUpdateOnSceneLoad
     public List<PlayerController> m_Players;
 
     private PauseManager _pauseManager;
+    private IEnumerator playerRespawner;
 
     public void Awake()
     {
@@ -79,6 +77,38 @@ public class GameManager : MonoBehaviour, IUpdateOnSceneLoad
         TeleportController(m_Players[0], pos);
         m_Camera.GetComponent<FollowCameraController>().ForceNewPos();
     }
+
+    public void CoolPlayerTeleport(Vector3 pos)
+    {
+        if (playerRespawner != null) return;
+        playerRespawner = TeleportPhase(pos);
+        StartCoroutine(playerRespawner);
+    }
+    
+    private IEnumerator TeleportPhase(Vector3 pos)
+    {
+        // Camera fadeblack
+       
+        yield return new WaitForSecondsRealtime( HUDManager.Instance.FadeToBlack());
+        TeleportPlayer(pos);
+        yield return new WaitForSecondsRealtime( HUDManager.Instance.FadeToWhite());
+        // Camera fadewhite
+        playerRespawner = null;
+    }
+    
+    private IEnumerator RespawnPhase(Vector3 pos)
+    {
+        // Camera fadeblack
+       
+        yield return new WaitForSecondsRealtime( HUDManager.Instance.FadeToBlack());
+        TeleportPlayer(pos);
+        m_Players[0].ToggleControls(true);
+        m_Players[0].GetComponent<PlayerAnimatorManager>().Restart();
+        m_Players[0].GetComponent<PlayerHealthManager>().Respawn();
+        yield return new WaitForSecondsRealtime( HUDManager.Instance.FadeToWhite());
+        // Camera fadewhite
+        playerRespawner = null;
+    }
     
     public void GetPlayers()
     {
@@ -123,14 +153,16 @@ public class GameManager : MonoBehaviour, IUpdateOnSceneLoad
         
         _pauseManager.TogglePause();
     }
-    
-    public void UpdateOnSceneLoad()
-    {
-        // 
-    }
 
     public GameObject GetPlayerGO()
     {
         return m_Players[0].gameObject;
+    }
+
+    public void RespawnPlayer()
+    {
+        if (playerRespawner != null) return;
+        playerRespawner = RespawnPhase(m_Players[0].GetStartingPos());
+        StartCoroutine(playerRespawner);
     }
 }

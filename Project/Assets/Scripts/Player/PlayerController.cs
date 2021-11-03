@@ -57,6 +57,8 @@ namespace Player
 
         private PlayerInput _input;
 
+        private bool controlsEnabled = true;
+
         private new void Awake()
         {
             base.Awake();
@@ -212,6 +214,7 @@ namespace Player
 
         public void Jump(InputAction.CallbackContext context)
         {
+            if (!controlsEnabled) return;
             // Debug.Log("Jumping input detected.");
             // Force remove from ground.
             if (Controller.isGrounded && context.performed)
@@ -229,6 +232,7 @@ namespace Player
 
         public void Move(InputAction.CallbackContext context)
         {
+            if (!controlsEnabled) return;
             var movement = context.ReadValue<Vector2>();
             float WalkingSpeed = Properties.WalkingSpeed;
             //LastWalkingSpeed = LimitValue(Properties.WalkingSpeed * Time.deltaTime, LastWalkingSpeed, 1.1f);
@@ -248,6 +252,7 @@ namespace Player
 
         private void OnControllerColliderHit(ControllerColliderHit hit)
         {
+            if (!enabled) return;
             // TODO Check here if the object is "Collidable" so we can treat collisions with the CharacterController.
             try
             {
@@ -290,7 +295,18 @@ namespace Player
         {
             _input.enabled = enable;
         }
+        
+        public void Kill()
+        {
+            this.controlsEnabled = false;
+            //this.enabled = false;
+        }
 
+        public void ToggleControls(bool enable)
+        {
+            controlsEnabled = enable;
+        }
+        
         #endregion
 
         #region Debug
@@ -314,9 +330,10 @@ namespace Player
 
         #region Interfaces / Heritage
 
+
         public override void Restart()
         {
-            GameManager.GM.TeleportPlayer(startingPosition);
+            GameManager.GM.RespawnPlayer();
         }
 
         #endregion

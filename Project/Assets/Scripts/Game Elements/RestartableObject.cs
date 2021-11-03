@@ -31,4 +31,9 @@ public class RestartableObject : MonoBehaviour
         this.startingPosition = position;
         this.startingRotation = rotation;
     }
+
+    public Vector3 GetStartingPos()
+    {
+        return startingPosition;
+    }
 }

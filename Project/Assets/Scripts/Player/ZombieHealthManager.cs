@@ -16,7 +16,8 @@ public class ZombieHealthManager : HealthManager, IPlayerCollide
 
     public bool CollideBottom(Vector3 collisionPoint)
     {
-        if (collisionPoint.y > transform.position.y)
+        Bounds selfBounds = GetComponent<Collider>().bounds;
+        if (collisionPoint.y >= (selfBounds.center.y + selfBounds.size.y * 0.3f))
         {
             this.gameObject.GetComponent<HealthManager>().Kill();
             return true;
@@ -35,7 +36,8 @@ public class ZombieHealthManager : HealthManager, IPlayerCollide
         if (m_SpawnLootOnDeath)
         {
             var it = Instantiate(loot, this.gameObject.transform.position + Vector3.up, Quaternion.identity);
-            it.GetComponent<Rigidbody>().AddForce((transform.forward + transform.up).normalized * 10f, ForceMode.VelocityChange);
+            it.GetComponent<Rigidbody>()
+                .AddForce((transform.forward + transform.up).normalized * 10f, ForceMode.VelocityChange);
         }
     }
 }

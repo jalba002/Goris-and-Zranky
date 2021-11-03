@@ -82,6 +82,12 @@ public class HealthManager : MonoBehaviour
         DealDamage(m_MaxHealth);
     }
 
+    [Button("Respawn")]
+    public virtual void Respawn()
+    {
+        onCharacterRespawn.Invoke();
+    }
+
     #region Getters
 
     public int GetCurrentHealth()
@@ -151,6 +157,7 @@ public class HealthManager : MonoBehaviour
     {
         m_CurrentHealth = m_MaxHealth;
         m_CurrentShield = m_MaxShield;
+        IsDead = false;
     }
 
     #endregion

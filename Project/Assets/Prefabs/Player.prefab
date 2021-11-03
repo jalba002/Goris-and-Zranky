@@ -193,6 +193,7 @@ GameObject:
   - component: {fileID: 2785531822228111110}
   - component: {fileID: 2785531822228111105}
   - component: {fileID: 2785531822228111109}
+  - component: {fileID: 8113113577953385978}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -404,7 +405,7 @@ MonoBehaviour:
   InstantiateProperties: 1
   Properties: {fileID: 11400000, guid: b208bcf4319393c43b8598e6812a025e, type: 2}
   Controller: {fileID: 2785531822228111111}
-  AlignToGameobject: 0
+  AlignToGameobject: 1
   m_Alignment: {fileID: 0}
   UseWorldDirection: 1
   RotateTowardsDirection: 1
@@ -422,6 +423,68 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e27e37c7b0fd4c44acdb44c0aac8c55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8113113577953385978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2785531822228111104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2c032cd719f1544f968d84b90538f9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_DisableOnDeath: 0
+  m_SpawnLootOnDeath: 0
+  loot: {fileID: 0}
+  m_GodMode: 0
+  m_MaxHealth: 3
+  m_MaxShield: 0
+  m_ShieldAbsorbption: 0
+  onDamageTaken:
+    m_PersistentCalls:
+      m_Calls: []
+  onCharacterDeath:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2785531822228111105}
+        m_MethodName: Kill
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2785531822228111109}
+        m_MethodName: Kill
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2785531822228111105}
+        m_MethodName: Restart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onCharacterRespawn:
+    m_PersistentCalls:
+      m_Calls: []
+  DebugMode: 0
 --- !u!1 &2785531822241912585
 GameObject:
   m_ObjectHideFlags: 0
