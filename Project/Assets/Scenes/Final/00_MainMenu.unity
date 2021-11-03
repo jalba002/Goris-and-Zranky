@@ -6161,6 +6161,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Mixer: {fileID: 24100000, guid: f245b9ab11d2ee74da903f48e0494d2b, type: 2}
+  group: {fileID: 0}
+  audios: []
 --- !u!82 &1387763640
 AudioSource:
   m_ObjectHideFlags: 0

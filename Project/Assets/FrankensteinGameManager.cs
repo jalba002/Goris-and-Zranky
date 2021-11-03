@@ -47,6 +47,15 @@ public class FrankensteinGameManager : MonoBehaviour
         StartCoroutine(MinigameController);
     }
 
+    public void PauseGame()
+    {
+        gameMusic.Pause();
+    }
+    public void UnPause()
+    {
+        gameMusic.UnPause();
+    }
+
     [Button("End Minigame")]
     private void EndGame()
     {
