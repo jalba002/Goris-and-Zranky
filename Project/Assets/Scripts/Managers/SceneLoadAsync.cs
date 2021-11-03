@@ -53,10 +53,10 @@ public class SceneLoadAsync : MonoBehaviour
         string m_Text = "";
         
         UpdateAllNeeded();
+        yield return new WaitForSeconds(1f);
         var task = SceneManager.LoadSceneAsync(sceneToLoad);
         task.allowSceneActivation = false;
         
-        yield return new WaitForSeconds(2f);
 
         while (!task.isDone)
         {
