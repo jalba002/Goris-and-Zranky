@@ -1198,6 +1198,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 617e8dd3b6bdaea42bd5e14336781786, type: 3}
+--- !u!114 &416798686 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2785531822228111105, guid: 617e8dd3b6bdaea42bd5e14336781786,
+    type: 3}
+  m_PrefabInstance: {fileID: 416798685}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5025b006b391540acd8c1412c1dd53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &474917486
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2189,6 +2201,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   frank: {fileID: 5445582784217178590}
+  wakeUpAnim: {fileID: 7400000, guid: 495bd6e0c00d23c4cbc0c6ca2f08c881, type: 2}
 --- !u!1001 &1000307652
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4685,7 +4698,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48afc803bac23b04183416d1f17799d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Players: []
+  m_Camera: {fileID: 1127438572}
+  player: {fileID: 416798686}
 --- !u!1001 &2085385204
 PrefabInstance:
   m_ObjectHideFlags: 0

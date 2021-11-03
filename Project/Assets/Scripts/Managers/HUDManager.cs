@@ -3,7 +3,22 @@ using UnityEngine;
 
 public class HUDManager : MonoBehaviour
 {
-    public static HUDManager Instance;
+    private static HUDManager _instance;
+    public static HUDManager Instance
+    {
+        get => _instance;
+        private set
+        {
+            if (_instance != null)
+            {
+                Destroy(value);
+                return;    
+            }
+
+            _instance = value;
+        }
+    }
+
     public Animation animation;
     
     public AnimationClip fadeBlack;

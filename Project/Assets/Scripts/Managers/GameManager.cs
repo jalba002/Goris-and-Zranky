@@ -5,7 +5,7 @@ using Player;
 using UnityEngine;
 
 // This class is a literal god.
-public class GameManager : MonoBehaviour
+public class GameManager : MonoBehaviour, IUpdateOnSceneLoad
 {
     private static GameManager _gameManager;
 
@@ -24,9 +24,9 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private Camera m_Camera;
-    
-    public List<PlayerController> m_Players;
+    public Camera m_Camera;
+
+    public PlayerController player;
 
     private PauseManager _pauseManager;
     private IEnumerator playerRespawner;
@@ -37,13 +37,13 @@ public class GameManager : MonoBehaviour
         // transform.parent = null;
         // DontDestroyOnLoad(this.gameObject);
         // gameObject.name = "[LITERAL GOD]";
-        m_Camera = Camera.main;
+        m_Camera = FindObjectOfType<Camera>();
         _pauseManager = FindObjectOfType<PauseManager>();
-        GetPlayers();
     }
 
     private void Start()
     {
+        GetPlayers();
         
         // PlayGame();
     }
@@ -74,7 +74,7 @@ public class GameManager : MonoBehaviour
 
     public void TeleportPlayer(Vector3 pos)
     {
-        TeleportController(m_Players[0], pos);
+        TeleportController(player, pos);
         m_Camera.GetComponent<FollowCameraController>().ForceNewPos();
     }
 
@@ -82,6 +82,13 @@ public class GameManager : MonoBehaviour
     {
         if (playerRespawner != null) return;
         playerRespawner = TeleportPhase(pos);
+        StartCoroutine(playerRespawner);
+    }
+    
+    public void RespawnPlayer()
+    {
+        if (playerRespawner != null) return;
+        playerRespawner = RespawnPhase(player.GetStartingPos());
         StartCoroutine(playerRespawner);
     }
     
@@ -102,9 +109,9 @@ public class GameManager : MonoBehaviour
        
         yield return new WaitForSecondsRealtime( HUDManager.Instance.FadeToBlack());
         TeleportPlayer(pos);
-        m_Players[0].ToggleControls(true);
-        m_Players[0].GetComponent<PlayerAnimatorManager>().Restart();
-        m_Players[0].GetComponent<PlayerHealthManager>().Respawn();
+        player.ToggleControls(true);
+        player.GetComponent<PlayerAnimatorManager>().Restart();
+        player.GetComponent<PlayerHealthManager>().Respawn();
         yield return new WaitForSecondsRealtime( HUDManager.Instance.FadeToWhite());
         // Camera fadewhite
         playerRespawner = null;
@@ -112,14 +119,7 @@ public class GameManager : MonoBehaviour
     
     public void GetPlayers()
     {
-        m_Players = new List<PlayerController>();
-        PlayerController[] players = FindObjectsOfType<PlayerController>();
-        int i = 0;
-        foreach (var player in players)
-        {
-            m_Players.Add(players[i]);
-            i++;
-        }
+        player = FindObjectOfType<PlayerController>();
     }
     
     
@@ -156,13 +156,13 @@ public class GameManager : MonoBehaviour
 
     public GameObject GetPlayerGO()
     {
-        return m_Players[0].gameObject;
+        return player.gameObject;
     }
 
-    public void RespawnPlayer()
+
+    public void UpdateOnSceneLoad()
     {
-        if (playerRespawner != null) return;
-        playerRespawner = RespawnPhase(m_Players[0].GetStartingPos());
-        StartCoroutine(playerRespawner);
+        player = FindObjectOfType<PlayerController>();
+        m_Camera = FindObjectOfType<Camera>();
     }
 }

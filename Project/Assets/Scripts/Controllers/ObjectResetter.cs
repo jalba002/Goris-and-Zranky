@@ -20,7 +20,7 @@ public class ObjectResetter : MonoBehaviour, IPlayerCollide
     public bool Collide(GameObject self, Vector3 collisionPoint)
     {
         //throw new NotImplementedException();
-        self.gameObject.GetComponent<RestartableObject>().Restart();
+        // self.gameObject.GetComponent<RestartableObject>().Restart();
         return true;
     }
 

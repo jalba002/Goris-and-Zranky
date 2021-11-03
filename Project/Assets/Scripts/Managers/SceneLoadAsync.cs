@@ -18,8 +18,8 @@ public class SceneLoadAsync : MonoBehaviour
 
     public void Awake()
     {
-        this.transform.parent = null;
-        DontDestroyOnLoad(this.gameObject);
+        //this.transform.parent = null;
+        //DontDestroyOnLoad(this.gameObject);
     }
 
     [Button("Trigger Load")]

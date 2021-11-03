@@ -6,6 +6,7 @@ using UnityEngine;
 public class FrankLoader : MonoBehaviour, IUpdateOnSceneLoad
 {
     public GameObject frank;
+    public AnimationClip wakeUpAnim;
 
     public static FrankLoader Instance;
     
@@ -24,7 +25,10 @@ public class FrankLoader : MonoBehaviour, IUpdateOnSceneLoad
     {
         frank.transform.position = pos;
         frank.SetActive(true);
-        frank.GetComponent<Animation>().Play();
+        var anim = frank.AddComponent<Animation>();
+        anim.AddClip(wakeUpAnim, wakeUpAnim.name);
+        anim.clip = wakeUpAnim;
+        anim.Play();
     }
 
     public void UpdateOnSceneLoad()

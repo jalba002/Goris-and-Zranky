@@ -331,9 +331,14 @@ namespace Player
         #region Interfaces / Heritage
 
 
-        public override void Restart()
+        public void Respawn()
         {
             GameManager.GM.RespawnPlayer();
+        }
+
+        public override void Restart()
+        {
+            GameManager.GM.CoolPlayerTeleport(startingPosition);
         }
 
         #endregion
