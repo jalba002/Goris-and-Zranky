@@ -33115,7 +33115,7 @@ Animation:
   - {fileID: 7400000, guid: d2a5c226d37df1e448d142418d3cafc6, type: 2}
   - {fileID: 7400000, guid: f04d34f05a13e85439dc61b92480b8c4, type: 2}
   m_WrapMode: 0
-  m_PlayAutomatically: 1
+  m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_CullingType: 0
 --- !u!114 &555643188
@@ -35634,7 +35634,7 @@ PrefabInstance:
     - target: {fileID: 2785531822228111108, guid: 617e8dd3b6bdaea42bd5e14336781786,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 11.55
+      value: 17.74
       objectReference: {fileID: 0}
     - target: {fileID: 2785531822228111108, guid: 617e8dd3b6bdaea42bd5e14336781786,
         type: 3}
@@ -35644,7 +35644,7 @@ PrefabInstance:
     - target: {fileID: 2785531822228111108, guid: 617e8dd3b6bdaea42bd5e14336781786,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -55
+      value: 117.8
       objectReference: {fileID: 0}
     - target: {fileID: 2785531822228111108, guid: 617e8dd3b6bdaea42bd5e14336781786,
         type: 3}
@@ -37388,8 +37388,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48afc803bac23b04183416d1f17799d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Players:
-  - {fileID: 831522442}
+  m_Camera: {fileID: 0}
+  player: {fileID: 0}
 --- !u!1001 &817582601
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -37623,18 +37623,6 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
---- !u!114 &831522442 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2785531822228111105, guid: 617e8dd3b6bdaea42bd5e14336781786,
-    type: 3}
-  m_PrefabInstance: {fileID: 720839916}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a5025b006b391540acd8c1412c1dd53, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &857180423 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7683276428198691190, guid: dab5125695d834949957f9a23db8f839,
@@ -42367,7 +42355,7 @@ PrefabInstance:
     - target: {fileID: 2655832438137467236, guid: 37760d2294605284f9204e7b6a18d709,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 68.177605
+      value: 66.58
       objectReference: {fileID: 0}
     - target: {fileID: 2655832438137467236, guid: 37760d2294605284f9204e7b6a18d709,
         type: 3}
